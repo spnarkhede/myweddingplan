@@ -166,7 +166,7 @@
       {
        "id": "fly-bc",
        "t": "Birth certificate and school leaving certificate",
-       "d": "For NMC registration.",
+       "d": "For marriage registration.",
        "tag": "Original + 2 copies"
       },
       {
@@ -221,7 +221,7 @@
       {
        "id": "pr-aad",
        "t": "Copy of his Aadhaar",
-       "d": "In case NMC asks for it."
+       "d": "In case the registrar asks for it."
       }
      ]
     },
@@ -289,13 +289,13 @@
       {
        "id": "pr-signs",
        "t": "Priest signs and stamps 3 originals",
-       "d": "One for NMC, one for the visa file, one to keep.",
+       "d": "One for the registrar, one for the visa file, one to keep.",
        "due": "W+0"
       },
       {
        "id": "pr-nmc",
-       "t": "Ask if he must attend NMC registration",
-       "d": "Confirm with NMC on your first visit too."
+       "t": "Ask if he must attend the marriage registration",
+       "d": "Confirm with the registrar on your first visit too."
       }
      ]
     }
@@ -303,7 +303,7 @@
   },
   {
    "id": "nmc",
-   "title": "Marriage registration (NMC example)",
+   "title": "Marriage registration",
    "place": "Municipal marriage office",
    "window": "Around the wedding",
    "color": "#8e1b2a",
@@ -679,7 +679,7 @@
       },
       {
        "id": "v-mc",
-       "t": "Marriage certificate (NMC)",
+       "t": "Government marriage certificate",
        "tag": "2 copies",
        "d": "With notary attested English translation if it is in Marathi."
       },
@@ -919,7 +919,7 @@
   }
  ],
  "nameChange": {
-  "intro": "Her surname after the wedding is her decision. All paths are legal and common, and none of them harms her career. The NMC marriage certificate links both names in every case, so keep certified copies with an English or German translation.",
+  "intro": "Her surname after the wedding is her decision. All paths are legal and common, and none of them harms her career. The government marriage certificate links both names in every case, so keep certified copies with an English or German translation.",
   "options": [
    {
     "id": "keep",
@@ -936,7 +936,7 @@
      {
       "id": "nc-k1",
       "t": "Apply for the visa in her maiden name",
-      "d": "Use her current passport and the NMC marriage certificate."
+      "d": "Use her current passport and the government marriage certificate."
      },
      {
       "id": "nc-k2",
@@ -993,7 +993,7 @@
     "steps": [
      {
       "id": "nc-i1",
-      "t": "Get the NMC marriage certificate",
+      "t": "Get the government marriage certificate",
       "d": "Registration on the first Monday or Thursday after the wedding. Ask for 3 certified copies.",
       "time": "1 to 2 weeks"
      },
@@ -1036,7 +1036,7 @@
     "paperwork": "High, Indian and German IDs",
     "cost": "Consulate passport fee plus about 67 euros for the new residence card",
     "degree": "Needs the marriage certificate",
-    "where": "CGI Munich, then Bürgerbüro and Ausländerbehörde ",
+    "where": "CGI Munich, then Bürgerbüro and Ausländerbehörde",
     "total": "About 3 to 5 months after arrival (estimate)",
     "best": "She wants your surname but does not want to delay coming to Germany.",
     "steps": [
@@ -1116,7 +1116,7 @@
    "No obligation to change. Keeping a maiden name is standard in Germany and does not affect her visa, taxes or dependent rights."
   ],
   "affWarn": "An affidavit alone will not work everywhere. A self sworn Indian affidavit on stamp paper carries little weight with German offices, banks or health insurers. They rely on her passport as the main ID, backed by the government marriage certificate, or the Name Change Certificate CGI Munich issues after her passport is updated.",
-  "timingTip": "Apply for the visa with her existing passport right after the NMC certificate. Changing her Indian passport before the visa appointment can delay it by 1 to 2 months.",
+  "timingTip": "Apply for the visa with her existing passport right after the marriage certificate. Changing her Indian passport before the visa appointment can delay it by 1 to 2 months.",
   "faq": [
    {
     "q": "Who can change their name legally in India?",
@@ -1240,7 +1240,7 @@
    },
    {
     "id": "hma",
-    "title": "Hindu Marriage Act registration (NMC Nagpur example)",
+    "title": "Hindu Marriage Act registration",
     "note": "Registration on Mondays and Thursdays. All originals are checked against the copies.",
     "items": [
      {
@@ -1338,7 +1338,7 @@
    },
    {
     "id": "aff",
-    "title": "NMC affidavits and forms",
+    "title": "Registration affidavits and forms",
     "note": "Rs 100 stamp paper, notarised. Each affidavit states names, ages, addresses, date and place of marriage, marital status before marriage, and that you are not within prohibited degrees.",
     "items": [
      {

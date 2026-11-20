@@ -2,3 +2,6 @@ dist/
 node_modules/
 .DS_Store
 *.log
+
+# Private copy of the personal artifact (names, dates, employer). Never commit.
+artifacts/

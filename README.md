@@ -9,7 +9,7 @@ A wedding project planner for an Indian Hindu wedding followed by a move to Germ
 | Section | What it does |
 |---|---|
 | Overview | Countdowns to travel, the wedding and the return trip, a timeline, the next tasks due and progress per workstream |
-| Workstreams | Checklists for documents before travel, the priest certificate, marriage registration (Hindu Marriage Act, NMC example), the spouse visa, events, shopping and bookings, plus your own tasks, notes and request status tracking |
+| Workstreams | Checklists for documents before travel, the priest certificate, marriage registration (Hindu Marriage Act), the spouse visa, events, shopping and bookings, plus your own tasks, notes and request status tracking |
 | Documents | A master list of every document for bride, groom and witnesses: court marriage, Hindu Marriage Act registration, affidavits, the marriage certificate, name change, identity documents, the spouse visa and the first months in Germany. Ticked documents stay on the list, struck through |
 | Certificate | Priest certificate maker with 14 designs in English, Marathi and bilingual, each with a matching rituals guide for the back page, as an A4 PDF |
 | Wedding Invitation | Six designs for engagement, haldi, sangeet and wedding, as a single page or a two page spread, as an image or a PDF |
