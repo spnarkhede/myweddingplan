@@ -1,0 +1,13 @@
+const LS="weddingProjectState",SS="weddingProjectPending";
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const fd=d=>{const[y,m,dd]=d.split("-").map(Number);return `${dd} ${MON[m-1]}`};
+const today=()=>{const t=new Date();return `${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,"0")}-${String(t.getDate()).padStart(2,"0")}`};
+const days=d=>Math.round((new Date(d+"T00:00:00")-new Date(today()+"T00:00:00"))/864e5);
+let T=null,T0=null,S={done:{},pick:{},notes:{},custom:{},cert:{},status:{},statusAt:{},updated:0};
+const STS=["Not requested","Requested","Received"];
+const stOf=i=>S.done[i.id]?"Received":(S.status[i.id]||(typeof i.status==="string"?i.status:"Not requested"));
+const stAt=i=>S.statusAt[i.id]||i.statusAt;
+let art,canSave=true,timer=null,cert=null;
+const chip=document.getElementById("saveChip");
+const setChip=t=>{chip.textContent=t};

@@ -1,0 +1,75 @@
+<nav class="tabs" aria-label="Designs"><div class="in" role="tablist" id="tabs"></div></nav>
+
+<div class="wrap main">
+<div class="pv">
+<div class="lang" id="lang" hidden><span>Language</span><button type="button" data-l="en" aria-pressed="true">English</button><button type="button" data-l="mr" aria-pressed="false">मराठी</button></div>
+<div class="pglbl">Front</div>
+<div class="stage" id="stage"><div class="sheet" id="sheet"></div></div>
+<label class="backopt"><input type="checkbox" id="photoOn" checked> Show the box for a joint photo of bride and groom</label>
+<label class="backopt"><input type="checkbox" id="sealOn" checked> Show the circle for the temple or priest seal</label>
+<label class="backopt"><input type="checkbox" id="backOn" checked> Include the matching back page (rituals guide) in the PDF</label>
+<div id="backWrap"><div class="pglbl">Back</div><div class="stage" id="stage2"><div class="sheet" id="sheet2"></div></div></div>
+<div class="acts">
+<button class="btn pri" id="dl" type="button">Download PDF</button>
+<span id="msg"></span>
+</div>
+</div>
+
+<form id="f" autocomplete="off">
+<p class="hint">One form feeds every design. Fields marked Marathi are used only in Marathi and bilingual pages. If you leave them empty, those pages show the English entry instead.</p>
+<fieldset><legend>Temple or priest letterhead</legend><div class="fg">
+<label class="f w">Temple, organisation or priest name<input id="templeName"></label>
+<label class="f w">Temple name in Marathi<input id="templeNameMr" lang="mr"></label>
+<label class="f w">Address with city, state, PIN<input id="templeAddr"></label>
+<label class="f">Phone<input id="templePhone" inputmode="tel"></label>
+<label class="f">Email<input id="templeEmail" type="email"></label>
+<label class="f">Issue date<input id="issueDate" type="date"></label>
+<label class="f">Place of issue<input id="place"></label>
+</div></fieldset>
+
+<fieldset><legend>Officiating priest</legend><div class="fg">
+<label class="f">Priest full name<input id="priestName"></label>
+<label class="f">Priest name in Marathi<input id="priestNameMr" lang="mr"></label>
+<label class="f">Priest's father's name<input id="priestFather"></label>
+<label class="f">Temple or organisation affiliated with<input id="priestAffil"></label>
+<label class="f w">Priest's address<input id="priestAddr"></label>
+<label class="f">Priest contact number<input id="priestPhone" inputmode="tel"></label>
+</div></fieldset>
+
+<fieldset><legend>Groom</legend><div class="fg">
+<label class="f">Full name<input id="groomName"></label>
+<label class="f">Full name in Marathi<input id="groomNameMr" lang="mr"></label>
+<label class="f">Father's name<input id="groomFather"></label>
+<label class="f">Father's name in Marathi<input id="groomFatherMr" lang="mr"></label>
+<label class="f">Mother's name<input id="groomMother"></label>
+<label class="f">Mother's name in Marathi<input id="groomMotherMr" lang="mr"></label>
+<label class="f">Date of birth<input id="groomDob" type="date"></label>
+<label class="f w">Address<textarea id="groomAddr"></textarea></label>
+</div></fieldset>
+
+<fieldset><legend>Bride</legend><div class="fg">
+<label class="f">Full name<input id="brideName"></label>
+<label class="f">Full name in Marathi<input id="brideNameMr" lang="mr"></label>
+<label class="f">Father's name<input id="brideFather"></label>
+<label class="f">Father's name in Marathi<input id="brideFatherMr" lang="mr"></label>
+<label class="f">Mother's name<input id="brideMother"></label>
+<label class="f">Mother's name in Marathi<input id="brideMotherMr" lang="mr"></label>
+<label class="f">Date of birth<input id="brideDob" type="date"></label>
+<label class="f w">Address<textarea id="brideAddr"></textarea></label>
+</div></fieldset>
+
+<fieldset><legend>Ceremony</legend><div class="fg">
+<label class="f">Date of marriage<input id="marDate" type="date"></label>
+<label class="f">Time of marriage<input id="marTime" type="time"></label>
+<label class="f">Venue or hall name<input id="venue"></label>
+<label class="f">Venue name in Marathi<input id="venueMr" lang="mr"></label>
+<label class="f w">Venue full address<input id="venueAddr"></label>
+<label class="f w">Rituals performed (English)<input id="rituals"></label>
+<label class="f w">Rituals performed (Marathi)<input id="ritualsMr" lang="mr"></label>
+</div></fieldset>
+
+<fieldset><legend>Witnesses</legend><div class="fg" id="wit"></div></fieldset>
+
+<div class="acts"><button class="btn" type="button" id="clr">Clear form</button></div>
+</form>
+</div>

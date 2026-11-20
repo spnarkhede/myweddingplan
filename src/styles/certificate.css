@@ -1,0 +1,241 @@
+/* VOICE: auspicious and formal, a certificate a priest signs and stamps
+   IDEA: wedding mandap stationery; each design borrows one Maharashtrian craft (toran, rangoli, kalash, paithani, temple arch, diya)
+   PICTURE: the live A4 front and back, updating as you type
+   COLOUR and TYPE: white paper, each design one dominant colour plus gold; Tiro Devanagari, Yatra One, Cinzel, Noto Serif on the sheet, Mukta for the tool
+   LAYOUT: format tabs, front and back preview with download, then one shared form */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#16100f);--ink:light-dark(#22140f,#f3ebe5);--mute:light-dark(#6f5c53,#b8a79e);--mar:light-dark(#8e1b2a,#ff8a8a);--gold:#d99a00;--line:light-dark(#ebdfd6,#3b2e29);--card:light-dark(#fdf7f2,#211816)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Mukta,system-ui,sans-serif;overflow-x:clip}
+
+.wrap{max-width:1240px;margin:0 auto;padding:clamp(20px,3vw,40px) max(5vw,16px)}
+h1{font-size:clamp(30px,4.6vw,46px);line-height:1.05;margin:0 0 6px;font-weight:800;text-wrap:balance}
+header p{margin:0;max-width:64ch;opacity:.92}
+nav.tabs{position:sticky;top:56px;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav.tabs .in{max-width:1240px;margin:0 auto;padding:0 max(5vw,16px);display:flex;gap:4px;overflow-x:auto;align-items:stretch}
+nav.tabs button{flex:none;font:600 16px Mukta,sans-serif;color:var(--mute);background:none;border:0;border-bottom:3px solid transparent;padding:12px 10px;min-height:48px;cursor:pointer}
+nav.tabs button[aria-selected=true]{color:var(--mar);border-color:var(--mar)}
+nav.tabs .grp{flex:none;align-self:center;font-size:13px;color:var(--mute);padding:0 4px 0 14px;border-left:1px solid var(--line)}
+nav.tabs .grp:first-child{border:0;padding-left:0}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.main{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:32px;align-items:start}
+.stage{position:relative;width:100%;overflow:hidden;border-radius:6px;box-shadow:0 2px 18px rgba(60,20,10,.18);background:#fff}
+.stage .sheet{position:absolute;top:0;left:0;transform-origin:0 0}
+.acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;align-items:center}
+.btn{font:600 16px Mukta,sans-serif;min-height:46px;padding:0 18px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.btn.pri{background:#8e1b2a;color:#fff;border-color:#8e1b2a}
+.btn[disabled]{opacity:.5;cursor:wait}
+#msg{font-size:15px;color:var(--mute)}
+.lang{display:flex;gap:6px;margin:0 0 10px;align-items:center;font-size:15px;color:var(--mute)}
+.lang[hidden]{display:none}
+.lang button{font:600 15px Mukta,sans-serif;min-height:40px;padding:0 14px;border-radius:20px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.lang button[aria-pressed=true]{background:#8e1b2a;color:#fff;border-color:#8e1b2a}
+.pglbl{font-size:14px;color:var(--mute);margin:16px 0 6px}
+.backopt{display:flex;align-items:center;gap:10px;margin-top:12px;font-size:15px;min-height:44px}
+.backopt input{width:22px;height:22px;accent-color:#8e1b2a}
+fieldset{border:1px solid var(--line);border-radius:10px;padding:6px 16px 14px;margin:0 0 16px}
+legend{font-weight:800;font-size:18px;padding:0 6px;color:var(--mar)}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:10px 14px}
+label.f{display:flex;flex-direction:column;font-size:14px;font-weight:600;color:var(--mute)}
+label.f input,label.f textarea{font:16px Mukta,sans-serif;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:9px 10px;min-height:44px;margin-top:3px}
+label.f textarea{resize:vertical;min-height:64px}
+label.f.w{grid-column:1/-1}
+.hint{font-size:14px;color:var(--mute);margin:4px 0 10px}
+@media(max-width:900px){.main{grid-template-columns:minmax(0,1fr)}}
+
+/* ===== certificate sheet, fixed A4 at 96 dpi, colours set per design ===== */
+.sheet{--k1:#8e1b2a;--k2:#d99a00;--k3:#f6a313;--k4:#fbefd6;--k5:#5a1019;--k6:#e3c37a;--k7:#fffaf0;width:794px;height:1123px;background:#fff;color:#2a1610;font:13.5px/1.5 "Noto Serif","Noto Serif Devanagari",serif;padding:20px;overflow:hidden}
+.sheet *{box-sizing:border-box}
+.th-rangoli{--k1:#9c1458;--k2:#e0a015;--k3:#ff7a00;--k4:#fde9f2;--k5:#62093a;--k6:#efbcd4;--k7:#fff8fb}
+.th-kalash{--k1:#1f6b3a;--k2:#c8961e;--k3:#e86a1a;--k4:#ecf5e7;--k5:#123f22;--k6:#b8d6a6;--k7:#fbfdf9}
+.th-paithani{--k1:#5b2a86;--k2:#c9a227;--k3:#1f8f6a;--k4:#f2ebfa;--k5:#3b175a;--k6:#d8c27c;--k7:#fcfaff}
+.th-mandir{--k1:#a0381c;--k2:#c9961a;--k3:#e2541a;--k4:#fbeee3;--k5:#672010;--k6:#e6bd88;--k7:#fffaf5}
+.th-deepam{--k1:#b0122b;--k2:#d4a017;--k3:#ff9f1c;--k4:#fff0dd;--k5:#6b0918;--k6:#efc277;--k7:#fffaf2}
+.fr{position:relative;height:100%;border:5px solid var(--k1);padding:7px}
+.fr2{position:relative;height:100%;border:1.5px solid var(--k2);padding:16px 40px 18px}
+.cor{position:absolute;width:74px;height:74px}
+.cor.tl{top:-2px;left:-2px}.cor.tr{top:-2px;left:calc(100% - 72px)}.cor.bl{top:calc(100% - 72px);left:-2px}.cor.br{top:calc(100% - 72px);left:calc(100% - 72px)}
+.toran{display:block;width:100%;height:46px;margin:-6px 0 2px}
+.inv{text-align:center;font:17px "Tiro Devanagari Marathi",serif;color:var(--k1);margin:0}
+.lh{text-align:center;margin:2px 0 6px}
+.om{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--k3);color:#fff;font:30px/1 "Tiro Devanagari Marathi",serif}
+.tn{font:700 20px "Noto Serif","Noto Serif Devanagari",serif;color:var(--k5);margin-top:3px}
+.ta{font-size:12.5px;color:#5b463d}
+.ttl{text-align:center;font:30px/1.15 "Tiro Devanagari Marathi",serif;color:var(--k1);margin:6px 0 0}
+.sub{text-align:center;font-size:13px;color:#8a5a12;margin:0 0 6px}
+.meta{display:flex;justify-content:space-between;font-size:13px;margin:6px 0 8px;border-top:1px solid var(--k6);border-bottom:1px solid var(--k6);padding:3px 0}
+.sheet p{margin:0 0 8px;text-align:justify}
+.b{display:inline-block;min-width:150px;border-bottom:1px dotted #6b4c3f;height:1.15em;vertical-align:baseline}
+.b.s{min-width:90px}
+.sheet table{width:100%;border-collapse:collapse;margin:4px 0 8px;font-size:12.5px}
+.sheet th,.sheet td{border:1px solid var(--k6);padding:4px 7px;text-align:left;vertical-align:top}
+.sheet th{background:var(--k4);color:var(--k5);font-weight:700}
+.sheet td.k{width:26%;color:#6b4c3f;background:var(--k7)}
+.sec{font:700 14px "Noto Serif","Noto Serif Devanagari",serif;color:var(--k1);margin:8px 0 3px}
+.sig{display:grid;grid-template-columns:1fr 1fr 124px 1fr;gap:14px;align-items:end;margin-top:14px;text-align:center;font-size:12.5px}
+.sig .ln{border-top:1px solid #4a2a20;padding-top:3px}
+.ph{height:132px;border:1.5px dashed var(--k2);display:grid;place-items:center;color:#8a6a3a;font-size:11.5px;padding:6px}
+.seal{width:96px;height:96px;margin:0 auto 4px;border:1.5px dashed var(--k2);border-radius:50%;display:grid;place-items:center;color:#8a6a3a;font-size:11px;text-align:center;padding:6px}
+.foot{display:flex;justify-content:space-between;margin-top:10px;font-size:13px}
+.note2{text-align:center;font-size:11.5px;color:#7a5a4a;margin-top:8px;font-style:italic}
+.wt td,.wt th{font-size:12px}
+.wt td.sg{width:22%}
+.mr{font-family:"Noto Serif Devanagari","Noto Serif",serif}
+.bi p.mr{font-size:12.5px;line-height:1.55}
+/* party cards */
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:4px 0 8px}
+.pc>div{border:1px solid var(--k6);border-radius:8px;background:var(--k7);padding:6px 12px 8px}
+.pc h6{margin:0 0 3px;font:700 15px "Noto Serif","Noto Serif Devanagari",serif;color:var(--k1);text-align:center;border-bottom:1px solid var(--k6);padding-bottom:3px}
+.pc .r{font-size:12.5px;line-height:1.75}.pc .r span{color:#6b4c3f}
+/* rangoli */
+.rgb{display:block;width:100%;height:26px}
+.th-rangoli .fr{border-width:4px}
+.th-rangoli .fr2{padding-top:8px}
+.mand{display:block;width:84px;height:84px;margin:0 auto}
+/* kalash */
+.th-kalash .fr{border:6px double var(--k2);padding:6px}
+.th-kalash .fr2{border:1.5px solid var(--k1);padding:12px 54px 16px}
+.lfs{position:absolute;top:10px;height:calc(100% - 20px);width:34px}
+.lfs.l{left:8px}.lfs.r{left:calc(100% - 42px)}
+.kh{display:grid;grid-template-columns:80px 1fr 80px;align-items:center;text-align:center}
+.kh svg{width:76px;height:92px}
+/* paithani */
+.th-paithani .fr{border:0;padding:0}
+.th-paithani .fr2{border:0;border-left:9px solid var(--k1);border-right:9px solid var(--k1);padding:0 36px}
+.zb{display:block;width:calc(100% + 90px);height:38px;margin:0 -45px}
+.ph2{display:grid;grid-template-columns:90px 1fr 90px;align-items:center;margin-top:6px}
+.ph2 svg{width:86px;height:86px}
+.sv{text-align:center;font:30px/1.1 "Yatra One","Tiro Devanagari Marathi",serif;color:var(--k1);margin:0}
+/* mandir */
+.th-mandir .fr{border-width:4px}
+.arch{display:block;width:calc(100% + 80px);height:150px;margin:-16px -40px 0}
+.ain{position:absolute;top:26px;left:0;right:0;text-align:center}.ain .inv{margin-bottom:4px}
+.th-mandir .ttl,.th-mandir .ttle{font-family:"Cinzel","Tiro Devanagari Marathi",serif}
+/* deepam */
+.th-deepam .fr{border:2px solid var(--k2);padding:5px}
+.th-deepam .fr2{border:3px solid var(--k1);padding:10px 44px 10px}
+.swb{display:block;width:100%;height:20px}
+.kai{position:absolute;width:62px;height:62px}
+.kai.tl{top:4px;left:4px}.kai.tr{top:4px;left:calc(100% - 66px)}.kai.bl{top:calc(100% - 66px);left:4px}.kai.br{top:calc(100% - 66px);left:calc(100% - 66px)}
+.diy{display:block;width:100%;height:44px;margin-top:4px}
+/* letter */
+.sheet.let .fr{border:0;padding:0}.sheet.let .fr2{border:0;padding:26px 54px}
+.lhbar{border-bottom:3px double var(--k1);padding-bottom:8px;margin-bottom:12px;display:flex;gap:14px;align-items:center}
+.lhbar .om{flex:none;width:52px;height:52px;background:var(--k1);font-size:32px}
+.lhbar .tn{font-size:21px;margin:0}
+.let .to{margin:14px 0 6px;font-weight:700}
+.let .subj{font-weight:700;text-decoration:underline;margin:4px 0 12px}
+.let p{font-size:14px;line-height:1.7}
+/* classic (sample 1) */
+.cl{height:100%;border:1px solid #b9b9b9;padding:8px}
+.cl .in{position:relative;height:100%;border:1.5px dashed #3a3a3a;padding:30px 46px}
+.cl .sun{position:absolute;top:16px;left:22px;width:132px;height:132px}
+.cl .kal{position:absolute;top:14px;right:24px;width:112px;height:136px}
+.cl h2{text-align:center;font:400 54px/1.1 Mukta,"Noto Serif Devanagari",sans-serif;margin:38px 0 0;color:#151515}
+.div{display:block;width:260px;height:22px;margin:8px auto 0}
+.cl p{font:15.5px/2.35 "Noto Serif","Noto Serif Devanagari",serif;margin:120px 0 0;text-align:justify;color:#1d1d1d}
+.cl .pr{text-align:center;margin-top:46px;font-size:15px;line-height:1.7}
+.cl .row{display:flex;justify-content:space-between;gap:20px;margin-top:70px;font-size:15px;line-height:1.7}
+.cl .row div{flex:1}.cl .row div:nth-child(2){text-align:center}.cl .row div:nth-child(3){text-align:right}
+.cl .sl{display:block;height:44px}
+.cl .band{position:absolute;left:46px;bottom:22px;width:calc(100% - 92px);height:40px;transform:scaleY(-1)}
+.cl.bkp .in{padding-top:24px}.cl.bkp h2{font-size:36px;margin-top:44px}
+/* simple (sample 2) */
+.sp{position:relative;height:100%;padding:46px 66px;border-top:12px solid #1f5f7a;border-bottom:5px solid #1f5f7a;overflow:hidden}
+.sp .wm{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);font:420px/1 "Tiro Devanagari Marathi",serif;color:#1f5f7a;opacity:.05}
+.sp .cn{position:absolute;width:60px;height:60px;border:2px solid #c99a2e}
+.sp .cn.a{top:26px;left:26px;border-right:0;border-bottom:0}.sp .cn.b{top:26px;right:26px;border-left:0;border-bottom:0}.sp .cn.c{bottom:26px;left:26px;border-right:0;border-top:0}.sp .cn.d{bottom:26px;right:26px;border-left:0;border-top:0}
+.sp h2{text-align:center;color:#1f5f7a;font:28px/1.2 "Tiro Devanagari Marathi",serif;margin:30px 0 4px}
+.sp .div{width:220px;height:20px;margin:0 auto 26px}
+.sp p{font:15px/2.25 "Noto Serif","Noto Serif Devanagari",serif;margin:0 0 10px;position:relative}
+.sp h3{color:#1f5f7a;font:700 19px "Noto Serif","Noto Serif Devanagari",serif;margin:34px 0 12px;position:relative}
+.sp .ln2{display:flex;gap:10px;align-items:flex-end;margin:22px 0;font-size:15px;position:relative}
+.sp .ln2 i{flex:1;border-bottom:1px solid #333;height:1.2em}
+.sp.bkp{padding:34px 54px}.sp.bkp h2{margin-top:18px}
+/* detailed (pasted sample) */
+.tp{height:100%;border:3px double #b8860b;padding:6px}
+.tp .in{height:100%;border:1px solid #e3b65a;padding:0 0 18px}
+.tp .hd{background:#fff3df;border-bottom:2px solid #d98c1f;display:grid;grid-template-columns:86px 1fr 86px;align-items:center;padding:12px 18px;text-align:center}
+.tp .hd svg{width:70px;height:70px}
+.tp .tn{color:#7a2e0b}
+.tp .bd{padding:14px 40px 0}
+.tp h2{text-align:center;font:24px/1.2 "Tiro Devanagari Marathi",serif;color:#7a2e0b;margin:2px 0 8px}
+.tp .mt{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:10px}
+.tp p,.tp li{font-size:14px;line-height:1.75}
+.tp ul{margin:4px 0 10px;padding-left:22px}
+.tp ol{margin:4px 0 0;padding-left:22px}
+.tp h4{font:700 15px "Noto Serif","Noto Serif Devanagari",serif;color:#7a2e0b;margin:12px 0 4px;border-bottom:1px solid #f0d49a;padding-bottom:2px}
+.tp .pd{display:grid;grid-template-columns:1fr 120px;gap:16px;align-items:end}
+.tp .seal{width:104px;height:104px;margin:0}
+/* to whom it may concern (pasted letter) */
+.fp{height:100%;display:grid;grid-template-columns:62px 1fr;border:1.5px solid #8e1b2a}
+.fp .st{background:#8e1b2a;position:relative;overflow:hidden}
+.fp .st svg{position:absolute;inset:0;width:100%;height:100%}
+.fp .bd{padding:46px 50px 30px}
+.fp .om2{font:40px/1 "Tiro Devanagari Marathi",serif;color:#c25b12;text-align:center}
+.fp .to{font:700 16px "Noto Serif","Noto Serif Devanagari",serif;margin:26px 0 18px}
+.fp p{font:15px/2.1 "Noto Serif","Noto Serif Devanagari",serif;text-align:justify;margin:0 0 12px}
+.fp ol{font-size:14.5px;line-height:2;margin:0 0 20px;padding-left:22px}
+.fp .ft{display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;margin-top:40px;font-size:15px}
+.fp.bkp .bd{padding:30px 40px 20px}
+
+/* ===== back pages ===== */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+.bttl{text-align:center;font:25px/1.15 "Tiro Devanagari Marathi",serif;color:var(--k1);margin:2px 0 0}
+.bsub{text-align:center;font-size:12.5px;color:#8a5a12;margin:0 0 8px}
+.ann{border-top:1px solid var(--k6);margin-top:4px;padding-top:6px;font-size:12px;display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between}
+/* card style */
+.rc{border:1px solid var(--k6);border-radius:6px;padding:7px 10px 6px;margin-bottom:8px;background:var(--k7)}
+.rc h5{display:flex;align-items:center;gap:8px;margin:0 0 2px;font:700 14px "Noto Serif","Noto Serif Devanagari",serif;color:var(--k1)}
+.rc h5 i{flex:none;width:22px;height:22px;border-radius:50%;background:var(--k3);color:#fff;font:700 12px/22px "Noto Serif",serif;text-align:center;font-style:normal}
+.rc .dv{font:13px "Tiro Devanagari Marathi",serif;color:#8a5a12;margin:0 0 3px 30px}
+.rc p{font-size:11.6px;line-height:1.5;margin:0 0 3px;text-align:left}
+.rc p b{color:var(--k5)}
+.rc ol{margin:2px 0 3px;padding-left:18px;font-size:11.2px;line-height:1.45}
+.mr .rc{padding:9px 12px 8px;margin-bottom:11px}.mr .rc p{font-size:13.2px;line-height:1.6}.mr .rc ol{font-size:12.6px;line-height:1.55}.mr .rc .dv{font-size:14px}
+/* per design card variations */
+.th-rangoli .rc{border-radius:0 14px 0 14px;border-color:var(--k1)}
+.th-kalash .rc{border:0;border-left:4px solid var(--k1);border-radius:0;background:var(--k4)}
+.th-kalash .rc h5 i{border-radius:4px}
+.th-paithani .rc{border:1.5px solid var(--k2);border-radius:2px;background:#fff;box-shadow:inset 0 3px 0 var(--k1)}
+.th-paithani .rc h5 i{background:var(--k3);transform:rotate(45deg);border-radius:3px}.th-paithani .rc h5 i b{display:inline-block;transform:rotate(-45deg)}
+.th-mandir .rc{border-radius:40px 40px 6px 6px;padding-top:9px;text-align:center}
+.th-mandir .rc h5{justify-content:center}.th-mandir .rc .dv{margin-left:0}.th-mandir .rc p,.th-mandir .rc ol{text-align:left}
+.th-deepam .rc{border:0;border-bottom:1.5px dashed var(--k2);border-radius:0;background:none;padding:5px 2px 7px;margin-bottom:6px}
+.th-deepam .rc h5 i{background:none;color:var(--k3);font-size:20px}
+.mr.th-deepam .rc,.th-deepam .mr .rc{padding:7px 2px 9px}
+/* plain style (samples and letters) */
+.ri{margin:0 0 9px;break-inside:avoid}
+.ri h6{margin:0 0 1px;font:700 14px "Noto Serif","Noto Serif Devanagari",serif;color:#222}
+.ri h6 span{font:400 13px "Tiro Devanagari Marathi",serif;color:#8a5a12;margin-left:6px}
+.ri p{font-size:11.8px;line-height:1.5;margin:0 0 2px;text-align:left}
+.ri ol{margin:1px 0 2px;padding-left:18px;font-size:11.3px;line-height:1.4}
+.ri .sg{font-style:italic;color:#555}
+.mr .ri p{font-size:13px;line-height:1.6}.mr .ri ol{font-size:12.5px}
+.cl .cols{margin-top:26px;gap:0 22px}.cl .cols>div+div{border-left:1px solid #d9b35b;padding-left:20px}
+.cl .ri p{font-size:11.6px;line-height:1.5}
+.sp .ri h6{color:#1f5f7a}.sp .cols{position:relative}
+.tp .ri h6{color:#7a2e0b;border-bottom:1px solid #f0d49a}
+.fp .ri h6{color:#8e1b2a}
+.let .ri h6{color:var(--k1)}
+.tp .bd .cols{margin-top:4px}
+.sheet p.inv,.sheet p.sub,.sheet p.bsub,.sheet p.sv{text-align:center}
+.bi .rc{padding:6px 9px 5px;margin-bottom:6px}.bi .rc p{font-size:10.7px;line-height:1.38;margin-bottom:2px}.bi .rc p.mr{font-size:11.2px;line-height:1.42}.bi .rc .dv{font-size:12px}
+.th-mandir .bsub{max-width:430px;margin-left:auto;margin-right:auto}
+.ri h6{font-size:15px}.ri p{font-size:13px;line-height:1.55}.ri ol,.tp .ri ol li,.tp .ri li{font-size:12.3px;line-height:1.45}.ri{margin-bottom:12px}
+.mr .ri p{font-size:13.6px;line-height:1.6}.mr .ri ol,.mr.tp .ri li{font-size:12.8px}
+.cl .ri p{font-size:12px;line-height:1.5}.cl .ri h6{font-size:14px}.cl .ri{margin-bottom:9px}.cl .ri ol{font-size:11.5px}
+.tp .ri p{font-size:13px;line-height:1.55}
+.cols.pl{font-size:13px}
+.cols.pl .ri h6{font-size:1.14em}.cols.pl .ri h6 span{font-size:.96em}.cols.pl .ri p{font-size:1em;line-height:1.55}.cols.pl .ri ol,.cols.pl .ri ol li{font-size:.94em;line-height:1.45}.cols.pl .ri{margin-bottom:.9em}
+.fitbox{display:flow-root}
+.orn .fitbox>div>p:not(.inv):not(.sub):not(.sv){font-size:15px;line-height:1.8}
+.orn .fitbox table{font-size:13.5px;margin:8px 0 12px}.orn .fitbox th,.orn .fitbox td{padding:7px 9px}
+.orn .pc .r{font-size:13.5px;line-height:2}.orn .pc>div{padding:8px 14px 10px}
+.orn .sec{font-size:15px;margin-top:14px}
+.orn .sig{margin-top:44px}.orn .ph{height:140px}.orn .seal{width:104px;height:104px}
+.orn .meta{margin:10px 0 14px;font-size:13.5px}
+.orn .foot{margin-top:22px;font-size:14px}.orn .note2{margin-top:14px}
+.orn .ttl{font-size:33px}
+.sig.nop{grid-template-columns:1fr 1fr 1fr;gap:30px}
+.sig.bare{margin-top:90px}.orn .sig.bare{margin-top:130px}

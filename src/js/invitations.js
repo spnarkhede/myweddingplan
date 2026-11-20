@@ -1,0 +1,56 @@
+/* ---------- wedding invitation maker ---------- */
+const IDEF={groom:"",bride:"",gParents:"",bParents:"",elders:"",city:"",rsvp:"",ev:{}};
+const ITPL=[["classic","Classic"],["simple","Simple"],["pro","Professional"],["royal","Royal"],["marigold","Marigold"],["paithani","Paithani"]];
+let iev="wedding",itpl="classic",ilay="single",idl=null;
+const I=()=>{S.inv=S.inv||JSON.parse(JSON.stringify(IDEF));S.inv.ev=S.inv.ev||{};return S.inv};
+const E=()=>{const x=I();x.ev[iev]=x.ev[iev]||{};return x.ev[iev]};
+const iv=(v,ph)=>v&&String(v).trim()?esc(String(v).trim()).replace(/\n/g,"<br>"):`<span class="iph">${ph}</span>`;
+const DAYS=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],MONS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+const idate=d=>{if(!d)return `<span class="iph">Date</span>`;const x=new Date(d+"T12:00:00");return `${DAYS[x.getDay()]}, ${x.getDate()} ${MONS[x.getMonth()]} ${x.getFullYear()}`};
+const evDef=()=>T.events.find(e=>e.id===iev);
+const first=n=>(n||"").trim().split(/\s+/)[0]||"";
+/* ornaments */
+const ip=(cx,cy,r,n,f,rot,op)=>Array.from({length:n},(_,i)=>`<ellipse cx="${cx}" cy="${cy-r}" rx="${r*.38}" ry="${r}" fill="${f}" ${op?`opacity="${op}"`:""} transform="rotate(${rot+i*360/n} ${cx} ${cy})"/>`).join("");
+const iMandala=(s,a,b,c)=>`<svg class="imand" viewBox="0 0 100 100" style="width:${s}px;height:${s}px">${ip(50,50,24,16,a,0,.85)}${ip(50,50,17,12,b,15)}${ip(50,50,10,8,c,22.5)}<circle cx="50" cy="50" r="9" fill="#fff"/><text x="50" y="56" text-anchor="middle" font-size="15" fill="${b}" font-family="Tiro Devanagari Marathi,serif">ॐ</text></svg>`;
+const iToran=(w)=>{let s=`<svg class="itoran" viewBox="0 0 540 60" preserveAspectRatio="none"><path d="M0 4 Q270 22 540 4" fill="none" stroke="#c9961a" stroke-width="2"/>`;for(let i=0;i<=27;i++){const x=i*20,y=4+16*(1-((x-270)/270)**2);s+=i%2?`<circle cx="${x}" cy="${y+10}" r="7.5" fill="#f6a313"/><circle cx="${x}" cy="${y+10}" r="3.5" fill="#e0641c"/><circle cx="${x}" cy="${y+22}" r="5" fill="#ffc94d"/>`:`<path d="M${x} ${y} q8 16 0 32 q-8 -16 0 -32z" fill="#2e7d32"/>`}return s+`</svg>`};
+const iGarland=(side)=>{let s=`<svg class="igar ${side}" viewBox="0 0 40 400" preserveAspectRatio="none"><path d="M20 0V400" stroke="#c9961a" stroke-width="1.5"/>`;for(let y=10;y<400;y+=18)s+=`<circle cx="20" cy="${y}" r="8" fill="${(y/18|0)%3?"#f6a313":"#e0641c"}"/>`;return s+`</svg>`};
+const iCorner=(c1,c2)=>`<svg class="icor" viewBox="0 0 80 80"><path d="M6 74V6h68" fill="none" stroke="${c2}" stroke-width="2"/><path d="M14 66V14h52" fill="none" stroke="${c1}" stroke-width="1"/>${ip(30,30,14,8,c2,0)}<circle cx="30" cy="30" r="5" fill="${c1}"/></svg>`;
+const imir=(svg,k)=>{if(!k||k==="tl")return svg;const m=svg.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);const w=m?m[1]:0,h=m?m[2]:0;const t={tr:`translate(${w},0) scale(-1,1)`,bl:`translate(0,${h}) scale(1,-1)`,br:`translate(${w},${h}) scale(-1,-1)`}[k];const i=svg.indexOf(">")+1,j=svg.lastIndexOf("</svg>");return svg.slice(0,i)+`<g transform="${t}">`+svg.slice(i,j)+"</g></svg>"};
+const iCorners=(a,b)=>["tl","tr","bl","br"].map(k=>imir(iCorner(a,b).replace('class="icor"',`class="icor ${k}"`),k)).join("");
+const iPeacock=(f)=>imir(iPeacockSvg(),f?"tr":"tl");
+const iPeacockSvg=()=>`<svg class="ipea" viewBox="0 0 86 86">${Array.from({length:7},(_,i)=>{const a=(-150+i*25)*Math.PI/180,x=36+34*Math.cos(a),y=58+34*Math.sin(a);return `<path d="M36 58 L${x.toFixed(1)} ${y.toFixed(1)}" stroke="#1f8f6a" stroke-width="1.2"/><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="6" fill="#1f8f6a"/><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.2" fill="#e6c35a"/>`}).join("")}<path d="M44 74 C30 74 28 56 40 52 C48 49 52 40 52 30 C52 24 56 20 60 22 C64 24 62 30 58 32 C58 44 60 56 54 66 C52 70 48 74 44 74Z" fill="#3b4fb5"/><path d="M62 24l6 1-6 2z" fill="#e6c35a"/></svg>`;
+const iArch=`<svg class="iarch" viewBox="0 0 540 200" preserveAspectRatio="none"><path d="M30 200 V110 Q30 80 80 74 Q180 64 230 30 Q260 8 270 6 Q280 8 310 30 Q360 64 460 74 Q510 80 510 110 V200" fill="none" stroke="#e6c35a" stroke-width="3"/><path d="M44 200 V114 Q44 92 86 87 Q186 76 238 42 Q262 22 270 20 Q278 22 302 42 Q354 76 454 87 Q496 92 496 114 V200" fill="none" stroke="#e6c35a" stroke-width="1" opacity=".7"/></svg>`;
+/* content blocks */
+const iHosts=()=>{const x=I();const g=(x.gParents||"").trim(),b=(x.bParents||"").trim();return g||b?`${iv(g,"Groom's parents")} <span class="iamp">&amp;</span> ${iv(b,"Bride's parents")}`:`<span class="iph">Groom's parents &amp; bride's parents</span>`};
+const iNames=()=>{const x=I();return `<div class="inames"><span>${iv(first(x.groom),"Groom")}</span><span class="iand">&amp;</span><span>${iv(first(x.bride),"Bride")}</span></div>`};
+const iEvent=()=>{const e=E(),d=evDef();return `<div class="iev"><div class="ievt">${esc(d.t)} <span class="mr">${esc(d.mr)}</span></div><div class="idt">${idate(e.date)}</div><div class="itm">${e.time?"at "+esc(e.time):`<span class="iph">Time</span>`}</div><div class="iven">${iv(e.venue,"Venue")}</div><div class="iadr">${iv(e.addr,I().city||"Address")}</div>${e.note?`<div class="inote">${iv(e.note,"")}</div>`:""}</div>`};
+const iFull=()=>{const x=I();return `<div class="ifull"><div><b>${iv(x.groom,"Groom's full name")}</b>${x.gParents?`<br><small>son of ${esc(x.gParents)}</small>`:""}</div><div class="iamp">&amp;</div><div><b>${iv(x.bride,"Bride's full name")}</b>${x.bParents?`<br><small>daughter of ${esc(x.bParents)}</small>`:""}</div></div>`};
+const iRsvp=()=>{const r=(I().rsvp||"").trim();return r?`<div class="irsvp"><b>RSVP</b> ${esc(r)}</div>`:""};
+const iTop=(t)=>({classic:iToran(),marigold:iToran(),royal:iArch,paithani:`<div class="ipeas">${iPeacock()}${iPeacock(1)}</div>`}[t]||"");
+const iDeco=(t)=>({classic:iCorners("#8e1b2a","#c9961a"),simple:"",pro:"",royal:iCorners("#e6c35a","#e6c35a"),marigold:iGarland("l")+iGarland("r"),paithani:""}[t]||"");
+const singleCard=t=>`<div class="ic t-${t}">${iDeco(t)}<div class="iin">${iTop(t)}<p class="iinv">॥ श्री गणेशाय नमः ॥</p>${t==="pro"?"":iMandala(t==="simple"?46:58,t==="royal"?"#e6c35a":"#f6a313",t==="royal"?"#fff":"#8e1b2a","#e0641c")}<p class="ihost">${iHosts()}</p><p class="iline">${esc(evDef().line)}</p>${iNames()}${iEvent()}${iRsvp()}</div></div>`;
+const doubleCard=t=>`<div class="ic2"><div class="ic t-${t} left">${iDeco(t)}<div class="iin">${iTop(t)}<p class="iinv">॥ श्री गणेशाय नमः ॥</p>${iMandala(110,t==="royal"?"#e6c35a":"#f6a313",t==="royal"?"#fff":"#8e1b2a","#e0641c")}<p class="ibless">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ।<br>निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥</p>${(I().elders||"").trim()?`<p class="ield">With the blessings of<br><b>${esc(I().elders)}</b></p>`:`<p class="ield"><span class="iph">With the blessings of our elders</span></p>`}${iFull()}</div></div><div class="ic t-${t} right">${iDeco(t)}<div class="iin">${iTop(t)}<p class="ihost">${iHosts()}</p><p class="iline">${esc(evDef().line)}</p>${iNames()}${iEvent()}${iRsvp()}</div></div></div>`;
+const istage=document.getElementById("istage"),iwrap=document.getElementById("iwrap");
+const iW=()=>ilay==="single"?540:1080;
+const ipinSvg=root=>root.querySelectorAll("svg.cor,svg.kai,svg.lfs,svg.icor,svg.igar").forEach(el=>{const d=document.createElement("div");d.className=el.getAttribute("class");el.removeAttribute("class");el.setAttribute("style","display:block;width:100%;height:100%");el.parentNode.insertBefore(d,el);d.appendChild(el)});
+const irender=()=>{iwrap.innerHTML=ilay==="single"?singleCard(itpl):doubleCard(itpl);ipinSvg(iwrap);iscale()};
+const iscale=()=>{const w=iW(),s=Math.min(1,istage.clientWidth/w)||1;iwrap.style.width=w+"px";iwrap.style.left=Math.max(0,(istage.clientWidth-w*s)/2)+"px";iwrap.style.transform=`scale(${s})`;istage.style.height=675*s+"px"};
+new ResizeObserver(iscale).observe(istage);
+function invitesView(){document.getElementById("itpls").innerHTML=ITPL.map(([k,l])=>`<button type="button" data-t="${k}" aria-pressed="${itpl===k}">${l}</button>`).join("");
+document.getElementById("ievs").innerHTML=T.events.map(e=>`<button type="button" data-e="${e.id}" aria-pressed="${iev===e.id}">${esc(e.t)}</button>`).join("");
+document.querySelectorAll("#ilay button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===ilay));
+const x=I(),e=E();document.querySelectorAll("#if [data-k]").forEach(i=>{i.value=x[i.dataset.k]||""});document.querySelectorAll("#if [data-e]").forEach(i=>{i.value=e[i.dataset.e]||(i.dataset.e==="date"&&evDef().date)||(i.dataset.e==="time"&&evDef().time)||""});
+document.getElementById("ievname").textContent=evDef().t;irender()}
+document.getElementById("if").addEventListener("input",ev=>{const t=ev.target;if(t.dataset.k)I()[t.dataset.k]=t.value;else if(t.dataset.e)E()[t.dataset.e]=t.value;else return;save();irender()});
+document.getElementById("v-invites").addEventListener("click",ev=>{const b=ev.target.closest("#itpls button,#ievs button,#ilay button");if(!b)return;if(b.dataset.t)itpl=b.dataset.t;if(b.dataset.e)iev=b.dataset.e;if(b.dataset.l)ilay=b.dataset.l;invitesView()});
+const imsg=document.getElementById("imsg");
+if(window.claude&&claude.use){claude.use("downloads").then(d=>{idl=d;if(!d){document.querySelectorAll(".idl").forEach(b=>b.hidden=true);imsg.textContent="Download is not available in this view. Open the page in claude.ai."}}).catch(()=>{})}
+async function icapture(){await (document.fonts?document.fonts.ready:Promise.resolve());const box=document.createElement("div");box.style.cssText="position:fixed;left:-10000px;top:0";const c=iwrap.cloneNode(true);c.style.transform="none";c.style.position="static";c.style.left="0";c.removeAttribute("id");box.appendChild(c);document.body.appendChild(box);
+try{return await html2canvas(c,{scale:2,backgroundColor:"#ffffff",width:iW(),height:675,windowWidth:Math.max(1200,iW()+100)})}finally{box.remove()}}
+document.querySelectorAll(".idl").forEach(btn=>btn.addEventListener("click",async()=>{if(!idl&&!STANDALONE){imsg.textContent="Download is not available in this view.";return}if(!window.html2canvas||!window.jspdf){imsg.textContent="The image tools did not load. Reload and try again.";return}
+btn.disabled=true;imsg.textContent="Preparing";const name=`${evDef().t} invitation ${ITPL.find(t=>t[0]===itpl)[1]} ${ilay==="single"?"single":"two page"}`;
+try{const cv=await icapture();let blob,fn;
+if(btn.dataset.f==="png"){blob=await new Promise(r=>cv.toBlob(r,"image/png"));fn=name+".png"}
+else{const pdf=new jspdf.jsPDF({orientation:"p",unit:"pt",format:[405,506.25]});if(ilay==="single"){pdf.addImage(cv.toDataURL("image/jpeg",.95),"JPEG",0,0,405,506.25)}else{const h=cv.height,w=cv.width/2;for(let i=0;i<2;i++){const part=document.createElement("canvas");part.width=w;part.height=h;part.getContext("2d").drawImage(cv,i*w,0,w,h,0,0,w,h);if(i)pdf.addPage([405,506.25],"p");pdf.addImage(part.toDataURL("image/jpeg",.95),"JPEG",0,0,405,506.25)}}blob=pdf.output("blob");fn=name+".pdf"}
+await saveFile(idl,fn,blob);imsg.textContent="Saved."}
+catch(err){const c=err&&err.code;imsg.textContent=c==="declined"?"Download cancelled.":c==="rate_limited"?"A save prompt is already open.":"Could not save here. Try again in claude.ai."}finally{btn.disabled=false}}));

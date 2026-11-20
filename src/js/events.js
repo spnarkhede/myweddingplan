@@ -1,0 +1,8 @@
+/* ---------- events ---------- */
+const rerender=()=>{const h=(location.hash||"#home").slice(1);if(h.startsWith("ws-"))wsView(h.slice(3));else if(h==="name")nameView();else home()};
+document.addEventListener("change",e=>{const c=e.target.closest("input[data-id]");if(!c||!T)return;if(c.checked)S.done[c.dataset.id]=1;else delete S.done[c.dataset.id];if(c.closest("li").querySelector(".stat")){S.status[c.dataset.id]=c.checked?"Received":"Requested";S.statusAt[c.dataset.id]=today()}save();rerender()});
+document.addEventListener("click",e=>{const sb=e.target.closest(".stat button");if(sb){e.preventDefault();const id=sb.parentElement.dataset.sid,val=sb.dataset.st;S.status[id]=val;S.statusAt[id]=today();if(val==="Received")S.done[id]=1;else delete S.done[id];save();rerender();return}
+const b=e.target.closest(".opts[data-pick] button");if(b){const id=b.parentElement.dataset.pick;S.pick[id]=S.pick[id]===b.dataset.o?undefined:b.dataset.o;if(!S.pick[id])delete S.pick[id];save();rerender();return}
+const d=e.target.closest("button[data-del]");if(d){const ws=d.dataset.ws;S.custom[ws]=(S.custom[ws]||[]).filter(i=>i.id!==d.dataset.del);delete S.done[d.dataset.del];save();rerender()}});
+document.addEventListener("submit",e=>{const f=e.target.closest("form[data-add]");if(!f)return;e.preventDefault();const t=f.t.value.trim();if(!t)return;const ws=f.dataset.add;(S.custom[ws]=S.custom[ws]||[]).push({id:"c"+Date.now().toString(36),t,due:f.due.value||undefined});save();rerender()});
+document.addEventListener("input",e=>{const n=e.target.closest("textarea[data-notes]");if(!n)return;S.notes[n.dataset.notes]=n.value;save()});

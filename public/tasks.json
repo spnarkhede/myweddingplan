@@ -1,0 +1,1930 @@
+{
+ "project": {
+  "title": "Our wedding project",
+  "sub": "",
+  "wedding": "",
+  "fly": "W-62",
+  "back": "W+13"
+ },
+ "timeline": [
+  {
+   "d": "W-75",
+   "to": "W-63",
+   "l": "Collect documents in Germany",
+   "ws": "fly"
+  },
+  {
+   "d": "W-62",
+   "l": "Fly to India",
+   "key": 1
+  },
+  {
+   "d": "W-58",
+   "l": "First visit to the marriage registration office",
+   "ws": "nmc"
+  },
+  {
+   "d": "W-45",
+   "l": "Affidavits, stamps and witnesses ready",
+   "ws": "nmc"
+  },
+  {
+   "d": "W-19",
+   "l": "Brief photographer and priest",
+   "ws": "priest"
+  },
+  {
+   "d": "W+0",
+   "l": "Wedding day",
+   "key": 1
+  },
+  {
+   "d": "W+1",
+   "l": "Register the marriage (first Monday or Thursday)",
+   "ws": "nmc",
+   "key": 1
+  },
+  {
+   "d": "W+12",
+   "l": "Collect certificate and certified copies",
+   "ws": "nmc"
+  },
+  {
+   "d": "W+13",
+   "l": "Fly back to Germany",
+   "key": 1
+  },
+  {
+   "d": "W+17",
+   "l": "Wife joins embassy waiting list",
+   "ws": "visa"
+  }
+ ],
+ "workstreams": [
+  {
+   "id": "fly",
+   "title": "Before you fly",
+   "place": "Germany",
+   "window": "Before you travel",
+   "color": "#1f5f7a",
+   "sections": [
+    {
+     "title": "Documents to get in Germany",
+     "items": [
+      {
+       "id": "fly-meld",
+       "t": "Meldebescheinigung",
+       "d": "Request at your Bürgerbüro. Must be under 6 months old on her visa appointment day.",
+       "due": "W-63",
+       "status": 1
+      },
+      {
+       "id": "fly-hr",
+       "t": "Employer confirmation letter from HR",
+       "d": "Role, start date, permanent status, salary.",
+       "due": "W-63",
+       "status": 1
+      },
+      {
+       "id": "fly-ins",
+       "t": "Health insurance letter",
+       "d": "Krankenkasse confirms family cover, or a private quote for her.",
+       "due": "W-63",
+       "status": 1
+      },
+      {
+       "id": "fly-rent",
+       "t": "Rental contract (Mietvertrag)",
+       "d": "Shows flat size in square meters.",
+       "due": "W-63"
+      },
+      {
+       "id": "fly-wgb",
+       "t": "Wohnungsgeberbestätigung zur Vorlage bei der Meldebehörde",
+       "due": "W-63",
+       "d": "Ask your landlord.",
+       "status": 1
+      },
+      {
+       "id": "fly-wra",
+       "t": "Wohnraumausweis (updated proof of living space)",
+       "d": "Ask your landlord. Shows the flat is large enough for two.",
+       "due": "W-63",
+       "status": 1
+      },
+      {
+       "id": "fly-inv",
+       "t": "Signed invitation letter to your wife",
+       "d": "Your address in Germany and her full name.",
+       "due": "W-63"
+      },
+      {
+       "id": "fly-lohn",
+       "t": "Latest Lohnsteuerbescheinigung",
+       "d": "Backup proof of income.",
+       "due": "W-63"
+      },
+      {
+       "id": "fly-bank",
+       "t": "Bank statements for 3 months",
+       "d": "Backup proof of income.",
+       "due": "W-63"
+      },
+      {
+       "id": "fly-sal",
+       "t": "Last three salary slips",
+       "d": "Download the latest slips while travelling and print them there."
+      }
+     ]
+    },
+    {
+     "title": "Pack originals plus 2 copies",
+     "items": [
+      {
+       "id": "fly-pp",
+       "t": "Indian passport",
+       "d": "Copies of data pages and all visa or stamp pages.",
+       "tag": "Original + 2 copies"
+      },
+      {
+       "id": "fly-rc",
+       "t": "German residence card (Niederlassungserlaubnis)",
+       "d": "Copies of front and back.",
+       "tag": "Original + 2 copies"
+      },
+      {
+       "id": "fly-ec",
+       "t": "Employment contract",
+       "tag": "Original + 2 copies"
+      },
+      {
+       "id": "fly-deg",
+       "t": "Degree certificates",
+       "d": "Backup if asked about skilled worker status.",
+       "tag": "Original + 2 copies"
+      },
+      {
+       "id": "fly-bc",
+       "t": "Birth certificate and school leaving certificate",
+       "d": "For NMC registration.",
+       "tag": "Original + 2 copies"
+      },
+      {
+       "id": "fly-aad",
+       "t": "Aadhaar card and PAN card",
+       "tag": "Original + 2 copies"
+      },
+      {
+       "id": "fly-ph",
+       "t": "Around 10 passport photos",
+       "d": "3.5 x 4.5 cm, matte, white background."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "priest",
+   "title": "Priest certificate",
+   "place": "India",
+   "window": "Before the wedding",
+   "color": "#a0381c",
+   "tool": "cert",
+   "sections": [
+    {
+     "title": "Priest identity",
+     "items": [
+      {
+       "id": "pr-name",
+       "t": "Full name, spelled as on his Aadhaar",
+       "due": "W-50"
+      },
+      {
+       "id": "pr-father",
+       "t": "Father's full name",
+       "due": "W-50"
+      },
+      {
+       "id": "pr-addr",
+       "t": "Home address with PIN",
+       "due": "W-50"
+      },
+      {
+       "id": "pr-phone",
+       "t": "Mobile number",
+       "due": "W-50"
+      },
+      {
+       "id": "pr-mail",
+       "t": "Email address, if any"
+      },
+      {
+       "id": "pr-aad",
+       "t": "Copy of his Aadhaar",
+       "d": "In case NMC asks for it."
+      }
+     ]
+    },
+    {
+     "title": "Temple, letterhead and seal",
+     "items": [
+      {
+       "id": "pr-temple",
+       "t": "Is he attached to a temple, math or association?",
+       "d": "If yes, get its full name, address, phone and email."
+      },
+      {
+       "id": "pr-lh",
+       "t": "Does the temple have printed letterhead?",
+       "d": "If yes, print the certificate on it and leave the letterhead fields empty."
+      },
+      {
+       "id": "pr-seal",
+       "t": "Does he or the temple have a stamp or seal?",
+       "d": "Yes: keep the seal circle on and ask him to bring it. No: turn the seal circle off."
+      },
+      {
+       "id": "pr-sign",
+       "t": "Which script does he sign in?",
+       "d": "Marathi, Hindi or English, so it matches his Aadhaar copy."
+      }
+     ]
+    },
+    {
+     "title": "Ceremony",
+     "items": [
+      {
+       "id": "pr-rit",
+       "t": "Confirm the nine rituals on the certificate",
+       "d": "Sankalpa, Mangalashtaka, Kanyadaan, Vivaha Homa, Panigrahana, Mangal Pheras, Saptapadi, Sindoor Daan and Mangalsutra Dharana, Ashirvad.",
+       "due": "W-19"
+      },
+      {
+       "id": "pr-muh",
+       "t": "Muhurta time on the wedding day",
+       "due": "W-19"
+      },
+      {
+       "id": "pr-venue",
+       "t": "Venue name and full address",
+       "due": "W-19"
+      },
+      {
+       "id": "pr-photo",
+       "t": "Brief photographer on required photos",
+       "d": "Garland exchange, family group, ritual with priest, Pheras or Saptapadi.",
+       "due": "W-19"
+      }
+     ]
+    },
+    {
+     "title": "Signing on the day",
+     "items": [
+      {
+       "id": "pr-print",
+       "t": "Print 3 certificates with back page",
+       "d": "Use the certificate maker. Double sided, A4, actual size.",
+       "due": "W-3"
+      },
+      {
+       "id": "pr-signs",
+       "t": "Priest signs and stamps 3 originals",
+       "d": "One for NMC, one for the visa file, one to keep.",
+       "due": "W+0"
+      },
+      {
+       "id": "pr-nmc",
+       "t": "Ask if he must attend NMC registration",
+       "d": "Confirm with NMC on your first visit too."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "nmc",
+   "title": "Marriage registration (NMC example)",
+   "place": "Municipal marriage office",
+   "window": "Around the wedding",
+   "color": "#8e1b2a",
+   "note": "Registration happens on Mondays and Thursdays only. Bring all originals. Fee Rs 1000 within one year of the wedding, Rs 1500 after. The clerk checks each copy against its original. Write \"self attested\" and sign each copy.",
+   "sections": [
+    {
+     "title": "Steps",
+     "items": [
+      {
+       "id": "nmc-visit",
+       "t": "Visit the marriage registration office in person",
+       "d": "Confirm the list, collect application and memorandum forms, ask processing time and certificate language.",
+       "due": "W-58"
+      },
+      {
+       "id": "nmc-aff",
+       "t": "Affidavits on Rs 100 stamp paper, notarised",
+       "d": "One for bride, one for groom.",
+       "due": "W-45"
+      },
+      {
+       "id": "nmc-stamp",
+       "t": "Buy Rs 100 court fee stamp",
+       "due": "W-45"
+      },
+      {
+       "id": "nmc-tax",
+       "t": "Collect current year property tax receipts",
+       "due": "W-45"
+      },
+      {
+       "id": "nmc-wit",
+       "t": "Line up three witnesses",
+       "due": "W-45"
+      },
+      {
+       "id": "nmc-reg",
+       "t": "Register the marriage",
+       "d": "First Monday or Thursday after the wedding. Bride, groom and three witnesses attend with originals.",
+       "due": "W+1"
+      },
+      {
+       "id": "nmc-copies",
+       "t": "Collect certificate and 3 certified copies",
+       "due": "W+12"
+      },
+      {
+       "id": "nmc-trans",
+       "t": "Notary attested English translation if in Marathi",
+       "due": "W+12"
+      }
+     ]
+    },
+    {
+     "title": "Online application: pick one document per category",
+     "pick": 1,
+     "items": [
+      {
+       "id": "cat-g-id",
+       "t": "Groom: proof of identity",
+       "opts": [
+        "Aadhaar card"
+       ]
+      },
+      {
+       "id": "cat-g-age",
+       "t": "Groom: proof of age",
+       "opts": [
+        "Birth certificate",
+        "SSC exam certificate",
+        "SSC school leaving certificate",
+        "Passport",
+        "Bonafide certificate",
+        "Driving licence",
+        "Domicile certificate"
+       ]
+      },
+      {
+       "id": "cat-g-res",
+       "t": "Groom: proof of residence",
+       "opts": [
+        "Election card",
+        "Leave and licence agreement",
+        "Passport",
+        "Ration card",
+        "Company residential proof",
+        "Society certificate",
+        "Electricity bill",
+        "Government employer ID",
+        "Telephone bill"
+       ]
+      },
+      {
+       "id": "cat-b-id",
+       "t": "Bride: proof of identity",
+       "opts": [
+        "Aadhaar card"
+       ]
+      },
+      {
+       "id": "cat-b-age",
+       "t": "Bride: proof of age",
+       "opts": [
+        "Birth certificate",
+        "SSC exam certificate",
+        "SSC school leaving certificate",
+        "Passport",
+        "Bonafide certificate",
+        "Driving licence",
+        "Domicile certificate"
+       ]
+      },
+      {
+       "id": "cat-b-res",
+       "t": "Bride: proof of residence",
+       "opts": [
+        "Election card",
+        "Leave and licence agreement",
+        "Passport",
+        "Ration card",
+        "Company residential proof",
+        "Society certificate",
+        "Electricity bill",
+        "Government employer ID",
+        "Telephone bill"
+       ]
+      },
+      {
+       "id": "cat-mar",
+       "t": "Proof of marriage",
+       "opts": [
+        "Marriage invitation card",
+        "Marriage declaration"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Groom documents",
+     "items": [
+      {
+       "id": "g-aad",
+       "t": "Aadhaar card",
+       "tag": "Original + 2 copies"
+      },
+      {
+       "id": "g-age",
+       "t": "Age proof",
+       "d": "Birth certificate or school leaving certificate.",
+       "tag": "Original + 2 copies"
+      },
+      {
+       "id": "g-res",
+       "t": "Residence proof",
+       "tag": "Original + 2 copies"
+      },
+      {
+       "id": "g-tax",
+       "t": "Current year tax paid receipt",
+       "tag": "Original + 2 copies"
+      },
+      {
+       "id": "g-ph",
+       "t": "2 passport photos",
+       "d": "3.5 x 4.5 cm, matte, white background, face 80%.",
+       "tag": "Hand over"
+      },
+      {
+       "id": "g-aff",
+       "t": "Affidavit on Rs 100 stamp paper",
+       "d": "Office keeps the original, keep a copy.",
+       "tag": "Original given"
+      }
+     ]
+    },
+    {
+     "title": "Bride documents",
+     "items": [
+      {
+       "id": "b-aad",
+       "t": "Aadhaar card",
+       "tag": "Original + 2 copies"
+      },
+      {
+       "id": "b-age",
+       "t": "Age proof",
+       "d": "Birth certificate or school leaving certificate.",
+       "tag": "Original + 2 copies"
+      },
+      {
+       "id": "b-res",
+       "t": "Residence proof",
+       "tag": "Original + 2 copies"
+      },
+      {
+       "id": "b-tax",
+       "t": "Current year tax paid receipt",
+       "tag": "Original + 2 copies"
+      },
+      {
+       "id": "b-ph",
+       "t": "2 passport photos",
+       "d": "3.5 x 4.5 cm, matte, white background, face 80%.",
+       "tag": "Hand over"
+      },
+      {
+       "id": "b-aff",
+       "t": "Affidavit on Rs 100 stamp paper",
+       "d": "Office keeps the original, keep a copy.",
+       "tag": "Original given"
+      }
+     ]
+    },
+    {
+     "title": "Joint and ceremony",
+     "items": [
+      {
+       "id": "j-card",
+       "t": "Wedding invitation card",
+       "d": "Bring two printed cards.",
+       "tag": "Original given"
+      },
+      {
+       "id": "j-ph1",
+       "t": "Postcard photo: garland exchange",
+       "tag": "Hand over"
+      },
+      {
+       "id": "j-ph2",
+       "t": "Postcard photo: family group",
+       "tag": "Hand over"
+      },
+      {
+       "id": "j-ph3",
+       "t": "Postcard photo: ritual with priest",
+       "tag": "Hand over"
+      },
+      {
+       "id": "j-cfs",
+       "t": "Court fee stamp Rs 100",
+       "tag": "Original given"
+      },
+      {
+       "id": "j-fee",
+       "t": "Registration fee Rs 1000 in cash",
+       "d": "Keep the receipt."
+      },
+      {
+       "id": "j-form",
+       "t": "Application and memorandum forms",
+       "tag": "Ask office"
+      },
+      {
+       "id": "j-priest",
+       "t": "Priest marriage certificate, signed and stamped",
+       "tag": "Original + 2 copies"
+      }
+     ]
+    },
+    {
+     "title": "Witnesses",
+     "items": [
+      {
+       "id": "w-1",
+       "t": "Witness 1: Aadhaar, residence proof, 2 photos",
+       "tag": "Original + 2 copies"
+      },
+      {
+       "id": "w-2",
+       "t": "Witness 2: Aadhaar, residence proof, 2 photos",
+       "tag": "Original + 2 copies"
+      },
+      {
+       "id": "w-3",
+       "t": "Witness 3: Aadhaar, residence proof, 2 photos",
+       "tag": "Original + 2 copies"
+      },
+      {
+       "id": "w-att",
+       "t": "All three attend in person"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "visa",
+   "title": "Wife's spouse visa",
+   "place": "Mumbai Consulate",
+   "window": "After the wedding",
+   "color": "#5b2a86",
+   "note": "Bring the copies counted on each item, all originals, unstapled A4. Your friend's list is based on a VFS appointment; the German Embassy currently books family reunion appointments through its own waiting list, so confirm which applies when you book.",
+   "sections": [
+    {
+     "title": "Steps",
+     "items": [
+      {
+       "id": "v-a1chk",
+       "t": "Check the paragraph on your residence card",
+       "d": "Blue Card or §§18a, 18b, 18c(3), 18d, 18f, 19c, ICT, §21: A1 exempt. §9 or §18c(2): email the consulate.",
+       "due": "W-50"
+      },
+      {
+       "id": "v-a1",
+       "t": "Start her A1 German course if needed",
+       "d": "Start Deutsch 1 (Goethe or telc) or ÖSD Grundstufe Deutsch 1."
+      },
+      {
+       "id": "v-forms",
+       "t": "VIDEX form, questionnaire and declaration"
+      },
+      {
+       "id": "v-wait",
+       "t": "Join the embassy waiting list",
+       "due": "W+17"
+      },
+      {
+       "id": "v-appt",
+       "t": "Attend the Mumbai Consulate appointment",
+       "d": "Marriage certificate verification takes 8 to 12 weeks."
+      },
+      {
+       "id": "v-arr",
+       "t": "After arrival: Anmeldung and Ausländerbehörde"
+      }
+     ]
+    },
+    {
+     "title": "Her documents",
+     "items": [
+      {
+       "id": "v-appt-l",
+       "t": "Appointment confirmation letter",
+       "tag": "2 copies"
+      },
+      {
+       "id": "v-videx",
+       "t": "Application form (VIDEX), signed",
+       "tag": "2 copies"
+      },
+      {
+       "id": "v-decl",
+       "t": "Declaration form, signed",
+       "tag": "2 copies"
+      },
+      {
+       "id": "v-contact",
+       "t": "Contact form",
+       "tag": "2 copies"
+      },
+      {
+       "id": "v-q",
+       "t": "Additional questionnaire for spouses",
+       "tag": "2 copies"
+      },
+      {
+       "id": "v-pp",
+       "t": "Her passport",
+       "tag": "2 copies",
+       "d": "Original plus copies of all pages with entries."
+      },
+      {
+       "id": "v-photos",
+       "t": "Biometric passport photos, German size 35 x 45 mm",
+       "tag": "Originals",
+       "d": "Not older than 6 months."
+      },
+      {
+       "id": "v-cover",
+       "t": "Personal covering letter from her, signed",
+       "tag": "2 copies",
+       "d": "Use the Visa letters tool."
+      },
+      {
+       "id": "v-mc",
+       "t": "Marriage certificate (NMC)",
+       "tag": "2 copies",
+       "d": "With notary attested English translation if it is in Marathi."
+      },
+      {
+       "id": "v-wph",
+       "t": "Wedding photos, normal prints from the photo studio",
+       "tag": "2 copies",
+       "d": "Showing Pheras or Saptapadi."
+      },
+      {
+       "id": "v-deg",
+       "t": "Higher education: 12th, BSc, MSc degrees, transcripts, marksheets",
+       "tag": "2 copies"
+      },
+      {
+       "id": "v-sc",
+       "t": "10th marksheet showing date of birth",
+       "tag": "2 copies"
+      },
+      {
+       "id": "v-bc",
+       "t": "Birth certificate",
+       "tag": "2 copies"
+      },
+      {
+       "id": "v-aadpan",
+       "t": "Aadhaar card and PAN card",
+       "tag": "2 copies"
+      },
+      {
+       "id": "v-ins",
+       "t": "Health insurance confirmation letter (for example TK family insurance)",
+       "tag": "3 copies"
+      },
+      {
+       "id": "v-slip",
+       "t": "Payment slips for visa fee and service fee",
+       "tag": "3 copies"
+      },
+      {
+       "id": "v-fee",
+       "t": "Visa fees",
+       "d": "Your friend paid about Rs 10,000 in cash and Rs 10,000 online. Check current fees before the appointment."
+      },
+      {
+       "id": "v-travel",
+       "t": "Travel insurance",
+       "tag": "3 copies",
+       "d": "Covers her until family insurance starts."
+      },
+      {
+       "id": "v-a1c",
+       "t": "A1 German certificate, unless exempt",
+       "tag": "2 copies",
+       "d": "Depends on the paragraph on your residence card."
+      },
+      {
+       "id": "v-album",
+       "t": "Wedding photo album",
+       "tag": "Original",
+       "d": "Mumbai has asked for it before."
+      }
+     ]
+    },
+    {
+     "title": "Your documents for her file",
+     "items": [
+      {
+       "id": "h-pp",
+       "t": "Your passport",
+       "tag": "3 copies"
+      },
+      {
+       "id": "h-rc",
+       "t": "Your residence card, both sides (Niederlassungserlaubnis)",
+       "tag": "3 copies",
+       "d": "Your friend's list says EU Blue Card; use your own card."
+      },
+      {
+       "id": "h-zus",
+       "t": "Zusatzblatt (supplementary sheet to the residence card)",
+       "tag": "3 copies"
+      },
+      {
+       "id": "h-anm",
+       "t": "City registration (Meldebescheinigung)",
+       "tag": "3 copies"
+      },
+      {
+       "id": "h-job",
+       "t": "Employment contract",
+       "tag": "3 copies"
+      },
+      {
+       "id": "h-sal",
+       "t": "Salary slips, last three months",
+       "tag": "3 copies"
+      },
+      {
+       "id": "h-house",
+       "t": "Rental contract",
+       "tag": "3 copies",
+       "d": "Add the Wohnraumausweis if the consulate asks for living space."
+      },
+      {
+       "id": "h-ins",
+       "t": "Your health insurance confirmation",
+       "tag": "3 copies"
+      },
+      {
+       "id": "h-inv",
+       "t": "Invitation letter from you, signed",
+       "tag": "3 copies",
+       "d": "Use the Visa letters tool."
+      }
+     ]
+    }
+   ],
+   "tool": "letters"
+  },
+  {
+   "id": "events",
+   "title": "Events and invitations",
+   "place": "India",
+   "window": "Wedding season",
+   "color": "#c25b12",
+   "tool": "invites",
+   "sections": [
+    {
+     "title": "Engagement",
+     "items": [
+      {
+       "id": "ev-eng-d",
+       "t": "Share engagement details",
+       "d": "Date, time, venue, hosts."
+      },
+      {
+       "id": "ev-eng-i",
+       "t": "Digital invitation"
+      }
+     ]
+    },
+    {
+     "title": "Haldi",
+     "items": [
+      {
+       "id": "ev-hal-d",
+       "t": "Share haldi details"
+      },
+      {
+       "id": "ev-hal-i",
+       "t": "Digital invitation"
+      }
+     ]
+    },
+    {
+     "title": "Sangeet",
+     "items": [
+      {
+       "id": "ev-san-d",
+       "t": "Share sangeet details"
+      },
+      {
+       "id": "ev-san-i",
+       "t": "Digital invitation"
+      }
+     ]
+    },
+    {
+     "title": "Wedding",
+     "items": [
+      {
+       "id": "ev-wed-d",
+       "t": "Share wedding details"
+      },
+      {
+       "id": "ev-wed-i",
+       "t": "Digital invitation"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shop",
+   "title": "Shopping",
+   "place": "India",
+   "window": "Before the wedding",
+   "color": "#2e7d32",
+   "sections": [
+    {
+     "title": "Shopping list",
+     "items": []
+    }
+   ]
+  },
+  {
+   "id": "book",
+   "title": "Bookings",
+   "place": "India",
+   "window": "Around the wedding",
+   "color": "#b8860b",
+   "sections": [
+    {
+     "title": "Bookings",
+     "items": []
+    }
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "engagement",
+   "t": "Engagement",
+   "mr": "साखरपुडा",
+   "line": "request the pleasure of your company at the engagement ceremony of"
+  },
+  {
+   "id": "haldi",
+   "t": "Haldi",
+   "mr": "हळद",
+   "line": "warmly invite you to the haldi ceremony of"
+  },
+  {
+   "id": "sangeet",
+   "t": "Sangeet",
+   "mr": "संगीत",
+   "line": "invite you to an evening of music and dance celebrating"
+  },
+  {
+   "id": "wedding",
+   "t": "Wedding",
+   "mr": "शुभ विवाह",
+   "line": "request the honour of your presence at the wedding of",
+   "date": "W+0",
+   "time": "12:10"
+  }
+ ],
+ "nameChange": {
+  "intro": "Her surname after the wedding is her decision. All paths are legal and common, and none of them harms her career. The NMC marriage certificate links both names in every case, so keep certified copies with an English or German translation.",
+  "options": [
+   {
+    "id": "keep",
+    "title": "Keep her maiden name",
+    "short": "No change anywhere",
+    "delay": "None",
+    "paperwork": "Minimal",
+    "cost": "None",
+    "degree": "Matches automatically",
+    "where": "Nothing to do",
+    "total": "0 days",
+    "best": "She wants the fastest, simplest path, or is not sure yet. She can still change later in Germany.",
+    "steps": [
+     {
+      "id": "nc-k1",
+      "t": "Apply for the visa in her maiden name",
+      "d": "Use her current passport and the NMC marriage certificate."
+     },
+     {
+      "id": "nc-k2",
+      "t": "Keep certified copies of the marriage certificate",
+      "d": "Proof of the marriage for the visa, Ausländerbehörde, tax and insurance."
+     },
+     {
+      "id": "nc-k3",
+      "t": "Optional: add your name as spouse at her next passport renewal",
+      "d": "She keeps her own surname. See the option to add your name as spouse."
+     }
+    ]
+   },
+   {
+    "id": "spouse",
+    "title": "Keep her name, add yours as spouse",
+    "short": "Spouse name added in her passport",
+    "delay": "None, if done after the visa",
+    "paperwork": "Low",
+    "cost": "Consulate passport fee plus about 67 euros for the new residence card",
+    "degree": "Matches automatically",
+    "where": "CGI Munich, then Ausländerbehörde",
+    "total": "About 2 to 4 months, at any time she chooses",
+    "best": "She wants to keep her own surname but have your name recorded in her passport.",
+    "steps": [
+     {
+      "id": "nc-s1",
+      "t": "Apply for the visa in her maiden name first",
+      "d": "Adding a spouse name before the visa would delay it like a name change."
+     },
+     {
+      "id": "nc-s2",
+      "t": "Reissue her passport with spouse name at CGI Munich",
+      "d": "Marriage certificate and your passport copy, plus the Consulate's affidavit to add a spouse name. Best combined with her next renewal."
+     },
+     {
+      "id": "nc-s3",
+      "t": "Transfer the residence card to the new passport number",
+      "d": "Her name on German IDs stays the same, but the new passport number still needs an Übertrag at the Ausländerbehörde."
+     }
+    ]
+   },
+   {
+    "id": "india",
+    "title": "Change in India, before the visa",
+    "short": "New passport in India first",
+    "delay": "About 6 to 10 weeks before the visa appointment (estimate)",
+    "paperwork": "Moderate, Indian IDs only",
+    "cost": "Indian passport reissue fee plus small update fees",
+    "degree": "Needs the marriage certificate",
+    "where": "India: Aadhaar Seva Kendra, Passport Seva Kendra, NSDL or UTIITSL, banks",
+    "total": "6 to 10 weeks (estimate)",
+    "best": "She wants your surname on her passport from day one and can wait about two months longer to come to Germany.",
+    "steps": [
+     {
+      "id": "nc-i1",
+      "t": "Get the NMC marriage certificate",
+      "d": "Registration on the first Monday or Thursday after the wedding. Ask for 3 certified copies.",
+      "time": "1 to 2 weeks"
+     },
+     {
+      "id": "nc-i1b",
+      "t": "Make a notarised name change after marriage affidavit",
+      "d": "On e-stamp paper (Rs 10 is common), signed before a Notary Public. Used with the marriage certificate to update Indian records. No newspaper advert or Gazette needed for a surname only change.",
+      "time": "1 to 2 days"
+     },
+     {
+      "id": "nc-i2",
+      "t": "Update Aadhaar with the new surname",
+      "d": "Online or at an Aadhaar Seva Kendra, with the marriage certificate.",
+      "time": "1 to 3 weeks"
+     },
+     {
+      "id": "nc-i3",
+      "t": "Reissue her passport at the Passport Seva Kendra",
+      "d": "Re-issue: change in existing personal particulars (change of name after marriage). Bring old passport, marriage certificate, your passport copy, updated Aadhaar. Police verification may apply.",
+      "time": "2 to 4 weeks normal, about 1 week Tatkaal"
+     },
+     {
+      "id": "nc-i4",
+      "t": "Update PAN and bank KYC",
+      "d": "PAN via NSDL or UTIITSL; banks with new passport or Aadhaar. Runs alongside the passport.",
+      "time": "1 to 2 weeks"
+     },
+     {
+      "id": "nc-i5",
+      "t": "Fill the visa forms with her new name",
+      "d": "All visa documents in the new name; attach the marriage certificate to link it to her maiden name degrees and A1 certificate."
+     }
+    ]
+   },
+   {
+    "id": "germany",
+    "title": "Change in Germany, after arrival",
+    "short": "Come first, reissue passport at CGI Munich",
+    "delay": "None",
+    "paperwork": "High, Indian and German IDs",
+    "cost": "Consulate passport fee plus about 67 euros for the new residence card",
+    "degree": "Needs the marriage certificate",
+    "where": "CGI Munich, then Bürgerbüro and Ausländerbehörde ",
+    "total": "About 3 to 5 months after arrival (estimate)",
+    "best": "She wants your surname but does not want to delay coming to Germany.",
+    "steps": [
+     {
+      "id": "nc-g1",
+      "t": "Arrive and register in her maiden name",
+      "d": "Anmeldung at the Bürgerbüro. Germany registers foreigners in the name on their passport.",
+      "time": "Weeks 1 to 2"
+     },
+     {
+      "id": "nc-g2",
+      "t": "Get her first residence card (eAT) in her maiden name",
+      "d": "Convert the entry visa at the Ausländerbehörde.",
+      "time": "Weeks 1 to 8"
+     },
+     {
+      "id": "nc-g3",
+      "t": "Apply online for passport reissue with the new name",
+      "d": "mPassport portal (mportal.passportindia.gov.in/mission). One Indian address is compulsory for police verification.",
+      "time": "Weeks 8 to 9"
+     },
+     {
+      "id": "nc-g4",
+      "t": "Submit to CGI Munich",
+      "d": "Government marriage certificate, your passport copy, and the Consulate's Joint Affidavit signed by both of you in front of the Consular Officer. Email passport.munich@mea.gov.in to plan the appointment. Her old passport is cancelled and returned.",
+      "time": "Weeks 9 to 16"
+     },
+     {
+      "id": "nc-g5",
+      "t": "Transfer the residence card to the new passport (Übertrag)",
+      "d": "Book online at the Ausländerbehörde. Bring old passport, new passport, current eAT and a biometric photo. About 67 euros. The Bundesdruckerei produces the new card.",
+      "time": "Weeks 16 to 22"
+     },
+     {
+      "id": "nc-g6",
+      "t": "Optional: Name Change Certificate from CGI Munich",
+      "d": "Issued from her old and new Indian passports. Useful for banks and insurers.",
+      "time": "After the new passport"
+     },
+     {
+      "id": "nc-g7",
+      "t": "Update German records",
+      "d": "Meldebescheinigung at the Bürgerbüro, Krankenkasse card, bank, Steuer ID records, employer and social security if working.",
+      "time": "Weeks 20 onwards"
+     },
+     {
+      "id": "nc-g8",
+      "t": "Update Indian IDs later",
+      "d": "PAN, Aadhaar and Indian banks, online or on a visit to India."
+     }
+    ],
+    "docs": [
+     "Original passport (mandatory, cancelled and returned)",
+     "Online application form with the new name",
+     "Self attested copy of passport, first and last page",
+     "Self attested copy of the government marriage certificate",
+     "Your passport copy, first and last page",
+     "Joint Affidavit, signed by both of you in front of the Consular Officer",
+     "Self attested copy of her residence permit",
+     "Self attested copy of her Meldebescheinigung",
+     "One photo 35 x 45 mm, matching the uploaded one",
+     "Self addressed A4 return envelope, at least 4.50 euros postage, Einschreiben",
+     "Fee payment receipt"
+    ]
+   }
+  ],
+  "affidavit": {
+   "url": "https://cgimunich.gov.in/public_files/assets/pdf/Joint_Affidavit.pdf",
+   "title": "Joint Affidavit: Name Change after Marriage, Re-marriage",
+   "page": "https://cgimunich.gov.in/pages/NDI3",
+   "checklist": "https://cgimunich.gov.in/public_files/assets/pdf/Checklist_of_Documents_170126.pdf",
+   "text": "The Consulate's prescribed Joint Affidavit is signed by both of you in front of the Consular Officer at CGI Munich, together with the government marriage certificate, when she reissues her passport with the new name. Email passport.munich@mea.gov.in for an appointment."
+  },
+  "career": [
+   "No negative effect on jobs. German employers, universities and credential evaluators such as ZAB routinely see degrees in a maiden name and a passport in a married name.",
+   "Bridge the difference with the marriage certificate. Submit it, with a certified English or German translation if needed, alongside her old and new passports when applying for jobs or degree recognition.",
+   "No obligation to change. Keeping a maiden name is standard in Germany and does not affect her visa, taxes or dependent rights."
+  ],
+  "affWarn": "An affidavit alone will not work everywhere. A self sworn Indian affidavit on stamp paper carries little weight with German offices, banks or health insurers. They rely on her passport as the main ID, backed by the government marriage certificate, or the Name Change Certificate CGI Munich issues after her passport is updated.",
+  "timingTip": "Apply for the visa with her existing passport right after the NMC certificate. Changing her Indian passport before the visa appointment can delay it by 1 to 2 months.",
+  "faq": [
+   {
+    "q": "Who can change their name legally in India?",
+    "a": "Anyone aged 18 or over. For a minor, the parents apply on the child's behalf."
+   },
+   {
+    "q": "How do you make a name change after marriage affidavit?",
+    "a": "Draft it with her maiden name, new name, your name, the date of marriage and her address. Print it on stamp paper (e-stamp is fine). Sign it in front of a Notary Public, who attests it with seal and signature."
+   },
+   {
+    "q": "What stamp paper value should she use?",
+    "a": "Stamp duty differs by state. With e-stamp paper there is no fixed value for this affidavit, and Rs 10 is the amount most commonly used."
+   },
+   {
+    "q": "Must the affidavit be notarised?",
+    "a": "Yes. Notarisation confirms she is the person signing and that she affirms the statements. Get it attested by a Notary Public."
+   },
+   {
+    "q": "What does she do with the affidavit afterwards?",
+    "a": "In India, present it with the marriage certificate to update PAN, Aadhaar, bank accounts, the local municipality and other records."
+   },
+   {
+    "q": "Does she need a newspaper advert or Gazette notification?",
+    "a": "Not for a surname only change after marriage. Example: Sunita Garg to Sunita Bansal needs neither. A full name change does: Sunita Garg to Neha Bansal needs adverts in two newspapers (one regional language, one English, keep 4 to 5 originals) and then a Gazette of India notification."
+   },
+   {
+    "q": "How does the Gazette of India notification work, if ever needed?",
+    "a": "Send the notarised affidavit, the original newspaper adverts, the filled specimen format (paper and soft copy), a signed declaration and undertaking, a demand draft to the Controller of Publication, Delhi (Rs 1,100 in your notes), two photos with the new name typed below, and a self attested photo ID. Documents must be under one year old. Published notices can be downloaded from egazette.nic.in."
+   },
+   {
+    "q": "What types of name affidavits exist?",
+    "a": "Name change affidavit (any name change, used for the Gazette). Name change after marriage (a woman changing her maiden name). One and the same person (proves different names on documents belong to one person). Annexure D (passport: woman's name change after marriage, in India). Annexure E (passport: other name changes). Annexure letters can change, so check the current list at the Passport Seva Kendra."
+   },
+   {
+    "q": "Which affidavit does the Munich Consulate need?",
+    "a": "For a passport reissue at CGI Munich, the Consulate's own Joint Affidavit, signed by both of you in front of the Consular Officer, together with the government marriage certificate. A notarised Indian affidavit does not replace it."
+   },
+   {
+    "q": "Will German offices accept the Indian affidavit?",
+    "a": "Not on its own. German offices, banks and insurers go by her passport, backed by the government marriage certificate or a CGI Munich Name Change Certificate. A stamp paper affidavit carries little weight there."
+   }
+  ]
+ },
+ "docs": {
+  "intro": "Every document in one place. Tick a document when you have it; it stays on the list, struck through.",
+  "cats": [
+   {
+    "id": "court",
+    "title": "Court marriage (Special Marriage Act, 1954)",
+    "note": "Only if you choose a court marriage instead of, or in addition to, Hindu Marriage Act registration. A 30 day notice period applies, and one of you must have lived in the district for 30 days before the notice.",
+    "items": [
+     {
+      "id": "d-c-notice",
+      "t": "Notice of intended marriage, signed by both",
+      "who": "Both"
+     },
+     {
+      "id": "d-c-age-g",
+      "t": "Age proof: birth certificate, SSC certificate or passport",
+      "who": "Groom",
+      "tag": "Original + 2 copies"
+     },
+     {
+      "id": "d-c-age-b",
+      "t": "Age proof: birth certificate, SSC certificate or passport",
+      "who": "Bride",
+      "tag": "Original + 2 copies"
+     },
+     {
+      "id": "d-c-res-g",
+      "t": "Address proof",
+      "who": "Groom",
+      "tag": "Original + 2 copies"
+     },
+     {
+      "id": "d-c-res-b",
+      "t": "Address proof",
+      "who": "Bride",
+      "tag": "Original + 2 copies"
+     },
+     {
+      "id": "d-c-30",
+      "t": "Proof one of you lived 30 days in the district",
+      "who": "Both",
+      "tag": "Original + 2 copies",
+      "d": "Usually the bride's address proof."
+     },
+     {
+      "id": "d-c-aff-g",
+      "t": "Affidavit: date of birth, marital status, nationality, not within prohibited relationship",
+      "who": "Groom"
+     },
+     {
+      "id": "d-c-aff-b",
+      "t": "Affidavit: date of birth, marital status, nationality, not within prohibited relationship",
+      "who": "Bride"
+     },
+     {
+      "id": "d-c-ph-g",
+      "t": "4 passport photos",
+      "who": "Groom"
+     },
+     {
+      "id": "d-c-ph-b",
+      "t": "4 passport photos",
+      "who": "Bride"
+     },
+     {
+      "id": "d-c-div",
+      "t": "Divorce decree or death certificate of former spouse, if applicable",
+      "who": "Both",
+      "tag": "Original + 2 copies"
+     },
+     {
+      "id": "d-c-wit",
+      "t": "Three witnesses: Aadhaar, address proof, 2 photos each",
+      "who": "Witnesses",
+      "tag": "Original + 2 copies"
+     }
+    ]
+   },
+   {
+    "id": "hma",
+    "title": "Hindu Marriage Act registration (NMC Nagpur example)",
+    "note": "Registration on Mondays and Thursdays. All originals are checked against the copies.",
+    "items": [
+     {
+      "id": "d-h-aad-g",
+      "t": "Aadhaar card",
+      "who": "Groom",
+      "tag": "Original + 2 copies"
+     },
+     {
+      "id": "d-h-aad-b",
+      "t": "Aadhaar card",
+      "who": "Bride",
+      "tag": "Original + 2 copies"
+     },
+     {
+      "id": "d-h-age-g",
+      "t": "Age proof: birth certificate or school leaving certificate",
+      "who": "Groom",
+      "tag": "Original + 2 copies"
+     },
+     {
+      "id": "d-h-age-b",
+      "t": "Age proof: birth certificate or school leaving certificate",
+      "who": "Bride",
+      "tag": "Original + 2 copies"
+     },
+     {
+      "id": "d-h-res-g",
+      "t": "Residence proof: electricity bill, ration card, passport or telephone bill",
+      "who": "Groom",
+      "tag": "Original + 2 copies"
+     },
+     {
+      "id": "d-h-res-b",
+      "t": "Residence proof: electricity bill, ration card, passport or telephone bill",
+      "who": "Bride",
+      "tag": "Original + 2 copies"
+     },
+     {
+      "id": "d-h-tax-g",
+      "t": "Current year property tax receipt",
+      "who": "Groom",
+      "tag": "Original + 2 copies"
+     },
+     {
+      "id": "d-h-tax-b",
+      "t": "Current year property tax receipt",
+      "who": "Bride",
+      "tag": "Original + 2 copies"
+     },
+     {
+      "id": "d-h-ph-g",
+      "t": "2 passport photos, 3.5 x 4.5 cm, matte, white background",
+      "who": "Groom"
+     },
+     {
+      "id": "d-h-ph-b",
+      "t": "2 passport photos, 3.5 x 4.5 cm, matte, white background",
+      "who": "Bride"
+     },
+     {
+      "id": "d-h-card",
+      "t": "Wedding invitation card",
+      "who": "Both",
+      "tag": "Original"
+     },
+     {
+      "id": "d-h-photos",
+      "t": "Postcard photos: garland exchange, family group, ritual with priest",
+      "who": "Both"
+     },
+     {
+      "id": "d-h-priest",
+      "t": "Priest marriage certificate, signed and stamped",
+      "who": "Both",
+      "tag": "Original + 2 copies"
+     },
+     {
+      "id": "d-h-cfs",
+      "t": "Court fee stamp Rs 100",
+      "who": "Both"
+     },
+     {
+      "id": "d-h-fee",
+      "t": "Fee Rs 1000 in cash",
+      "who": "Both"
+     },
+     {
+      "id": "d-h-wit",
+      "t": "Three witnesses: Aadhaar, residence proof, 2 photos each",
+      "who": "Witnesses",
+      "tag": "Original + 2 copies"
+     }
+    ]
+   },
+   {
+    "id": "aff",
+    "title": "NMC affidavits and forms",
+    "note": "Rs 100 stamp paper, notarised. Each affidavit states names, ages, addresses, date and place of marriage, marital status before marriage, and that you are not within prohibited degrees.",
+    "items": [
+     {
+      "id": "d-a-g",
+      "t": "Affidavit on Rs 100 stamp paper, notarised",
+      "who": "Groom",
+      "tag": "Original given"
+     },
+     {
+      "id": "d-a-b",
+      "t": "Affidavit on Rs 100 stamp paper, notarised",
+      "who": "Bride",
+      "tag": "Original given"
+     },
+     {
+      "id": "d-a-form",
+      "t": "Application form from the registration office",
+      "who": "Both"
+     },
+     {
+      "id": "d-a-memo",
+      "t": "Memorandum of marriage, signed by bride, groom, priest and witnesses",
+      "who": "Both"
+     },
+     {
+      "id": "d-a-copy",
+      "t": "Your own copies of both affidavits",
+      "who": "Both"
+     }
+    ]
+   },
+   {
+    "id": "cert",
+    "title": "Marriage registration certificate (after registration)",
+    "items": [
+     {
+      "id": "d-r-orig",
+      "t": "Original marriage registration certificate",
+      "who": "Both",
+      "tag": "Original"
+     },
+     {
+      "id": "d-r-cc",
+      "t": "3 certified copies",
+      "who": "Both"
+     },
+     {
+      "id": "d-r-tr",
+      "t": "Notary attested English translation, if issued in Marathi",
+      "who": "Both"
+     },
+     {
+      "id": "d-r-scan",
+      "t": "Scanned PDF of certificate and translation",
+      "who": "Both",
+      "tag": "Digital"
+     }
+    ]
+   },
+   {
+    "id": "name",
+    "title": "Name change after marriage",
+    "note": "Only if she changes her surname. A surname only change needs no newspaper advert or Gazette.",
+    "items": [
+     {
+      "id": "d-n-aff",
+      "t": "Notarised name change after marriage affidavit (Rs 10 e-stamp is common)",
+      "who": "Bride",
+      "tag": "Original + 2 copies"
+     },
+     {
+      "id": "d-n-mc",
+      "t": "Marriage certificate copies for each update",
+      "who": "Bride"
+     },
+     {
+      "id": "d-n-aad",
+      "t": "Updated Aadhaar card",
+      "who": "Bride"
+     },
+     {
+      "id": "d-n-pan",
+      "t": "Updated PAN card",
+      "who": "Bride"
+     },
+     {
+      "id": "d-n-pp",
+      "t": "New passport with married name",
+      "who": "Bride",
+      "tag": "Original"
+     },
+     {
+      "id": "d-n-voter",
+      "t": "Updated Voter ID (Form 8)",
+      "who": "Bride"
+     },
+     {
+      "id": "d-n-bank",
+      "t": "Bank KYC updated",
+      "who": "Bride"
+     },
+     {
+      "id": "d-n-cgi",
+      "t": "CGI Munich Joint Affidavit, if changing in Germany",
+      "who": "Both"
+     }
+    ]
+   },
+   {
+    "id": "ids",
+    "title": "Identity documents",
+    "items": [
+     {
+      "id": "d-i-aad-g",
+      "t": "Aadhaar card",
+      "who": "Groom",
+      "tag": "Original"
+     },
+     {
+      "id": "d-i-aad-b",
+      "t": "Aadhaar card",
+      "who": "Bride",
+      "tag": "Original"
+     },
+     {
+      "id": "d-i-pan-g",
+      "t": "PAN card",
+      "who": "Groom",
+      "tag": "Original"
+     },
+     {
+      "id": "d-i-pan-b",
+      "t": "PAN card",
+      "who": "Bride",
+      "tag": "Original"
+     },
+     {
+      "id": "d-i-pp-g",
+      "t": "Passport, valid",
+      "who": "Groom",
+      "tag": "Original"
+     },
+     {
+      "id": "d-i-pp-b",
+      "t": "Passport, valid, issued within 10 years",
+      "who": "Bride",
+      "tag": "Original"
+     },
+     {
+      "id": "d-i-voter-g",
+      "t": "Voter ID",
+      "who": "Groom"
+     },
+     {
+      "id": "d-i-voter-b",
+      "t": "Voter ID",
+      "who": "Bride"
+     },
+     {
+      "id": "d-i-dl-g",
+      "t": "Driving licence",
+      "who": "Groom"
+     },
+     {
+      "id": "d-i-dl-b",
+      "t": "Driving licence",
+      "who": "Bride"
+     },
+     {
+      "id": "d-i-bc-g",
+      "t": "Birth certificate",
+      "who": "Groom",
+      "tag": "Original"
+     },
+     {
+      "id": "d-i-bc-b",
+      "t": "Birth certificate",
+      "who": "Bride",
+      "tag": "Original"
+     }
+    ]
+   },
+   {
+    "id": "visa",
+    "title": "Spouse visa (family reunion)",
+    "items": [
+     {
+      "id": "d-v-appt",
+      "t": "Appointment confirmation",
+      "who": "Bride",
+      "tag": "2 copies"
+     },
+     {
+      "id": "d-v-videx",
+      "t": "VIDEX application form, signed",
+      "who": "Bride",
+      "tag": "2 copies"
+     },
+     {
+      "id": "d-v-decl",
+      "t": "Declaration form",
+      "who": "Bride",
+      "tag": "2 copies"
+     },
+     {
+      "id": "d-v-contact",
+      "t": "Contact form",
+      "who": "Bride",
+      "tag": "2 copies"
+     },
+     {
+      "id": "d-v-q",
+      "t": "Additional questionnaire",
+      "who": "Bride",
+      "tag": "2 copies"
+     },
+     {
+      "id": "d-v-pp",
+      "t": "Passport and copies",
+      "who": "Bride",
+      "tag": "2 copies"
+     },
+     {
+      "id": "d-v-photo",
+      "t": "Biometric photos 35 x 45 mm",
+      "who": "Bride"
+     },
+     {
+      "id": "d-v-cover",
+      "t": "Personal covering letter, signed",
+      "who": "Bride",
+      "tag": "2 copies"
+     },
+     {
+      "id": "d-v-mc",
+      "t": "Marriage certificate",
+      "who": "Bride",
+      "tag": "2 copies"
+     },
+     {
+      "id": "d-v-wph",
+      "t": "Wedding photos",
+      "who": "Bride",
+      "tag": "2 copies"
+     },
+     {
+      "id": "d-v-edu",
+      "t": "12th, BSc, MSc degrees, transcripts, marksheets",
+      "who": "Bride",
+      "tag": "2 copies"
+     },
+     {
+      "id": "d-v-10",
+      "t": "10th marksheet with date of birth",
+      "who": "Bride",
+      "tag": "2 copies"
+     },
+     {
+      "id": "d-v-bc",
+      "t": "Birth certificate",
+      "who": "Bride",
+      "tag": "2 copies"
+     },
+     {
+      "id": "d-v-ap",
+      "t": "Aadhaar and PAN",
+      "who": "Bride",
+      "tag": "2 copies"
+     },
+     {
+      "id": "d-v-ins",
+      "t": "Health insurance confirmation",
+      "who": "Bride",
+      "tag": "3 copies"
+     },
+     {
+      "id": "d-v-slip",
+      "t": "Fee payment slips",
+      "who": "Bride",
+      "tag": "3 copies"
+     },
+     {
+      "id": "d-v-travel",
+      "t": "Travel insurance",
+      "who": "Bride",
+      "tag": "3 copies"
+     },
+     {
+      "id": "d-v-a1",
+      "t": "A1 German certificate, unless exempt",
+      "who": "Bride",
+      "tag": "2 copies"
+     },
+     {
+      "id": "d-v-gpp",
+      "t": "Passport",
+      "who": "Groom",
+      "tag": "3 copies"
+     },
+     {
+      "id": "d-v-grc",
+      "t": "Niederlassungserlaubnis, both sides",
+      "who": "Groom",
+      "tag": "3 copies"
+     },
+     {
+      "id": "d-v-gzus",
+      "t": "Zusatzblatt",
+      "who": "Groom",
+      "tag": "3 copies"
+     },
+     {
+      "id": "d-v-ganm",
+      "t": "Meldebescheinigung",
+      "who": "Groom",
+      "tag": "3 copies"
+     },
+     {
+      "id": "d-v-gjob",
+      "t": "Employment contract",
+      "who": "Groom",
+      "tag": "3 copies"
+     },
+     {
+      "id": "d-v-gsal",
+      "t": "Salary slips, 3 months",
+      "who": "Groom",
+      "tag": "3 copies"
+     },
+     {
+      "id": "d-v-ghouse",
+      "t": "Rental contract and Wohnraumausweis",
+      "who": "Groom",
+      "tag": "3 copies"
+     },
+     {
+      "id": "d-v-gins",
+      "t": "Health insurance confirmation",
+      "who": "Groom",
+      "tag": "3 copies"
+     },
+     {
+      "id": "d-v-ginv",
+      "t": "Invitation letter, signed",
+      "who": "Groom",
+      "tag": "3 copies"
+     }
+    ]
+   },
+   {
+    "id": "de-anm",
+    "title": "Germany: city registration (Bürgerbüro)",
+    "note": "Register within 14 days of moving in.",
+    "items": [
+     {
+      "id": "d-g-anm-pp",
+      "t": "Her passport with visa",
+      "who": "Bride",
+      "tag": "Original"
+     },
+     {
+      "id": "d-g-anm-wgb",
+      "t": "Wohnungsgeberbestätigung from your landlord",
+      "who": "Groom",
+      "tag": "Original"
+     },
+     {
+      "id": "d-g-anm-form",
+      "t": "Registration form (Anmeldeformular)",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-anm-mc",
+      "t": "Marriage certificate with translation",
+      "who": "Both"
+     },
+     {
+      "id": "d-g-anm-out",
+      "t": "Meldebescheinigung received",
+      "who": "Bride",
+      "tag": "Original"
+     }
+    ]
+   },
+   {
+    "id": "de-eat",
+    "title": "Germany: residence permit card (Ausländerbehörde)",
+    "note": "Apply before her entry visa expires.",
+    "items": [
+     {
+      "id": "d-g-eat-form",
+      "t": "Application form",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-eat-pp",
+      "t": "Passport with visa",
+      "who": "Bride",
+      "tag": "Original"
+     },
+     {
+      "id": "d-g-eat-ph",
+      "t": "Biometric photo",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-eat-anm",
+      "t": "Meldebescheinigung",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-eat-mc",
+      "t": "Marriage certificate",
+      "who": "Both"
+     },
+     {
+      "id": "d-g-eat-ins",
+      "t": "Health insurance proof",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-eat-grc",
+      "t": "Your residence card and passport",
+      "who": "Groom"
+     },
+     {
+      "id": "d-g-eat-inc",
+      "t": "Your employment contract and salary slips",
+      "who": "Groom"
+     },
+     {
+      "id": "d-g-eat-rent",
+      "t": "Rental contract and Wohnraumausweis",
+      "who": "Groom"
+     },
+     {
+      "id": "d-g-eat-fee",
+      "t": "Fee",
+      "who": "Both"
+     }
+    ]
+   },
+   {
+    "id": "de-kk",
+    "title": "Germany: health insurance (Krankenkasse)",
+    "items": [
+     {
+      "id": "d-g-kk-form",
+      "t": "Family insurance form (Familienversicherung)",
+      "who": "Groom"
+     },
+     {
+      "id": "d-g-kk-mc",
+      "t": "Marriage certificate",
+      "who": "Both"
+     },
+     {
+      "id": "d-g-kk-id",
+      "t": "Her passport and residence card",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-kk-anm",
+      "t": "Meldebescheinigung",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-kk-photo",
+      "t": "Photo for the health insurance card",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-kk-card",
+      "t": "Health insurance card received",
+      "who": "Bride",
+      "tag": "Original"
+     }
+    ]
+   },
+   {
+    "id": "de-bank",
+    "title": "Germany: bank account and tax",
+    "items": [
+     {
+      "id": "d-g-b-id",
+      "t": "Passport and residence card or visa for the bank",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-b-anm",
+      "t": "Meldebescheinigung for the bank",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-taxid",
+      "t": "Steuer ID letter (arrives by post after registration)",
+      "who": "Bride",
+      "tag": "Original"
+     },
+     {
+      "id": "d-g-sk",
+      "t": "Tax class check for both of you via ELSTER or Finanzamt",
+      "who": "Both",
+      "d": "Married couples start with IV/IV; III/V is an option."
+     }
+    ]
+   },
+   {
+    "id": "de-job",
+    "title": "Germany: employer, social security and job search",
+    "note": "The Jobcenter handles Bürgergeld. For job search and counselling she registers with the Agentur für Arbeit.",
+    "items": [
+     {
+      "id": "d-g-j-taxid",
+      "t": "Steuer ID for the employer",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-j-svn",
+      "t": "Social security number (Sozialversicherungsnummer)",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-j-iban",
+      "t": "Bank IBAN for salary",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-j-kk",
+      "t": "Krankenkasse membership confirmation",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-j-eat",
+      "t": "Residence card allowing work",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-j-cv",
+      "t": "German style CV and cover letter",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-j-zab",
+      "t": "Degree recognition (ZAB Zeugnisbewertung), if needed",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-j-tr",
+      "t": "Certified translations of degrees",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-j-aa",
+      "t": "Agentur für Arbeit job seeker registration",
+      "who": "Bride"
+     }
+    ]
+   },
+   {
+    "id": "de-int",
+    "title": "Germany: integration course and driving",
+    "items": [
+     {
+      "id": "d-g-i-ber",
+      "t": "Integration course entitlement (Berechtigungsschein) from the Ausländerbehörde",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-i-id",
+      "t": "Passport and residence card for the course provider",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-i-a1",
+      "t": "A1 certificate",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-dl",
+      "t": "Driving licence conversion: Indian licence, translation, eye test, first aid course, photo",
+      "who": "Bride",
+      "d": "Her Indian licence is valid for 6 months after registration."
+     }
+    ]
+   }
+  ]
+ }
+}

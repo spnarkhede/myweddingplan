@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wedding Project Planner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Mukta:wght@400;600;800&family=Noto+Serif:wght@400;700&family=Noto+Serif+Devanagari:wght@400;700&family=Tiro+Devanagari+Marathi&family=Yatra+One&family=Cinzel:wght@600&display=swap" rel="stylesheet">
+<style>
+/*MAKER_CSS*/
+/*SHELL_CSS*/
+</style>
+</head>
+<body>
+<header class="ab">
+<div class="ab-in">
+<a class="ab-brand" href="#home"><span class="ab-om">ॐ</span><span>Wedding project</span></a>
+<nav class="ab-nav" aria-label="Sections">
+<a href="#home" data-v="home">Overview</a>
+<a href="#cert" data-v="cert">Certificate</a>
+<a href="#docs" data-v="docs">Documents</a>
+<a href="#invites" data-v="invites">Wedding Invitation</a>
+<a href="#letters" data-v="letters">Visa letters</a>
+<a href="#name" data-v="name">Name change</a>
+</nav>
+<span class="ab-save" id="saveChip">Loading</span>
+</div>
+</header>
+
+<main id="v-home" class="view">
+<section class="hero"><div class="ap-wrap">
+<p class="hero-k" id="heroSub"></p>
+<h1 class="hero-t" id="heroTitle"></h1>
+<div class="hero-stats" id="stats"></div>
+<div class="meter2"><div class="bar2"><i id="allFill"></i></div><b id="allCount"></b></div>
+<details class="pset"><summary>Edit project details</summary><form id="pf" class="fg" autocomplete="off"><label class="f w">Project title<input data-p="title" placeholder="Our wedding, city, date"></label><label class="f">Wedding date<input data-p="wedding" type="date"></label><label class="f">Travel out<input data-p="fly" type="date"></label><label class="f">Travel back<input data-p="back" type="date"></label></form><p class="hint" style="color:#fff;opacity:.85">Due dates move with the wedding date.</p></details>
+</div></section>
+<section class="ap-wrap tl-band">
+<h2 class="ap-h2">Timeline</h2>
+<ol class="tl2" id="timeline"></ol>
+</section>
+<section class="ap-wrap two">
+<div>
+<h2 class="ap-h2">Next up</h2>
+<ul class="ck2" id="nextUp"></ul>
+</div>
+<div>
+<h2 class="ap-h2">Workstreams</h2>
+<div class="wsg" id="wsGrid"></div>
+</div>
+</section>
+</main>
+
+<main id="v-ws" class="view" hidden></main>
+
+<main id="v-cert" class="view" hidden>
+<div class="ap-wrap ap-sub"><a class="back" href="#ws-priest">Priest certificate tasks</a><h2 class="ap-h2" style="margin:4px 0 0">Priest certificate maker</h2><p class="muted">Pick a design, fill the form once, and download the PDF with its matching back page. Print double sided on A4 at actual size.</p></div>
+<!--MAKER_MARKUP-->
+</main>
+
+<main id="v-invites" class="view" hidden>
+<div class="ap-wrap ap-sub"><a class="back" href="#ws-events">Event tasks</a><h2 class="ap-h2" style="margin:4px 0 0">Wedding invitation</h2><p class="muted">Choose an event, a design and a layout. Fill the details once; each event keeps its own date, time and venue. Download an image for WhatsApp or a PDF for print.</p>
+<div class="irow"><span class="ilab">Event</span><div class="opts" id="ievs"></div></div>
+<div class="irow"><span class="ilab">Design</span><div class="opts" id="itpls"></div></div>
+<div class="irow"><span class="ilab">Layout</span><div class="opts" id="ilay"><button type="button" data-l="single" aria-pressed="true">Single page</button><button type="button" data-l="double" aria-pressed="false">Two page spread</button></div></div></div>
+<div class="ap-wrap">
+<div class="istage" id="istage"><div class="iwrap" id="iwrap"></div></div>
+<div class="acts"><button class="btn pri idl" data-f="png" type="button">Download image</button><button class="btn idl" data-f="pdf" type="button">Download PDF</button><span id="imsg" class="muted"></span></div>
+<form id="if" autocomplete="off" style="margin-top:18px">
+<fieldset><legend>Couple and families</legend><div class="fg">
+<label class="f">Groom's full name<input data-k="groom"></label>
+<label class="f">Bride's full name<input data-k="bride"></label>
+<label class="f">Groom's parents<input data-k="gParents" placeholder="Mr. and Mrs. ..."></label>
+<label class="f">Bride's parents<input data-k="bParents" placeholder="Mr. and Mrs. ..."></label>
+<label class="f w">Blessings of (two page layout)<input data-k="elders" placeholder="Grandparents or elders"></label>
+<label class="f">City<input data-k="city"></label>
+<label class="f">RSVP names and phone<input data-k="rsvp"></label>
+</div></fieldset>
+<fieldset><legend><span id="ievname">Wedding</span> details</legend><div class="fg">
+<label class="f">Date<input data-e="date" type="date"></label>
+<label class="f">Time (24 hours)<input data-e="time" placeholder="12:10"></label>
+<label class="f">Venue<input data-e="venue"></label>
+<label class="f w">Venue address<input data-e="addr"></label>
+<label class="f w">Extra line (optional)<input data-e="note" placeholder="Dress code, lunch to follow, and so on"></label>
+</div></fieldset>
+</form></div>
+</main>
+
+<main id="v-docs" class="view" hidden></main>
+
+<main id="v-name" class="view" hidden></main>
+
+<main id="v-letters" class="view" hidden>
+<div class="ap-wrap ap-sub"><a class="back" href="#ws-visa">Visa tasks</a><h2 class="ap-h2" style="margin:4px 0 0">Visa letters</h2><p class="muted">Fill the details once. Both letters update together. Download the PDF, print it on A4 and sign it.</p>
+<div class="ltabs" role="tablist" id="ltabs"><button type="button" data-l="inv" aria-selected="true">Invitation letter (from you)</button><button type="button" data-l="cov" aria-selected="false">Personal covering letter (from her)</button></div>
+<div class="irow"><span class="ilab">Design</span><div class="opts" id="ltpl"></div></div>
+<div class="irow"><span class="ilab">Layout</span><div class="opts" id="llay"><button type="button" data-l="single" aria-pressed="true">Single page</button><button type="button" data-l="double" aria-pressed="false">Two pages with annexure</button></div></div></div>
+<div class="wrap main" style="padding-top:8px">
+<div>
+<div class="pglbl">Page 1</div><div class="stage" id="lstage"><div class="lsheet" id="lsheet"></div></div>
+<div id="lpg2" hidden><div class="pglbl">Page 2</div><div class="stage" id="lstage2"><div class="lsheet" id="lsheet2"></div></div></div>
+<div class="acts"><button class="btn pri" id="ldl" type="button">Download PDF</button><span id="lmsg" class="muted"></span></div>
+</div>
+<form id="lf" autocomplete="off">
+<fieldset><legend>You (husband)</legend><div class="fg">
+<label class="f">Full name<input data-k="hName"></label>
+<label class="f">Indian passport number<input data-k="hPass"></label>
+<label class="f w">Residence permit<input data-k="hPermit"></label>
+<label class="f">Employer<input data-k="employer"></label>
+<label class="f">Employer city<input data-k="empCity"></label>
+<label class="f w">Job title<input data-k="job"></label>
+<label class="f">Street and house number<input data-k="hStreet"></label>
+<label class="f">Postcode and city<input data-k="hCity"></label>
+<label class="f">Living space in m² (optional)<input data-k="flat" inputmode="decimal"></label>
+<label class="f">Mobile<input data-k="hPhone" inputmode="tel"></label>
+<label class="f w">Email<input data-k="hEmail" type="email"></label>
+<label class="f">Date on your letter<input data-k="dateH" type="date"></label>
+<label class="f w">A few personal lines (optional)<textarea data-k="pH" placeholder="For example, how long you have known each other, or your plans together"></textarea></label>
+</div></fieldset>
+<fieldset><legend>Your wife</legend><div class="fg">
+<label class="f">Full name<input data-k="wName"></label>
+<label class="f">Indian passport number<input data-k="wPass"></label>
+<label class="f w">Address in India<textarea data-k="wAddr"></textarea></label>
+<label class="f">Mobile<input data-k="wPhone" inputmode="tel"></label>
+<label class="f">Email<input data-k="wEmail" type="email"></label>
+<label class="f">Date on her letter<input data-k="dateW" type="date"></label>
+<label class="f w">Planned stay<input data-k="stay"></label>
+<label class="f w">A few personal lines (optional)<textarea data-k="pW" placeholder="For example, what she looks forward to in Germany"></textarea></label>
+</div></fieldset>
+<fieldset><legend>Marriage</legend><div class="fg">
+<label class="f">Date of marriage<input data-k="marDate" type="date"></label>
+<label class="f">Time of marriage (24 hours)<input data-k="marTime" placeholder="12:10" inputmode="numeric"></label>
+<label class="f">Place of marriage<input data-k="marPlace"></label>
+<label class="f">Registered with<input data-k="regOffice"></label>
+<label class="f">Registration certificate number<input data-k="regNo"></label>
+</div></fieldset>
+<fieldset><legend>Your residence status (enclosures)</legend><p class="hint">Tick what applies. Each tick adds that document to the enclosure list.</p><div class="permg" id="permg">
+<label class="backopt"><input type="checkbox" data-perm="pr"> Niederlassungserlaubnis (permanent residence)</label>
+<label class="backopt"><input type="checkbox" data-perm="blue"> EU Blue Card (Blaue Karte EU)</label>
+<label class="backopt"><input type="checkbox" data-perm="work"> Work permit (residence permit for employment)</label>
+<label class="backopt"><input type="checkbox" data-perm="student"> Student (residence permit for study)</label>
+<label class="backopt"><input type="checkbox" data-perm="foreign"> Foreign citizenship (no permit, passport already enclosed)</label>
+</div></fieldset>
+<fieldset><legend>Consulate</legend><div class="fg">
+<label class="f w">Consulate address<textarea data-k="cons"></textarea></label>
+<label class="backopt"><input type="checkbox" data-k="enc"> Add a list of enclosed documents</label>
+</div></fieldset>
+</form>
+</div>
+</main>
+
+<div class="ap-wrap foot2"><p class="muted" id="footNote"></p><div class="acts" style="margin-top:4px"><button class="btn" type="button" id="bExp">Export backup</button><label class="btn" style="display:inline-flex;align-items:center">Import backup<input type="file" id="bImp" accept="application/json,.json" hidden></label><span class="muted" id="bMsg"></span></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+const STANDALONE=!(window.claude&&window.claude.use);
+const saveFile=async(ns,fn,blob)=>{if(ns)return ns.save({filename:fn,data:blob});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=fn;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},3000);return {status:"saved"}};
+/*MAKER_JS*/
+{
+/*SHELL_JS*/
+}
+</script>
+</body>
+</html>

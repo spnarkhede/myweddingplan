@@ -1,0 +1,14 @@
+{
+  "name": "myweddingplan",
+  "version": "1.0.0",
+  "description": "Wedding project planner: checklists, documents, priest certificate, invitations and visa letters. Runs in the browser.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "dev": "node scripts/serve.mjs"
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT"
+}
