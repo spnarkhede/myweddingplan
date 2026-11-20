@@ -208,3 +208,12 @@ ul.ck2 input:checked~.tx .tt{color:var(--mute);text-decoration:line-through}
 .g-t{text-align:center;font:600 21px "Cinzel","Noto Serif",serif;color:#7a5c1e;margin:14px 0 14px;letter-spacing:2px}
 .ld-elegant .lsub{background:#faf5ea;border-left-color:#b08d3c}.ld-elegant .ltab th{background:#faf5ea}
 .pset{margin-top:14px}.pset summary{cursor:pointer;font-weight:600;min-height:44px;display:flex;align-items:center}.pset .fg{background:rgba(255,255,255,.08);padding:12px;border-radius:10px}.pset label.f{color:#fff}.pset label.f input{color:#22140f;background:#fff}
+/* documents: groom and bride side by side per topic */
+.dgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 32px}
+.dgrid.one{grid-template-columns:minmax(0,1fr)}
+.dcol{margin-bottom:6px}
+.dch{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:10px 0 0;padding:6px 0 6px 10px;font-size:17px;border-left:4px solid var(--wc,var(--line))}
+.dch span{font-size:14px;font-weight:600;color:var(--mute);white-space:nowrap}
+.dc-Groom{--wc:#1f5f7a}.dc-Bride{--wc:#9c1458}.dc-Both{--wc:#8a6a1a}.dc-Witnesses{--wc:#555}
+.dc-Both,.dc-Witnesses{margin-top:8px}
+@media(max-width:700px){.dgrid{grid-template-columns:minmax(0,1fr)}}
