@@ -385,3 +385,62 @@ ul.ck2 input:checked~.tx .tt{color:var(--mute);text-decoration:line-through}
 .fx.calm,.fx.calm *{animation:none!important}
 .fx.calm .fx-fl{top:var(--y)}.fx.calm .fx-note{display:none}
 @media print{.fx{display:none!important}}
+/* vidaai: the bride rides to her new home */
+.fx-vidaai{--cw:clamp(240px,36vw,480px);background:linear-gradient(to bottom,#2b1055 0%,#6a2c91 26%,#e0577a 56%,#ff9a5a 76%,#ffd89b 100%);color:#fff}
+.fx-vidaai .fx-hint{color:rgba(255,255,255,.8);z-index:5}
+.fx-vidaai .fx-t{text-shadow:0 2px 12px rgba(60,0,40,.45)}
+.vsun{position:absolute;left:16%;bottom:24vh;width:18vmin;height:18vmin;border-radius:50%;background:radial-gradient(circle,#fff6c9 0%,#ffd166 45%,#ff9a5a 100%);box-shadow:0 0 60px 30px rgba(255,200,120,.45)}
+.vhills{position:absolute;left:0;right:0;bottom:10vh;width:100%;height:26vh}
+.vcl{position:absolute;left:-22vw;width:16vw;height:4.5vw;min-width:120px;min-height:34px;border-radius:999px;background:rgba(255,255,255,.5);filter:blur(1px);animation:vCl var(--d) linear var(--w) infinite}
+.vcl::before,.vcl::after{content:"";position:absolute;background:inherit;border-radius:50%}
+.vcl::before{width:45%;height:150%;left:18%;top:-70%}.vcl::after{width:35%;height:120%;left:50%;top:-45%}
+@keyframes vCl{to{translate:140vw 0}}
+.vroad{position:absolute;left:0;right:0;bottom:0;height:11vh;background:repeating-linear-gradient(90deg,transparent 0 3vw,#f5f0e6 3vw 6vw) center 52%/100% 5px no-repeat,linear-gradient(#45414f,#34313c);box-shadow:0 -1.6vh 0 #5b8c3a,0 -2.2vh 0 #3f6e2a}
+.vhome{position:absolute;right:1vw;bottom:10.5vh;width:clamp(200px,30vw,400px);z-index:1;overflow:visible}
+.vhome .bulb{animation:vBulb 1.2s ease-in-out calc(var(--i) * -.17s) infinite alternate}
+@keyframes vBulb{from{opacity:.35}}
+.vhome .flame{transform-box:fill-box;transform-origin:50% 100%;animation:vFlame .5s ease-in-out infinite alternate}
+@keyframes vFlame{from{transform:scale(.85,1.08) rotate(-4deg)}to{transform:scale(1.05,.92) rotate(4deg)}}
+.vhome .vdoorL,.vhome .vdoorR{transform-box:fill-box;transform:scaleX(.12)}
+.vhome .vdoorL{transform-origin:0 50%;animation:vDoor .9s ease-in-out 8s both}
+.vhome .vdoorR{transform-origin:100% 50%;animation:vDoor .9s ease-in-out 8s both}
+@keyframes vDoor{from{transform:scaleX(1)}}
+.vhome .vglow{animation:vGlow 1.4s ease-in-out 8.4s infinite alternate}
+@keyframes vGlow{to{fill:#fff3c4}}
+.vcarw{position:absolute;bottom:2.4vh;left:max(7vw,calc(66vw - var(--cw)));width:var(--cw);z-index:2;animation:vDrive 7.4s cubic-bezier(.22,.6,.3,1) .4s both}
+@keyframes vDrive{from{transform:translateX(calc(-66vw - 4vw))}}
+.vbob{position:relative;animation:vBob .36s ease-in-out .4s 20 alternate}
+@keyframes vBob{to{transform:translateY(-1.6%) rotate(-.4deg)}}
+.vcar{display:block;width:100%;overflow:visible}
+.vcar .spin{transform-box:fill-box;transform-origin:center;animation:vSpin .42s linear .4s 18}
+@keyframes vSpin{to{transform:rotate(360deg)}}
+.vcar .dust{opacity:0;transform-box:fill-box;transform-origin:100% 50%;animation:vDust .6s ease-out .5s 11}
+@keyframes vDust{0%{opacity:.8;transform:scale(.4)}100%{opacity:0;transform:scale(1.6) translateX(-10px)}}
+.vcar .streamer{animation:vStream .5s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:100% 50%}
+.vcar .streamer.s2{animation-delay:-.25s}
+@keyframes vStream{to{transform:scaleY(1.8) rotate(-3deg)}}
+.vcar .vdup{transform-box:view-box;animation:vDup .32s ease-in-out infinite alternate}
+@keyframes vDup{from{transform:rotate(-5deg) scaleY(1.05)}to{transform:rotate(6deg) scaleY(.82)}}
+.vcar .vwave{transform-box:view-box;animation:vWave .42s ease-in-out infinite alternate}
+@keyframes vWave{from{transform:rotate(-20deg)}to{transform:rotate(18deg)}}
+.vbub{position:absolute;left:56%;top:-14%;padding:6px 14px;border-radius:16px;background:#fff;color:#c1121f;font:700 clamp(15px,1.8vw,20px)/1.1 "Dancing Script","Great Vibes",cursive;white-space:nowrap;box-shadow:0 6px 16px rgba(60,0,30,.25);opacity:0;transform-origin:0 100%}
+.vbub::after{content:"";position:absolute;left:14px;bottom:-7px;border:7px solid transparent;border-top-color:#fff;border-bottom:0}
+.vbub.b1{animation:vBub 2.6s ease-out 1s both}
+.vbub.b2{animation:vBub 2.8s ease-out 3.7s both}
+.vbub.b3{opacity:1;animation:vBubIn .6s cubic-bezier(.34,1.56,.64,1) 7.9s both}
+@keyframes vBub{0%{opacity:0;transform:scale(.4)}12%{opacity:1;transform:scale(1.06)}18%{transform:scale(1)}85%{opacity:1}100%{opacity:0;transform:scale(1)}}
+@keyframes vBubIn{from{opacity:0;transform:scale(.4)}}
+.vht{position:absolute;left:58%;top:4%;color:#ff4d6d;font-size:clamp(14px,1.6vw,22px);opacity:0;animation:vHt 2.2s ease-out var(--w) 3 both}
+@keyframes vHt{0%{opacity:0;transform:translate(0,0) scale(.5)}20%{opacity:1}100%{opacity:0;transform:translate(-30px,-80px) scale(1.2)}}
+.vtrs{position:absolute;inset:0;pointer-events:none;z-index:3}
+.vtr{position:absolute;bottom:9vh;width:var(--s);height:var(--s);opacity:0;animation:vTr 2.6s ease-out var(--w) both}
+.vtr svg{width:100%;height:100%;display:block}
+@keyframes vTr{0%{opacity:0;transform:translate(0,0) scale(.3)}15%{opacity:1;transform:translate(0,-46px) scale(1)}100%{opacity:0;transform:translate(var(--sw),24px) rotate(220deg)}}
+.vfw{position:absolute;width:13vmin;height:13vmin;opacity:0;animation:vFw 1.7s ease-out calc(8.1s + var(--i) * .35s) infinite}
+.vfw svg{width:100%;height:100%;display:block}
+@keyframes vFw{0%{opacity:1;transform:scale(.1)}70%{opacity:1}100%{opacity:0;transform:scale(1.25)}}
+.vt1{opacity:0;animation:vT1 7.9s ease .2s both}
+@keyframes vT1{0%{opacity:0}6%,88%{opacity:1}100%{opacity:0}}
+.vt2{animation:fxTi .9s ease-out 8.1s both}
+@media(max-width:600px){.fx-vidaai{--cw:clamp(220px,62vw,300px)}.vhome{width:46vw}.vsun{left:8%}}
+.fx.calm .vcl,.fx.calm .vtr,.fx.calm .vht,.fx.calm .vfw{display:none}
