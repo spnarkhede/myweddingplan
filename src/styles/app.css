@@ -423,14 +423,14 @@ ul.ck2 input:checked~.tx .tt{color:var(--mute);text-decoration:line-through}
 @keyframes vDup{from{transform:rotate(-5deg) scaleY(1.05)}to{transform:rotate(6deg) scaleY(.82)}}
 .vcar .vwave{transform-box:view-box;animation:vWave .42s ease-in-out infinite alternate}
 @keyframes vWave{from{transform:rotate(-20deg)}to{transform:rotate(18deg)}}
-.vbub{position:absolute;left:56%;top:-14%;padding:6px 14px;border-radius:16px;background:#fff;color:#c1121f;font:700 clamp(15px,1.8vw,20px)/1.1 "Dancing Script","Great Vibes",cursive;white-space:nowrap;box-shadow:0 6px 16px rgba(60,0,30,.25);opacity:0;transform-origin:0 100%}
+.vbub{position:absolute;left:46%;top:-14%;padding:6px 14px;border-radius:16px;background:#fff;color:#c1121f;font:700 clamp(15px,1.8vw,20px)/1.1 "Dancing Script","Great Vibes",cursive;white-space:nowrap;box-shadow:0 6px 16px rgba(60,0,30,.25);opacity:0;transform-origin:0 100%}
 .vbub::after{content:"";position:absolute;left:14px;bottom:-7px;border:7px solid transparent;border-top-color:#fff;border-bottom:0}
 .vbub.b1{animation:vBub 2.6s ease-out 1s both}
 .vbub.b2{animation:vBub 2.8s ease-out 3.7s both}
 .vbub.b3{opacity:1;animation:vBubIn .6s cubic-bezier(.34,1.56,.64,1) 7.9s both}
 @keyframes vBub{0%{opacity:0;transform:scale(.4)}12%{opacity:1;transform:scale(1.06)}18%{transform:scale(1)}85%{opacity:1}100%{opacity:0;transform:scale(1)}}
 @keyframes vBubIn{from{opacity:0;transform:scale(.4)}}
-.vht{position:absolute;left:58%;top:4%;color:#ff4d6d;font-size:clamp(14px,1.6vw,22px);opacity:0;animation:vHt 2.2s ease-out var(--w) 3 both}
+.vht{position:absolute;left:45%;top:4%;color:#ff4d6d;font-size:clamp(14px,1.6vw,22px);opacity:0;animation:vHt 2.2s ease-out var(--w) 3 both}
 @keyframes vHt{0%{opacity:0;transform:translate(0,0) scale(.5)}20%{opacity:1}100%{opacity:0;transform:translate(-30px,-80px) scale(1.2)}}
 .vtrs{position:absolute;inset:0;pointer-events:none;z-index:3}
 .vtr{position:absolute;bottom:9vh;width:var(--s);height:var(--s);opacity:0;animation:vTr 2.6s ease-out var(--w) both}
