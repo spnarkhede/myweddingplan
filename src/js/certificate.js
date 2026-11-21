@@ -12,7 +12,7 @@ const FMT=[
 const F=FMT.filter(x=>x.k);
 const RE="Sankalpa, Mangalashtaka, Kanyadaan, Vivaha Homa, Panigrahana, Mangal Pheras (Agni Pradakshina), Saptapadi, Sindoor Daan and Mangalsutra Dharana, and Ashirvad";
 const RM="संकल्प, मंगलाष्टके, कन्यादान, विवाह होम, पाणिग्रहण, मंगल फेरे (अग्निप्रदक्षिणा), सप्तपदी, सिंदूर दान व मंगळसूत्र धारण आणि आशीर्वाद";
-const DEF={rituals:RE,ritualsMr:RM};
+const DEF={place:"Nagpur",groomName:"Shubham Narkhede",marDate:"2027-02-03",venueAddr:"Nagpur, Maharashtra",rituals:RE,ritualsMr:RM};
 const KEY="priestCertForm";
 
 /* ---------- form state ---------- */

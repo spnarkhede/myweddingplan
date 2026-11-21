@@ -10,18 +10,18 @@
   {
    "d": "W-75",
    "to": "W-63",
-   "l": "Collect documents in Germany",
+   "l": "Collect German documents in Stuttgart",
    "ws": "fly"
   },
   {
    "d": "W-62",
    "role": "fly",
-   "l": "Fly to India",
+   "l": "Fly Frankfurt to Nagpur",
    "key": 1
   },
   {
    "d": "W-58",
-   "l": "First visit to the marriage registration office",
+   "l": "First visit to NMC Zone 3 office",
    "ws": "nmc"
   },
   {
@@ -42,7 +42,7 @@
   },
   {
    "d": "W+1",
-   "l": "Register the marriage (first Monday or Thursday)",
+   "l": "Register marriage (Thu 4 Feb or Mon 8 Feb)",
    "ws": "nmc",
    "key": 1
   },
@@ -67,23 +67,23 @@
   {
    "id": "fly",
    "title": "Before you fly",
-   "place": "Germany",
-   "window": "Before you travel",
+   "place": "Stuttgart",
+   "window": "Now to 2 Dec",
    "color": "#1f5f7a",
    "sections": [
     {
-     "title": "Documents to get in Germany",
+     "title": "Documents to get in Stuttgart",
      "items": [
       {
        "id": "fly-meld",
        "t": "Meldebescheinigung",
-       "d": "Request at your Bürgerbüro. Must be under 6 months old on her visa appointment day.",
+       "d": "Request at the Bürgerbüro Stuttgart. Must be under 6 months old on her visa appointment day.",
        "due": "W-63",
        "status": 1
       },
       {
        "id": "fly-hr",
-       "t": "Employer confirmation letter from HR",
+       "t": "Employer confirmation letter from Bosch HR",
        "d": "Role, start date, permanent status, salary.",
        "due": "W-63",
        "status": 1
@@ -105,20 +105,20 @@
        "id": "fly-wgb",
        "t": "Wohnungsgeberbestätigung zur Vorlage bei der Meldebehörde",
        "due": "W-63",
-       "d": "Ask your landlord.",
+       "d": "Requested from your landlord.",
        "status": 1
       },
       {
        "id": "fly-wra",
        "t": "Wohnraumausweis (updated proof of living space)",
-       "d": "Ask your landlord. Shows the flat is large enough for two.",
+       "d": "Requested from your landlord. Shows the flat is large enough for two.",
        "due": "W-63",
        "status": 1
       },
       {
        "id": "fly-inv",
        "t": "Signed invitation letter to your wife",
-       "d": "Your address in Germany and her full name.",
+       "d": "Your Stuttgart address and her full name.",
        "due": "W-63"
       },
       {
@@ -136,7 +136,7 @@
       {
        "id": "fly-sal",
        "t": "Last three salary slips",
-       "d": "Download the latest slips while travelling and print them there."
+       "d": "Download Dec, Jan and Feb slips in India and print them there."
       }
      ]
     },
@@ -157,7 +157,7 @@
       },
       {
        "id": "fly-ec",
-       "t": "Employment contract",
+       "t": "Employment contract with Bosch",
        "tag": "Original + 2 copies"
       },
       {
@@ -169,7 +169,7 @@
       {
        "id": "fly-bc",
        "t": "Birth certificate and school leaving certificate",
-       "d": "For marriage registration.",
+       "d": "For NMC registration.",
        "tag": "Original + 2 copies"
       },
       {
@@ -189,8 +189,8 @@
   {
    "id": "priest",
    "title": "Priest certificate",
-   "place": "India",
-   "window": "Before the wedding",
+   "place": "Nagpur",
+   "window": "Dec to 3 Feb",
    "color": "#a0381c",
    "tool": "cert",
    "sections": [
@@ -224,7 +224,7 @@
       {
        "id": "pr-aad",
        "t": "Copy of his Aadhaar",
-       "d": "In case the registrar asks for it."
+       "d": "In case NMC asks for it."
       }
      ]
     },
@@ -264,7 +264,7 @@
       },
       {
        "id": "pr-muh",
-       "t": "Muhurta time on the wedding day",
+       "t": "Muhurta time on 3 February",
        "due": "W-19"
       },
       {
@@ -292,13 +292,13 @@
       {
        "id": "pr-signs",
        "t": "Priest signs and stamps 3 originals",
-       "d": "One for the registrar, one for the visa file, one to keep.",
+       "d": "One for NMC, one for the visa file, one to keep.",
        "due": "W+0"
       },
       {
        "id": "pr-nmc",
-       "t": "Ask if he must attend the marriage registration",
-       "d": "Confirm with the registrar on your first visit too."
+       "t": "Ask if he must attend NMC registration",
+       "d": "Confirm with NMC on your first visit too."
       }
      ]
     }
@@ -306,9 +306,9 @@
   },
   {
    "id": "nmc",
-   "title": "Marriage registration",
-   "place": "Municipal marriage office",
-   "window": "Around the wedding",
+   "title": "NMC marriage registration",
+   "place": "Hanuman Nagar, Zone 3",
+   "window": "Dec to 15 Feb",
    "color": "#8e1b2a",
    "note": "Registration happens on Mondays and Thursdays only. Bring all originals. Fee Rs 1000 within one year of the wedding, Rs 1500 after. The clerk checks each copy against its original. Write \"self attested\" and sign each copy.",
    "sections": [
@@ -317,7 +317,7 @@
      "items": [
       {
        "id": "nmc-visit",
-       "t": "Visit the marriage registration office in person",
+       "t": "Visit Zone 3 office in person",
        "d": "Confirm the list, collect application and memorandum forms, ask processing time and certificate language.",
        "due": "W-58"
       },
@@ -345,7 +345,7 @@
       {
        "id": "nmc-reg",
        "t": "Register the marriage",
-       "d": "First Monday or Thursday after the wedding. Bride, groom and three witnesses attend with originals.",
+       "d": "Thu 4 Feb or Mon 8 Feb. Bride, groom and three witnesses attend with originals.",
        "due": "W+1"
       },
       {
@@ -596,7 +596,7 @@
    "id": "visa",
    "title": "Wife's spouse visa",
    "place": "Mumbai Consulate",
-   "window": "After the wedding",
+   "window": "From Feb",
    "color": "#5b2a86",
    "note": "Bring the copies counted on each item, all originals, unstapled A4. Your friend's list is based on a VFS appointment; the German Embassy currently books family reunion appointments through its own waiting list, so confirm which applies when you book.",
    "sections": [
@@ -682,7 +682,7 @@
       },
       {
        "id": "v-mc",
-       "t": "Government marriage certificate",
+       "t": "Marriage certificate (NMC)",
        "tag": "2 copies",
        "d": "With notary attested English translation if it is in Marathi."
       },
@@ -806,8 +806,8 @@
   {
    "id": "events",
    "title": "Events and invitations",
-   "place": "India",
-   "window": "Wedding season",
+   "place": "Nagpur",
+   "window": "Jan to Feb",
    "color": "#c25b12",
    "tool": "invites",
    "sections": [
@@ -869,8 +869,8 @@
   {
    "id": "shop",
    "title": "Shopping",
-   "place": "India",
-   "window": "Before the wedding",
+   "place": "Nagpur",
+   "window": "Dec to Jan",
    "color": "#2e7d32",
    "sections": [
     {
@@ -882,8 +882,8 @@
   {
    "id": "book",
    "title": "Bookings",
-   "place": "India",
-   "window": "Around the wedding",
+   "place": "Nagpur",
+   "window": "Dec to Feb",
    "color": "#b8860b",
    "sections": [
     {
@@ -922,7 +922,7 @@
   }
  ],
  "nameChange": {
-  "intro": "Her surname after the wedding is her decision. All paths are legal and common, and none of them harms her career. The government marriage certificate links both names in every case, so keep certified copies with an English or German translation.",
+  "intro": "Her surname after the wedding is her decision. All paths are legal and common, and none of them harms her career. The NMC marriage certificate links both names in every case, so keep certified copies with an English or German translation.",
   "options": [
    {
     "id": "keep",
@@ -939,7 +939,7 @@
      {
       "id": "nc-k1",
       "t": "Apply for the visa in her maiden name",
-      "d": "Use her current passport and the government marriage certificate."
+      "d": "Use her current passport and the NMC marriage certificate."
      },
      {
       "id": "nc-k2",
@@ -990,14 +990,14 @@
     "paperwork": "Moderate, Indian IDs only",
     "cost": "Indian passport reissue fee plus small update fees",
     "degree": "Needs the marriage certificate",
-    "where": "India: Aadhaar Seva Kendra, Passport Seva Kendra, NSDL or UTIITSL, banks",
+    "where": "Nagpur: Aadhaar Seva Kendra, PSK Nagpur, NSDL or UTIITSL, banks",
     "total": "6 to 10 weeks (estimate)",
     "best": "She wants your surname on her passport from day one and can wait about two months longer to come to Germany.",
     "steps": [
      {
       "id": "nc-i1",
-      "t": "Get the government marriage certificate",
-      "d": "Registration on the first Monday or Thursday after the wedding. Ask for 3 certified copies.",
+      "t": "Get the NMC marriage certificate",
+      "d": "Registration on 4 or 8 Feb. Ask for 3 certified copies.",
       "time": "1 to 2 weeks"
      },
      {
@@ -1014,7 +1014,7 @@
      },
      {
       "id": "nc-i3",
-      "t": "Reissue her passport at the Passport Seva Kendra",
+      "t": "Reissue her passport at PSK Nagpur",
       "d": "Re-issue: change in existing personal particulars (change of name after marriage). Bring old passport, marriage certificate, your passport copy, updated Aadhaar. Police verification may apply.",
       "time": "2 to 4 weeks normal, about 1 week Tatkaal"
      },
@@ -1039,7 +1039,7 @@
     "paperwork": "High, Indian and German IDs",
     "cost": "Consulate passport fee plus about 67 euros for the new residence card",
     "degree": "Needs the marriage certificate",
-    "where": "CGI Munich, then Bürgerbüro and Ausländerbehörde",
+    "where": "CGI Munich, then Bürgerbüro and Ausländerbehörde (Stuttgart, or Landratsamt Böblingen if you live in Leonberg)",
     "total": "About 3 to 5 months after arrival (estimate)",
     "best": "She wants your surname but does not want to delay coming to Germany.",
     "steps": [
@@ -1119,7 +1119,7 @@
    "No obligation to change. Keeping a maiden name is standard in Germany and does not affect her visa, taxes or dependent rights."
   ],
   "affWarn": "An affidavit alone will not work everywhere. A self sworn Indian affidavit on stamp paper carries little weight with German offices, banks or health insurers. They rely on her passport as the main ID, backed by the government marriage certificate, or the Name Change Certificate CGI Munich issues after her passport is updated.",
-  "timingTip": "Apply for the visa with her existing passport right after the marriage certificate. Changing her Indian passport before the visa appointment can delay it by 1 to 2 months.",
+  "timingTip": "Apply for the visa with her existing passport right after the NMC certificate. Changing her Indian passport before the visa appointment can delay it by 1 to 2 months.",
   "faq": [
    {
     "q": "Who can change their name legally in India?",
@@ -1202,7 +1202,7 @@
      },
      {
       "id": "d-c-30",
-      "t": "Proof one of you lived 30 days in the district",
+      "t": "Proof one of you lived 30 days in Nagpur district",
       "who": "Both",
       "tag": "Original + 2 copies",
       "d": "Usually the bride's address proof."
@@ -1243,7 +1243,7 @@
    },
    {
     "id": "hma",
-    "title": "Hindu Marriage Act registration",
+    "title": "Hindu Marriage Act registration at NMC Zone 3",
     "note": "Registration on Mondays and Thursdays. All originals are checked against the copies.",
     "items": [
      {
@@ -1341,7 +1341,7 @@
    },
    {
     "id": "aff",
-    "title": "Registration affidavits and forms",
+    "title": "NMC affidavits and forms",
     "note": "Rs 100 stamp paper, notarised. Each affidavit states names, ages, addresses, date and place of marriage, marital status before marriage, and that you are not within prohibited degrees.",
     "items": [
      {
@@ -1358,7 +1358,7 @@
      },
      {
       "id": "d-a-form",
-      "t": "Application form from the registration office",
+      "t": "Application form from the Zone 3 office",
       "who": "Both"
      },
      {

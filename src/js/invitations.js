@@ -1,5 +1,5 @@
 /* ---------- wedding invitation maker ---------- */
-const IDEF={groom:"",bride:"",gParents:"",bParents:"",elders:"",city:"",rsvp:"",ev:{}};
+const IDEF={groom:"Shubham Narkhede",bride:"",gParents:"",bParents:"",elders:"",city:"Nagpur",rsvp:"",ev:{wedding:{date:"2027-02-03",time:"12:10"}}};
 const ITPL=[["classic","Classic"],["simple","Simple"],["pro","Professional"],["royal","Royal"],["marigold","Marigold"],["paithani","Paithani"]];
 let iev="wedding",itpl="classic",ilay="single",idl=null;
 const I=()=>{S.inv=S.inv||JSON.parse(JSON.stringify(IDEF));S.inv.ev=S.inv.ev||{};return S.inv};
