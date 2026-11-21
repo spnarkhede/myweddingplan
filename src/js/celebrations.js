@@ -1,7 +1,7 @@
 /* ---------- event celebrations (engagement, haldi, sangeet, wedding, love) ---------- */
 // Full-screen scenes drawn with inline SVG and CSS animation. The header stays above
 // them, so the countdown can be clicked again to move to the next scene.
-const FXD={engagement:9000,haldi:9500,sangeet:10000,wedding:15500,love:6500};
+const FXD={engagement:9000,haldi:9500,sangeet:10000,wedding:15500,vidaai:14000,love:6500};
 const rnd=(a,b)=>a+Math.random()*(b-a);
 
 /* a person, 120 x 260 user units, standing or seated */
@@ -62,6 +62,50 @@ let toran="";for(let i=0;i<=16;i++){const t=i/16,x=20+360*t,y=60-70*4*t*(1-t)+0;
 const gar=`<path d="M-20 -2 Q0 56 20 -2" stroke="#ff8c00" stroke-width="8" stroke-dasharray=".1 9" stroke-linecap="round" fill="none"/><path d="M-20 -2 Q0 56 20 -2" stroke="#fff3c4" stroke-width="5" stroke-dasharray=".1 9" stroke-dashoffset="4.5" stroke-linecap="round" fill="none"/><circle cx="0" cy="27" r="5" fill="#d00000"/>`;
 return `<div class="fx-fls">${petals}</div><div class="fx-wed">${fxTitle("wedding","")}<svg class="fx-couple fx-wed-c" viewBox="0 0 400 300" aria-hidden="true"><rect x="18" y="50" width="12" height="250" rx="3" fill="#8e1b2a"/><rect x="370" y="50" width="12" height="250" rx="3" fill="#8e1b2a"/><path d="M20 60 Q200 -14 380 60" stroke="#d4a017" stroke-width="6" fill="none"/>${toran}<g transform="translate(70 34)" class="pB">${fxPerson({kind:"bride",top:"#c1121f",acc:"#e6b422",skin:"#d9a07a",veil:"#e6b422"})}</g><g transform="translate(210 34)" class="pG">${fxPerson({kind:"groom",top:"#fff3d6",acc:"#d4a017",low:"#fffaf0",hat:"#e85d04",skin:"#b97a52"})}</g><g transform="translate(270 128)"><g class="g1">${gar}</g></g><g transform="translate(130 128)"><g class="g2">${gar}</g></g></svg><ol class="vows">${V.map((v,i)=>`<li style="--i:${i}"><b>${i+1}</b>${esc(v)}</li>`).join("")}</ol></div>`},
 
+vidaai(){const we=fxEv("wedding");const when=we.date?`After the wedding · ${fdl(we.date)}`:"After the wedding";
+const bead=(d,w=7)=>`<path d="${d}" stroke="#ff8c00" stroke-width="${w}" stroke-dasharray=".1 ${w+2}" stroke-linecap="round" fill="none"/><path d="${d}" stroke="#d00000" stroke-width="${w-2}" stroke-dasharray=".1 ${w+2}" stroke-dashoffset="${(w+2)/2}" stroke-linecap="round" fill="none"/>`;
+const wheel=x=>`<g transform="translate(${x} 212)"><g class="spin"><circle r="28" fill="#1f1f24"/><circle r="17" fill="#d5dae0"/><path d="M0 -17V17M-17 0H17M-12 -12L12 12M12 -12L-12 12" stroke="#8a9099" stroke-width="3"/><circle r="5.5" fill="#8a9099"/></g></g>`;
+const car=`<svg class="vcar" viewBox="0 0 400 260" aria-hidden="true">
+<ellipse cx="205" cy="240" rx="175" ry="9" fill="rgba(0,0,0,.28)"/>
+<path class="streamer" d="M34 192 Q4 200 -26 192 T-86 194" stroke="#ff4d6d" stroke-width="3" fill="none"/><path class="streamer s2" d="M34 198 Q8 208 -20 202 T-74 208" stroke="#ffd166" stroke-width="3" fill="none"/>
+<g class="vdup" style="transform-origin:206px 48px"><path d="M204 44 Q160 30 112 40 Q138 52 124 66 Q160 60 172 74 Q186 62 204 80Z" fill="#d00000"/><path d="M112 40 Q138 52 124 66 Q160 60 172 74" stroke="#e6b422" stroke-width="3" fill="none"/></g>
+<path d="M199 102 L202 76 Q214 69 226 76 L229 102Z" fill="#c1121f"/><path d="M204 77 Q214 84 224 77" stroke="#e6b422" stroke-width="2.5" fill="none"/>
+<path d="M203 80 L188 99" stroke="#d9a07a" stroke-width="7" stroke-linecap="round"/><path d="M203 80 L198 87" stroke="#c1121f" stroke-width="8" stroke-linecap="round"/>
+<g class="vwave" style="transform-origin:225px 79px"><path d="M225 79 L238 53" stroke="#d9a07a" stroke-width="7" stroke-linecap="round"/><path d="M225 79 L229 71" stroke="#c1121f" stroke-width="8" stroke-linecap="round"/><path d="M234 61 l6 3" stroke="#c8102e" stroke-width="3"/><path d="M233 63 l6 3" stroke="#e6b422" stroke-width="2"/><circle cx="239" cy="50" r="4.6" fill="#d9a07a"/></g>
+<rect x="208" y="62" width="11" height="12" rx="3" fill="#d9a07a"/><circle cx="213.5" cy="52" r="12.5" fill="#d9a07a"/>
+<path d="M201 54 Q200 38 213.5 38 Q227 38 226 54 Q222 44 213.5 44 Q205 44 201 54Z" fill="#21140e"/><circle cx="200" cy="50" r="6" fill="#21140e"/><circle cx="196" cy="46" r="1.6" fill="#fff"/><circle cx="195" cy="51" r="1.6" fill="#fff"/><circle cx="197" cy="55" r="1.6" fill="#fff"/>
+<path d="M199 58 Q198 34 213.5 33 Q229 34 228 58" stroke="#d00000" stroke-width="4.5" fill="none"/><path d="M199 58 Q198 34 213.5 33 Q229 34 228 58" stroke="#e6b422" stroke-width="1.4" fill="none"/>
+<circle cx="213.5" cy="42" r="2.2" fill="#e6b422"/><circle cx="213.5" cy="47" r="1.5" fill="#c8102e"/><path d="M207 51.5 q2.5 -2 5 0 M215 51.5 q2.5 -2 5 0" stroke="#21140e" stroke-width="1.6" fill="none" stroke-linecap="round"/><ellipse cx="213.5" cy="58" rx="3.3" ry="3" fill="#7a1a1a"/><circle cx="219" cy="55" r="2.6" fill="none" stroke="#e6b422" stroke-width="1.2"/><circle cx="207" cy="55" r="2.6" fill="#ff6b81" opacity=".35"/>
+<path d="M30 190 Q28 156 62 150 L112 144 L152 106 Q162 98 178 98 L272 98 Q288 98 300 108 L334 144 L364 152 Q386 158 386 184 L386 206 Q386 214 378 214 L38 214 Q30 214 30 206Z" fill="#fbfbfd" stroke="#d6d8de" stroke-width="2"/>
+<path d="M188 99 H240" stroke="#3a3a44" stroke-width="3.5" stroke-linecap="round"/>
+<g><circle cx="262" cy="125" r="10.5" fill="#b97a52"/><path d="M251 123 Q251 109 262 109 Q273 109 273 123 Q262 118 251 123Z" fill="#e85d04"/><path d="M272 116 Q282 124 278 140" stroke="#e85d04" stroke-width="4" fill="none"/><rect x="250" y="135" width="26" height="12" rx="5" fill="#fff3d6"/><path d="M284 142 L296 126" stroke="#2b2b33" stroke-width="4" stroke-linecap="round"/></g>
+<path d="M120 144 L156 112 Q162 106 170 106 L200 106 L200 144Z" fill="#a9d8f0" opacity=".85"/><path d="M210 106 L268 106 Q280 106 288 114 L318 144 L210 144Z" fill="#cfeaf7" opacity=".22"/><path d="M226 108 L246 108 L222 142 L212 142Z" fill="#fff" opacity=".35"/>
+<path d="M205 146 V208" stroke="#d6d8de" stroke-width="2"/><rect x="176" y="156" width="16" height="4" rx="2" fill="#b8bcc4"/><rect x="236" y="156" width="16" height="4" rx="2" fill="#b8bcc4"/>
+<path d="M40 168 H382" stroke="#d4a017" stroke-width="3"/>${bead("M44 160 Q122 182 205 160 Q288 182 374 160")}
+<path d="M300 108 L366 154" stroke="#ff4d6d" stroke-width="4"/><g transform="translate(350 150)"><path d="M0 8 C-12 0 -10 -10 -3 -10 C0 -10 0 -7 0 -6 C0 -7 0 -10 3 -10 C10 -10 12 0 0 8Z" fill="#d00000"/><circle cx="-4" cy="-5" r="1.6" fill="#ff6b81"/><circle cx="4" cy="-4" r="1.6" fill="#ff6b81"/></g>
+<ellipse cx="379" cy="172" rx="6" ry="8" fill="#fff6c2"/><path d="M384 166 L430 152 L430 192 L384 178Z" fill="rgba(255,240,170,.35)"/><rect x="31" y="160" width="7" height="15" rx="2" fill="#e5383b"/><rect x="26" y="200" width="364" height="10" rx="5" fill="#c7cbd2"/>
+<g transform="translate(-2 182) rotate(-4)"><rect width="74" height="22" rx="5" fill="#fff" stroke="#d00000" stroke-width="2"/><text x="37" y="15.5" text-anchor="middle" font-family="Dancing Script, cursive" font-weight="700" font-size="13" fill="#d00000">Just Married</text></g>
+${wheel(112)}${wheel(316)}
+<g class="dust"><circle cx="70" cy="226" r="9" fill="#d9c6a5"/><circle cx="54" cy="222" r="7" fill="#e6d7bc"/><circle cx="40" cy="228" r="6" fill="#efe4cf"/></g></svg>`;
+const bub=(t,c)=>`<span class="vbub ${c}">${t}</span>`;
+let trail="";for(let i=0;i<24;i++)trail+=`<span class="vtr" style="left:${(i*3.2+2).toFixed(1)}vw;--w:${(.5+i*.27).toFixed(2)}s;--sw:${Math.round(rnd(-30,30))}px;--s:${Math.round(rnd(10,18))}px"><svg viewBox="0 0 24 22" aria-hidden="true">${i%3?`<path d="M12 0 Q22 9 12 22 Q2 9 12 0" fill="${i%2?"#e63946":"#ff8fa3"}"/>`:`<path d="${HEART}" fill="#ff4d6d"/>`}</svg></span>`;
+let bulbs="";for(let i=0;i<15;i++){const x=14+i*19.4,y=118-(Math.abs(i-7)*-0)+0;bulbs+=`<circle class="bulb" style="--i:${i}" cx="${x.toFixed(1)}" cy="${(30+Math.abs(7-i)*12.2).toFixed(1)}" r="4" fill="${["#ffd166","#ff4d6d","#4cc9f0","#06d6a0"][i%4]}"/>`}
+const house=`<svg class="vhome" viewBox="0 0 300 290" aria-hidden="true"><rect x="34" y="112" width="232" height="164" fill="#f6d7a7"/><rect x="34" y="112" width="232" height="10" fill="#e9c08a"/><path d="M8 120 L150 24 L292 120Z" fill="#b5442e"/><path d="M8 120 L150 24 L292 120" stroke="#8e2c1b" stroke-width="5" fill="none"/>${bulbs}
+<rect x="56" y="150" width="44" height="46" rx="4" fill="#ffd66b"/><path d="M56 150 h44 v10 q-22 10 -44 0z" fill="#c1121f"/><rect x="200" y="150" width="44" height="46" rx="4" fill="#ffd66b"/><path d="M200 150 h44 v10 q-22 10 -44 0z" fill="#c1121f"/>
+<rect x="112" y="148" width="76" height="18" rx="3" fill="#ffd166"/><text x="150" y="162" text-anchor="middle" font-family="Tiro Devanagari Marathi, serif" font-size="13" fill="#8e1b2a">स्वागतम्</text>
+<rect x="120" y="172" width="60" height="98" fill="#6b3410"/><rect class="vglow" x="126" y="178" width="48" height="92" fill="#ffe08a"/><g class="vdoorL"><rect x="126" y="178" width="24" height="92" fill="#a0522d"/><circle cx="145" cy="226" r="2.4" fill="#e6b422"/></g><g class="vdoorR"><rect x="150" y="178" width="24" height="92" fill="#8b4513"/><circle cx="155" cy="226" r="2.4" fill="#e6b422"/></g>
+${bead("M116 174 Q150 190 184 174",6)}${[124,136,148,160,172].map(x=>`<path d="M${x} 180 l4 9 l4 -9z" fill="#2e7d32"/>`).join("")}
+<rect x="110" y="270" width="80" height="9" rx="2" fill="#c9a27a"/><g transform="translate(150 262)"><path d="M-8 0 Q-11 -11 0 -13 Q11 -11 8 0Z" fill="#c9961a"/><ellipse cx="0" cy="-13" rx="6" ry="2.5" fill="#fff8e1"/></g>
+${[[96,268],[204,268]].map(([x,y])=>`<g transform="translate(${x} ${y})"><ellipse cx="0" cy="0" rx="9" ry="4" fill="#b5651d"/><path class="flame" d="M0 -14 Q5 -6 0 -2 Q-5 -6 0 -14Z" fill="#ffb703"/></g>`).join("")}
+<ellipse cx="150" cy="286" rx="46" ry="5" fill="#ff4d6d" opacity=".7"/><ellipse cx="150" cy="286" rx="32" ry="3.5" fill="#ffd166"/><ellipse cx="150" cy="286" rx="16" ry="2" fill="#4cc9f0"/></svg>`;
+let fw="";[[18,22,"#ffd166"],[40,14,"#ff4d6d"],[64,20,"#4cc9f0"],[84,12,"#06d6a0"],[30,30,"#f72585"]].forEach(([x,y,c],i)=>{fw+=`<span class="vfw" style="left:${x}%;top:${y}%;--i:${i};color:${c}"><svg viewBox="-30 -30 60 60" aria-hidden="true">${Array.from({length:12},(_,k)=>`<path d="M0 -10 V-26" transform="rotate(${k*30})" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><circle cx="0" cy="-28" r="1.8" fill="currentColor" transform="rotate(${k*30+15})"/>`).join("")}</svg></span>`});
+return `<div class="vsun"></div><svg class="vhills" viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120 Q120 60 240 110 T480 100 T740 90 T1000 110 V200 H0Z" fill="#7d4a8a" opacity=".55"/><path d="M0 150 Q160 100 320 140 T640 130 T1000 140 V200 H0Z" fill="#4f2d63" opacity=".75"/></svg>
+<span class="vcl" style="top:22%;--d:38s;--w:-6s"></span><span class="vcl" style="top:32%;--d:52s;--w:-30s;transform:scale(.7)"></span><span class="vcl" style="top:16%;--d:46s;--w:-18s;transform:scale(.55)"></span>
+${fw}<div class="vroad"></div>${house}<div class="vtrs">${trail}</div>
+<div class="vcarw"><div class="vbob">${car}<span class="vht" style="--w:.6s">&#9829;</span><span class="vht" style="--w:1.6s;left:62%">&#9829;</span><span class="vht" style="--w:2.6s;left:54%">&#9829;</span>${bub("Bye, everyone!","b1")}${bub("We're married!","b2")}${bub("Hello, new home!","b3")}</div></div>
+<div class="fx-t vt1"><p class="fx-mr">पाठवणी</p><h2>Vidaai</h2><p class="fx-w">${esc(when)}</p><p class="fx-l">On the way to her new home</p></div>
+<div class="fx-t vt2"><p class="fx-mr">गृहप्रवेश</p><h2>Welcome home</h2><p class="fx-w">${esc(when)}</p><p class="fx-l">A new home, a new beginning</p></div>`},
+
 love(){const n=Math.min(46,Math.max(26,Math.round(innerWidth/30)));let b="";const R=["#e0102f","#c8102e","#ff2d55","#b0122b","#ff4d6d","#d90429"];
 for(let i=0;i<n;i++){const s=26+Math.random()*46,c=R[i%R.length];
 b+=`<span class="lvb" style="--x:${(Math.random()*96).toFixed(1)}vw;--s:${s.toFixed(0)}px;--d:${(4.2+Math.random()*3).toFixed(2)}s;--w:${(Math.random()*1.6).toFixed(2)}s;--sw:${(Math.random()*60-30).toFixed(0)}px;--r:${(Math.random()*30-15).toFixed(0)}deg;--y:${(10+Math.random()*80).toFixed(0)}vh"><svg viewBox="0 0 24 40" aria-hidden="true"><path d="${HEART}" fill="${c}"/><path d="M8 8.5c1.2-1.4 2.6-1.8 3.6-1.6" stroke="#fff" stroke-opacity=".55" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M12 21q-1.5 5 0 9t0 9" stroke="${c}" stroke-opacity=".7" stroke-width=".8" fill="none"/></svg></span>`}
@@ -75,7 +119,7 @@ function closeScene(){if(!fxEl)return;clearTimeout(fxTimer);const el=fxEl;fxEl=n
 function playScene(kind){if(!FX[kind])return;if(fxEl){fxEl.remove();fxEl=null;clearTimeout(fxTimer)}
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;const e=fxEv(kind);
 const el=document.createElement("div");el.className=`fx fx-${kind}${kind==="love"?" love":""}${reduce?" calm":""}`;
-el.setAttribute("role","dialog");el.setAttribute("aria-label",kind==="love"?"I love you so much! So excited!":`${e.t||kind}: ${fxWhen(e)}`);
+el.setAttribute("role","dialog");el.setAttribute("aria-label",kind==="love"?"I love you so much! So excited!":kind==="vidaai"?"Vidaai: the bride rides to her new home":`${e.t||kind}: ${fxWhen(e)}`);
 el.innerHTML=FX[kind]()+`<p class="fx-hint">Click the countdown for the next event, or anywhere to close</p>`;
 document.body.appendChild(el);fxEl=el;el.addEventListener("click",closeScene);document.addEventListener("keydown",fxKey);
 fxTimer=setTimeout(closeScene,reduce?Math.min(FXD[kind],6000):FXD[kind])}

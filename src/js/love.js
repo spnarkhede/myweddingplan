@@ -6,9 +6,10 @@ const loveBtn=document.getElementById("loveTimer"),loveTxt=document.getElementBy
 const p2=n=>String(n).padStart(2,"0");
 const addMon=(d,n)=>{const x=new Date(d.getTime()),day=x.getDate();x.setDate(1);x.setMonth(x.getMonth()+n);x.setDate(Math.min(day,new Date(x.getFullYear(),x.getMonth()+1,0).getDate()));return x};
 const UNITS=[["all","Years to seconds"],["years","Total years"],["months","Total months"],["weeks","Total weeks"],["days","Total days"],["hours","Total hours"],["minutes","Total minutes"],["seconds","Total seconds"]];
-const SEQ=["engagement","haldi","sangeet","wedding","love"];
+const SEQ=["engagement","haldi","sangeet","wedding","vidaai","love"];
+const SUF={vidaai:" · Vidaai",love:" ♥"},NEXTN={vidaai:"the Vidaai",love:"a surprise"};
 let unitIx=0,seqIx=-1;try{unitIx=Math.max(0,UNITS.findIndex(u=>u[0]===localStorage.getItem("mwpTimerUnit")))}catch(e){}
-const curEvent=()=>seqIx<0||SEQ[seqIx]==="love"?"wedding":SEQ[seqIx];
+const curEvent=()=>seqIx<0||SUF[SEQ[seqIx]]?"wedding":SEQ[seqIx];const suf=()=>seqIx>=0&&SUF[SEQ[seqIx]]||"";
 function eventAt(id){if(!T||typeof evList!=="function")return null;const e=evList().find(x=>x.id===id);if(!e||!e.date)return null;
 const m=/^(\d{1,2}):(\d{2})$/.exec(e.time||"");const [y,mo,d]=e.date.split("-").map(Number);return new Date(y,mo-1,d,m?+m[1]:0,m?+m[2]:0,0)}
 function spanParts(a,b){let m=0;while(addMon(a,m+1)<=b)m++;let r=Math.floor((b-addMon(a,m))/1000);
@@ -23,10 +24,10 @@ case "hours":return nIN(Math.floor(ms/36e5))+" hours";case "minutes":return nIN(
 case "seconds":return nIN(Math.floor(ms/1e3))+" seconds";
 default:return `${p2(p.Y)}Y:${p2(p.M)}M:${p2(p.W)}W:${p2(p.D)}D:${p2(p.H)}H:${p2(p.m)}M:${p2(p.S)}S`}}
 function tickTimer(){if(document.hidden)return;const id=curEvent(),ev=(typeof evList==="function"&&T?evList():[]).find(x=>x.id===id)||{t:"Wedding"},at=eventAt(id),now=new Date();
-const name=ev.t||"Wedding",next=SEQ[(seqIx+1)%SEQ.length],nextName=next==="love"?"a surprise":((typeof evList==="function"&&T?evList():[]).find(x=>x.id===next)||{t:next}).t;
-if(!at){loveLab.textContent=name+(seqIx>=0&&SEQ[seqIx]==="love"?" ♥":"");loveTxt.textContent=id==="wedding"?(unitIx?"Add the wedding date":"00Y:00M:00W:00D:00H:00M:00S"):"Date to be set";
+const name=ev.t||"Wedding",next=SEQ[(seqIx+1)%SEQ.length],nextName=NEXTN[next]||((typeof evList==="function"&&T?evList():[]).find(x=>x.id===next)||{t:next}).t;
+if(!at){loveLab.textContent=name+suf();loveTxt.textContent=id==="wedding"?(unitIx?"Add the wedding date":"00Y:00M:00W:00D:00H:00M:00S"):"Date to be set";
 loveBtn.title=`${name}: add the date on the Overview. Click for ${nextName}.`;loveBtn.setAttribute("aria-label",loveBtn.title);return}
-const past=now>at;loveLab.textContent=(past?"since ":"to ")+name+(seqIx>=0&&SEQ[seqIx]==="love"?" ♥":"");
+const past=now>at;loveLab.textContent=(past?"since ":"to ")+name+suf();
 loveTxt.textContent=(past&&!unitIx?"+":"")+fmtSpan(past?at:now,past?now:at);
 loveBtn.title=`${past?"Time since":"Time to"} ${name}. Click for ${nextName}.`;
 if(!loveBtn.dataset.s||now.getSeconds()===0){loveBtn.dataset.s=1;loveBtn.setAttribute("aria-label",`${loveLab.textContent}: ${loveTxt.textContent}. Click for ${nextName}.`)}}
