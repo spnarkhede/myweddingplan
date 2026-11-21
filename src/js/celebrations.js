@@ -1,0 +1,81 @@
+/* ---------- event celebrations (engagement, haldi, sangeet, wedding, love) ---------- */
+// Full-screen scenes drawn with inline SVG and CSS animation. The header stays above
+// them, so the countdown can be clicked again to move to the next scene.
+const FXD={engagement:9000,haldi:9500,sangeet:10000,wedding:15500,love:6500};
+const rnd=(a,b)=>a+Math.random()*(b-a);
+
+/* a person, 120 x 260 user units, standing or seated */
+function fxPerson(o){
+const sk=o.skin||"#c68a5c",hair=o.hair||"#21140e",top=o.top,acc=o.acc||"#d4a017",low=o.low||"#f3e6c8";
+const bride=o.kind==="bride",sit=o.pose==="sit",hy=sit?182:168;let s="";
+if(bride)s+=`<path d="M35 60 Q33 106 44 124 L76 124 Q87 106 85 60Z" fill="${hair}"/>`;
+if(!sit&&!bride)s+=`<rect x="45" y="192" width="13" height="58" rx="5" fill="${low}"/><rect x="62" y="192" width="13" height="58" rx="5" fill="${low}"/><ellipse cx="50" cy="252" rx="10" ry="5" fill="#4a2616"/><ellipse cx="70" cy="252" rx="10" ry="5" fill="#4a2616"/>`;
+if(sit)s+=`<ellipse cx="60" cy="200" rx="50" ry="16" fill="${bride?top:low}"/>${bride?`<path d="M14 204 Q60 222 106 204" stroke="${acc}" stroke-width="5" fill="none"/>`:""}`;
+if(bride)s+=sit?`<path d="M38 100 Q60 92 82 100 L92 194 Q60 200 28 194Z" fill="${top}"/>`:`<path d="M38 100 Q60 92 82 100 L98 250 Q60 258 22 250Z" fill="${top}"/><path d="M24 244 Q60 252 96 244" stroke="${acc}" stroke-width="6" fill="none"/>`;
+else s+=`<path d="M36 100 Q60 92 84 100 L${sit?90:92} ${sit?194:204} Q60 ${sit?200:210} ${sit?30:28} ${sit?194:204}Z" fill="${top}"/><path d="M60 98 V${sit?160:150}" stroke="${acc}" stroke-width="2.5"/><circle cx="60" cy="110" r="1.8" fill="${acc}"/><circle cx="60" cy="122" r="1.8" fill="${acc}"/><circle cx="60" cy="134" r="1.8" fill="${acc}"/>`;
+if(bride)s+=`<path d="M77 97 L88 106 L46 ${sit?186:182} L35 ${sit?178:174}Z" fill="${acc}" opacity=".9"/>`;
+s+=`<rect x="53" y="80" width="14" height="18" rx="4" fill="${sk}"/>`;
+if(o.garland)s+=`<path d="M41 96 Q60 150 79 96" stroke="#ff8c00" stroke-width="7" stroke-dasharray=".1 8.5" stroke-linecap="round" fill="none"/>`;
+const arm=side=>{const sx=side==="L"?38:82,hx=side==="L"?(sit?36:22):(sit?84:98);const mx=sx+(hx-sx)*.38,my=104+(hy-104)*.38;
+return `<g class="arm a${side}" style="transform-origin:${sx}px 104px"><path d="M${sx} 104 L${hx} ${hy}" stroke="${bride?sk:top}" stroke-width="12" stroke-linecap="round"/>${bride?`<path d="M${sx} 104 L${mx} ${my}" stroke="${acc}" stroke-width="13" stroke-linecap="round"/><circle cx="${hx+(sx-hx)*.13}" cy="${hy-(hy-104)*.13}" r="7.5" fill="none" stroke="#c8102e" stroke-width="2.5"/>`:""}<circle cx="${hx}" cy="${hy+2}" r="7" fill="${sk}"/></g>`};
+s+=arm("L")+arm("R");
+s+=`<circle cx="60" cy="62" r="22" fill="${sk}"/>`;
+if(bride)s+=`<path d="M37 64 Q36 37 60 36 Q84 37 83 64 Q78 46 60 45 Q42 46 37 64Z" fill="${hair}"/><path d="M60 37 V45" stroke="#c8102e" stroke-width="2"/><circle cx="60" cy="52" r="1.9" fill="#c8102e"/><circle cx="38.5" cy="70" r="3" fill="#e6b422"/><circle cx="81.5" cy="70" r="3" fill="#e6b422"/><circle cx="84" cy="48" r="2" fill="#fff"/><circle cx="86" cy="54" r="2" fill="#fff"/><circle cx="86.5" cy="60" r="2" fill="#fff"/>`;
+else if(o.hat)s+=`<path d="M36 58 Q34 30 60 28 Q86 30 84 58 Q60 50 36 58Z" fill="${o.hat}"/><path d="M38 50 Q60 40 82 50" stroke="${acc}" stroke-width="3" fill="none"/><path d="M82 52 Q102 70 94 104 L87 102 Q93 72 78 58Z" fill="${o.hat}"/><path d="M60 32 Q66 18 60 10 Q56 20 60 32" fill="${acc}"/>`;
+else s+=`<path d="M38 62 Q36 38 60 37 Q84 38 82 62 Q78 48 60 47 Q42 48 38 62Z" fill="${hair}"/>`;
+if(o.veil)s+=`<path d="M33 72 Q33 29 60 28 Q87 29 87 72" stroke="${o.veil}" stroke-width="7" fill="none"/>`;
+s+=`<circle cx="52" cy="63" r="2.1" fill="#21140e"/><circle cx="68" cy="63" r="2.1" fill="#21140e"/><path d="M53 71 Q60 77 67 71" stroke="#7a2e1a" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="47" cy="69" r="3.5" fill="#ff6b81" opacity=".3"/><circle cx="73" cy="69" r="3.5" fill="#ff6b81" opacity=".3"/>`;
+if(o.haldi)s+=`<circle cx="46" cy="69" r="4.5" fill="#f5c400" opacity=".75"/><circle cx="74" cy="69" r="4.5" fill="#f5c400" opacity=".75"/><circle cx="60" cy="49" r="2.6" fill="#f5c400" opacity=".8"/>`;
+return s}
+const fxMarigold=(r,a="#ff8c00",b="#ffb703")=>`<svg viewBox="-12 -12 24 24" aria-hidden="true">${[0,1,2,3,4,5,6,7,8,9].map(i=>`<ellipse cx="0" cy="-6.5" rx="3.3" ry="5.6" fill="${i%2?a:b}" transform="rotate(${i*36})"/>`).join("")}${[0,1,2,3,4,5,6,7].map(i=>`<ellipse cx="0" cy="-3.6" rx="2.2" ry="3.4" fill="${i%2?b:a}" transform="rotate(${i*45+20})"/>`).join("")}<circle r="2.2" fill="#e85d04"/></svg>`;
+const fxRing=`<svg viewBox="0 0 60 70" aria-hidden="true"><defs><linearGradient id="fxg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1b8"/><stop offset=".45" stop-color="#e6b422"/><stop offset="1" stop-color="#a87b10"/></linearGradient><linearGradient id="fxd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#bfe9ff"/><stop offset="1" stop-color="#7cc8f0"/></linearGradient></defs><circle cx="30" cy="44" r="19" fill="none" stroke="url(#fxg)" stroke-width="6"/><path d="M19 22 L24 14 L36 14 L41 22 L30 34Z" fill="url(#fxd)" stroke="#fff" stroke-width="1.2"/><path d="M19 22 H41 M24 14 L30 22 L36 14 M30 22 V34" stroke="#9fd8f5" stroke-width=".8" fill="none"/><path class="tw" d="M48 8 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z" fill="#fff"/></svg>`;
+const fxWhen=e=>{if(!e||!e.date)return "Date to be set";const m=/^(\d{1,2}):(\d{2})$/.exec(e.time||"");let t="";if(m){const h=+m[1];t=` · ${h%12||12}:${m[2]} ${h<12?"am":"pm"}`}return fdl(e.date)+t};
+const fxEv=id=>(typeof evList==="function"?evList():[]).find(e=>e.id===id)||{t:id};
+const fxTitle=(id,line)=>{const e=fxEv(id);return `<div class="fx-t"><p class="fx-mr">${esc(e.mr||"")}</p><h2>${esc(e.t||"")}</h2><p class="fx-w">${esc(fxWhen(e))}</p>${line?`<p class="fx-l">${line}</p>`:""}</div>`};
+
+const FX={
+engagement(){const sk="#d9a07a",sk2="#a86b45";
+let pops="";const P=[[8,22],[88,20],[14,72],[84,68],[5,46],[93,44],[30,86],[68,88],[20,38],[78,38]];
+P.forEach(([x,y],i)=>{pops+=`<span class="fx-pop" style="left:${x}%;top:${y}%;--i:${i};--s:${Math.round(rnd(38,64))}px">${fxRing}</span>`});
+const burst=[0,45,90,135,180,225,270,315].map(a=>`<path d="M0 -14 V-26" transform="rotate(${a})" stroke="#ffd166" stroke-width="3" stroke-linecap="round"/>`).join("");
+return `<div class="fx-glow"></div>${pops}<svg class="fx-hands" viewBox="0 0 800 320" aria-hidden="true"><defs><linearGradient id="fxg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1b8"/><stop offset=".5" stop-color="#e6b422"/><stop offset="1" stop-color="#a87b10"/></linearGradient><linearGradient id="fxd2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#8fd3f4"/></linearGradient></defs>
+<g class="hb"><rect x="-700" y="140" width="912" height="44" rx="22" fill="${sk}"/>${[146,158,170,182].map((x,i)=>`<rect x="${x}" y="135" width="7" height="54" rx="3" fill="${i%2?"#e6b422":"#c8102e"}"/>`).join("")}<rect x="200" y="124" width="86" height="76" rx="26" fill="${sk}"/><rect x="236" y="104" width="58" height="18" rx="9" transform="rotate(-28 236 113)" fill="${sk}"/><rect x="262" y="124" width="92" height="17" rx="8.5" fill="${sk}"/><rect x="262" y="143" width="104" height="17" rx="8.5" fill="${sk}"/><rect x="262" y="162" width="96" height="17" rx="8.5" fill="${sk}"/><rect x="262" y="181" width="74" height="15" rx="7.5" fill="${sk}"/><g fill="none" stroke="#9a4a1c" stroke-width="1.6" opacity=".55"><circle cx="236" cy="160" r="12"/><circle cx="236" cy="160" r="5"/><path d="M216 140 q20 -8 40 0 M216 182 q20 8 40 0"/></g><g fill="#ffd5c2"><rect x="344" y="127" width="8" height="11" rx="4"/><rect x="356" y="146" width="8" height="11" rx="4"/><rect x="348" y="165" width="8" height="11" rx="4"/><rect x="326" y="183" width="8" height="10" rx="4"/></g></g>
+<g class="hg"><rect x="470" y="66" width="1000" height="72" rx="20" fill="#f3e6c8"/><rect x="464" y="62" width="22" height="80" rx="6" fill="#d4a017"/><rect x="380" y="62" width="100" height="84" rx="30" fill="${sk2}"/><path d="M392 108 L316 150" stroke="${sk2}" stroke-width="17" stroke-linecap="round"/><path d="M404 146 L316 186" stroke="${sk2}" stroke-width="18" stroke-linecap="round"/></g>
+<g class="ringHeld"><ellipse cx="300" cy="170" rx="8" ry="15" fill="none" stroke="url(#fxg2)" stroke-width="5"/><path d="M300 141 l9 9 -9 9 -9 -9z" fill="url(#fxd2)" stroke="#fff" stroke-width="1.4"/></g>
+<g class="ringOn"><rect x="295" y="157" width="10" height="26" rx="3" fill="url(#fxg2)"/><path d="M300 141 l10 10 -10 10 -10 -10z" fill="url(#fxd2)" stroke="#fff" stroke-width="1.5"/></g>
+<g transform="translate(300 152)"><g class="burst">${burst}</g></g></svg>${fxTitle("engagement","Two hands, one promise")}`},
+
+haldi(){let fl="";for(let i=0;i<46;i++)fl+=`<span class="fx-fl" style="left:${rnd(-2,98).toFixed(1)}vw;--s:${Math.round(rnd(18,40))}px;--d:${rnd(4,7.5).toFixed(2)}s;--w:-${rnd(0,7).toFixed(2)}s;--sw:${Math.round(rnd(-50,50))}px;--y:${Math.round(rnd(4,90))}vh">${fxMarigold(1,i%3?"#ff8c00":"#ffb703",i%3?"#ffb703":"#ffd60a")}</span>`;
+let strands="";for(let x=14;x<=306;x+=24){const n=3+((x/24)%3|0);for(let k=0;k<n;k++)strands+=`<circle cx="${x}" cy="${10+k*13}" r="6" fill="${k%2?"#ffb703":"#ff8c00"}"/>`}
+return `<svg class="fx-couple fx-haldi-c" viewBox="0 0 320 300" aria-hidden="true"><path d="M0 6 Q160 26 320 6" stroke="#2e7d32" stroke-width="3" fill="none"/>${strands}<rect x="34" y="260" width="120" height="14" rx="4" fill="#8b4513"/><rect x="166" y="260" width="120" height="14" rx="4" fill="#8b4513"/><g transform="translate(34 46)">${fxPerson({kind:"bride",pose:"sit",top:"#ffd60a",acc:"#2e9e44",skin:"#d9a07a",haldi:1})}</g><g transform="translate(166 46)">${fxPerson({kind:"groom",pose:"sit",top:"#ffcf33",acc:"#e85d04",low:"#fff3c4",skin:"#b97a52",haldi:1})}</g><ellipse cx="160" cy="288" rx="20" ry="7" fill="#c9961a"/><ellipse cx="160" cy="285" rx="15" ry="4" fill="#f5c400"/></svg><div class="fx-fls">${fl}</div>${fxTitle("haldi","Turmeric, laughter and marigolds")}`},
+
+sangeet(){const C=[["#e63946","#ffd166"],["#7b2cbf","#ffd166"],["#118ab2","#ffb703"],["#f72585","#4cc9f0"],["#2a9d8f","#ffd166"],["#ff7f11","#7b2cbf"],["#d00000","#ffba08"],["#3a86ff","#ff006e"],["#06d6a0","#f72585"],["#fb5607","#3a86ff"]];
+const SK=["#c68a5c","#a86b45","#d9a07a","#8d5a3b","#e0b08a"];
+const spots=[[3,52,-70,0],[16,58,0,70],[29,54,70,0],[42,60,-60,-70],[55,55,0,70],[68,60,70,-60],[81,53,-70,0],[10,30,-60,-60],[48,28,0,-70],[86,30,70,-60]];
+let d="";spots.forEach(([l,b,fx,fy],i)=>{const [c1,c2]=C[i%C.length];const back=b<40;d+=`<div class="dnc${back?" rear":""}" style="left:${l}%;bottom:${b<40?36:4}vh;--fx:${fx}vw;--fy:${-fy}vh;--del:${(i*.18).toFixed(2)}s;--bd:${rnd(.45,.7).toFixed(2)}s;--ad:${rnd(.35,.6).toFixed(2)}s"><svg viewBox="0 0 120 260" aria-hidden="true">${fxPerson({kind:i%2?"bride":"groom",top:c1,acc:c2,low:i%3?"#f3e6c8":"#22223b",skin:SK[i%SK.length],hair:i%4?"#21140e":"#3b2416"})}</svg></div>`});
+let notes="";for(let i=0;i<16;i++)notes+=`<span class="fx-note" style="left:${rnd(2,96).toFixed(1)}vw;--d:${rnd(3,5).toFixed(2)}s;--w:-${rnd(0,5).toFixed(2)}s;color:${C[i%C.length][1]}">${"♪♫♬♩"[i%4]}</span>`;
+return `<div class="beam" style="left:8%;--c:rgba(255,0,110,.35);--bd:3.2s"></div><div class="beam" style="left:40%;--c:rgba(58,134,255,.35);--bd:2.6s"></div><div class="beam" style="left:72%;--c:rgba(255,190,11,.35);--bd:3.6s"></div>${notes}${d}${fxTitle("sangeet","Music, dance and the whole family")}`},
+
+wedding(){const V=["We will nourish each other, in every season.","We will grow strong together, in body, mind and spirit.","We will build our home with honesty and hard work.","We will share every joy and carry every sorrow.","We will care for our families and the little ones to come.","We will walk through life side by side, patient and kind.","We will stay friends and partners, forever."];
+let petals="";for(let i=0;i<22;i++)petals+=`<span class="fx-fl petal" style="left:${rnd(0,98).toFixed(1)}vw;--s:${Math.round(rnd(10,18))}px;--d:${rnd(5,8).toFixed(2)}s;--w:-${rnd(0,8).toFixed(2)}s;--sw:${Math.round(rnd(-40,40))}px;--y:${Math.round(rnd(4,90))}vh"><svg viewBox="0 0 10 14" aria-hidden="true"><path d="M5 0 Q10 6 5 14 Q0 6 5 0" fill="${i%2?"#e63946":"#ff8fa3"}"/></svg></span>`;
+let toran="";for(let i=0;i<=16;i++){const t=i/16,x=20+360*t,y=60-70*4*t*(1-t)+0;toran+=`<circle cx="${x.toFixed(1)}" cy="${(y+8).toFixed(1)}" r="6" fill="${i%2?"#ffb703":"#ff8c00"}"/>`}
+const gar=`<path d="M-20 -2 Q0 56 20 -2" stroke="#ff8c00" stroke-width="8" stroke-dasharray=".1 9" stroke-linecap="round" fill="none"/><path d="M-20 -2 Q0 56 20 -2" stroke="#fff3c4" stroke-width="5" stroke-dasharray=".1 9" stroke-dashoffset="4.5" stroke-linecap="round" fill="none"/><circle cx="0" cy="27" r="5" fill="#d00000"/>`;
+return `<div class="fx-fls">${petals}</div><div class="fx-wed">${fxTitle("wedding","")}<svg class="fx-couple fx-wed-c" viewBox="0 0 400 300" aria-hidden="true"><rect x="18" y="50" width="12" height="250" rx="3" fill="#8e1b2a"/><rect x="370" y="50" width="12" height="250" rx="3" fill="#8e1b2a"/><path d="M20 60 Q200 -14 380 60" stroke="#d4a017" stroke-width="6" fill="none"/>${toran}<g transform="translate(70 34)" class="pB">${fxPerson({kind:"bride",top:"#c1121f",acc:"#e6b422",skin:"#d9a07a",veil:"#e6b422"})}</g><g transform="translate(210 34)" class="pG">${fxPerson({kind:"groom",top:"#fff3d6",acc:"#d4a017",low:"#fffaf0",hat:"#e85d04",skin:"#b97a52"})}</g><g transform="translate(270 128)"><g class="g1">${gar}</g></g><g transform="translate(130 128)"><g class="g2">${gar}</g></g></svg><ol class="vows">${V.map((v,i)=>`<li style="--i:${i}"><b>${i+1}</b>${esc(v)}</li>`).join("")}</ol></div>`},
+
+love(){const n=Math.min(46,Math.max(26,Math.round(innerWidth/30)));let b="";const R=["#e0102f","#c8102e","#ff2d55","#b0122b","#ff4d6d","#d90429"];
+for(let i=0;i<n;i++){const s=26+Math.random()*46,c=R[i%R.length];
+b+=`<span class="lvb" style="--x:${(Math.random()*96).toFixed(1)}vw;--s:${s.toFixed(0)}px;--d:${(4.2+Math.random()*3).toFixed(2)}s;--w:${(Math.random()*1.6).toFixed(2)}s;--sw:${(Math.random()*60-30).toFixed(0)}px;--r:${(Math.random()*30-15).toFixed(0)}deg;--y:${(10+Math.random()*80).toFixed(0)}vh"><svg viewBox="0 0 24 40" aria-hidden="true"><path d="${HEART}" fill="${c}"/><path d="M8 8.5c1.2-1.4 2.6-1.8 3.6-1.6" stroke="#fff" stroke-opacity=".55" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M12 21q-1.5 5 0 9t0 9" stroke="${c}" stroke-opacity=".7" stroke-width=".8" fill="none"/></svg></span>`}
+return `<div class="lbs">${b}</div><div class="lmsg"><svg class="lheart" viewBox="0.6 3.9 22.8 17.4" preserveAspectRatio="none" aria-hidden="true"><path d="${HEART}" fill="#d90429"/></svg><div class="ltx"><p class="l1">I Love you so much!</p><p class="l2">So Excited !</p></div></div>`}
+};
+const HEART="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 2.8 4.5 6.5 4.5c2.2 0 3.6 1.3 4.5 2.7.9-1.4 2.3-2.7 4.5-2.7 3.7 0 5.6 3.8 4.1 7.2C19.5 16.4 12 21 12 21z";
+
+let fxEl=null,fxTimer=null;
+const fxKey=e=>{if(e.key==="Escape"){e.preventDefault();closeScene()}};
+function closeScene(){if(!fxEl)return;clearTimeout(fxTimer);const el=fxEl;fxEl=null;el.classList.add("out");setTimeout(()=>el.remove(),420);document.removeEventListener("keydown",fxKey)}
+function playScene(kind){if(!FX[kind])return;if(fxEl){fxEl.remove();fxEl=null;clearTimeout(fxTimer)}
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;const e=fxEv(kind);
+const el=document.createElement("div");el.className=`fx fx-${kind}${kind==="love"?" love":""}${reduce?" calm":""}`;
+el.setAttribute("role","dialog");el.setAttribute("aria-label",kind==="love"?"I love you so much! So excited!":`${e.t||kind}: ${fxWhen(e)}`);
+el.innerHTML=FX[kind]()+`<p class="fx-hint">Click the countdown for the next event, or anywhere to close</p>`;
+document.body.appendChild(el);fxEl=el;el.addEventListener("click",closeScene);document.addEventListener("keydown",fxKey);
+fxTimer=setTimeout(closeScene,reduce?Math.min(FXD[kind],6000):FXD[kind])}

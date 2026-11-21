@@ -1,40 +1,40 @@
-/* ---------- wedding countdown and celebration ---------- */
-// Counts down to the wedding date plus the wedding start time (shared with the
-// invitation maker), counts up once it has passed. A click releases heart balloons.
-const loveBtn=document.getElementById("loveTimer"),loveTxt=document.getElementById("tmTxt");
+/* ---------- event countdown in the header ---------- */
+// Counts down to the selected event (wedding by default) using the dates and times
+// shared with the invitation maker. The round button switches units; clicking the
+// countdown moves to the next event and plays its scene (see celebrations.js).
+const loveBtn=document.getElementById("loveTimer"),loveTxt=document.getElementById("tmTxt"),loveLab=document.getElementById("tmLab"),unitBtn=document.getElementById("tmUnit");
 const p2=n=>String(n).padStart(2,"0");
 const addMon=(d,n)=>{const x=new Date(d.getTime()),day=x.getDate();x.setDate(1);x.setMonth(x.getMonth()+n);x.setDate(Math.min(day,new Date(x.getFullYear(),x.getMonth()+1,0).getDate()));return x};
-function weddingAt(){if(!T||!T.project||!T.project.wedding)return null;
-const w=(S.inv&&S.inv.ev&&S.inv.ev.wedding)||{},def=(T.events||[]).find(e=>e.id==="wedding")||{};
-const date=w.date||T.project.wedding,m=/^(\d{1,2}):(\d{2})$/.exec(w.time||def.time||"");
-const [y,mo,d]=date.split("-").map(Number);return new Date(y,mo-1,d,m?+m[1]:0,m?+m[2]:0,0)}
+const UNITS=[["all","Years to seconds"],["years","Total years"],["months","Total months"],["weeks","Total weeks"],["days","Total days"],["hours","Total hours"],["minutes","Total minutes"],["seconds","Total seconds"]];
+const SEQ=["engagement","haldi","sangeet","wedding","love"];
+let unitIx=0,seqIx=-1;try{unitIx=Math.max(0,UNITS.findIndex(u=>u[0]===localStorage.getItem("mwpTimerUnit")))}catch(e){}
+const curEvent=()=>seqIx<0||SEQ[seqIx]==="love"?"wedding":SEQ[seqIx];
+function eventAt(id){if(!T||typeof evList!=="function")return null;const e=evList().find(x=>x.id===id);if(!e||!e.date)return null;
+const m=/^(\d{1,2}):(\d{2})$/.exec(e.time||"");const [y,mo,d]=e.date.split("-").map(Number);return new Date(y,mo-1,d,m?+m[1]:0,m?+m[2]:0,0)}
 function spanParts(a,b){let m=0;while(addMon(a,m+1)<=b)m++;let r=Math.floor((b-addMon(a,m))/1000);
 const dd=Math.floor(r/86400);r-=dd*86400;const h=Math.floor(r/3600);r-=h*3600;const mi=Math.floor(r/60);
-return {Y:Math.floor(m/12),M:m%12,W:Math.floor(dd/7),D:dd%7,H:h,m:mi,S:r-mi*60}}
-function tickTimer(){if(document.hidden)return;const at=weddingAt(),now=new Date();
-if(!at){loveTxt.textContent="00Y:00M:00W:00D:00H:00M:00S";loveBtn.title="Add the wedding date on the Overview to start the countdown. Click to celebrate.";loveBtn.setAttribute("aria-label","Wedding countdown, no date set yet. Click to celebrate.");return}
-const past=now>at,p=past?spanParts(at,now):spanParts(now,at);
-loveTxt.textContent=`${past?"+":""}${p2(p.Y)}Y:${p2(p.M)}M:${p2(p.W)}W:${p2(p.D)}D:${p2(p.H)}H:${p2(p.m)}M:${p2(p.S)}S`;
-const words=`${p.Y} years, ${p.M} months, ${p.W} weeks, ${p.D} days, ${p.H} hours, ${p.m} minutes`;
-loveBtn.title=(past?"Time since the wedding":"Time to the wedding")+". Click to celebrate.";
-if(p.S===0||!loveBtn.dataset.lab){loveBtn.dataset.lab=1;loveBtn.setAttribute("aria-label",(past?"Married for ":"Wedding in ")+words+". Click to celebrate.")}}
-tickTimer();setInterval(tickTimer,1000);document.addEventListener("visibilitychange",tickTimer);
+return {mo:m,rest:b-addMon(a,m),Y:Math.floor(m/12),M:m%12,W:Math.floor(dd/7),D:dd%7,H:h,m:mi,S:r-mi*60}}
+const nIN=(v,d=0)=>v.toLocaleString("en-IN",{minimumFractionDigits:d,maximumFractionDigits:d});
+function fmtSpan(a,b){const ms=b-a,p=spanParts(a,b),u=UNITS[unitIx][0];
+switch(u){case "years":return nIN(ms/(365.2425*864e5),4)+" years";
+case "months":return nIN(p.mo+p.rest/(30.436875*864e5),3)+" months";
+case "weeks":return nIN(ms/(7*864e5),2)+" weeks";case "days":return nIN(ms/864e5,2)+" days";
+case "hours":return nIN(Math.floor(ms/36e5))+" hours";case "minutes":return nIN(Math.floor(ms/6e4))+" minutes";
+case "seconds":return nIN(Math.floor(ms/1e3))+" seconds";
+default:return `${p2(p.Y)}Y:${p2(p.M)}M:${p2(p.W)}W:${p2(p.D)}D:${p2(p.H)}H:${p2(p.m)}M:${p2(p.S)}S`}}
+function tickTimer(){if(document.hidden)return;const id=curEvent(),ev=(typeof evList==="function"&&T?evList():[]).find(x=>x.id===id)||{t:"Wedding"},at=eventAt(id),now=new Date();
+const name=ev.t||"Wedding",next=SEQ[(seqIx+1)%SEQ.length],nextName=next==="love"?"a surprise":((typeof evList==="function"&&T?evList():[]).find(x=>x.id===next)||{t:next}).t;
+if(!at){loveLab.textContent=name+(seqIx>=0&&SEQ[seqIx]==="love"?" ♥":"");loveTxt.textContent=id==="wedding"?(unitIx?"Add the wedding date":"00Y:00M:00W:00D:00H:00M:00S"):"Date to be set";
+loveBtn.title=`${name}: add the date on the Overview. Click for ${nextName}.`;loveBtn.setAttribute("aria-label",loveBtn.title);return}
+const past=now>at;loveLab.textContent=(past?"since ":"to ")+name+(seqIx>=0&&SEQ[seqIx]==="love"?" ♥":"");
+loveTxt.textContent=(past&&!unitIx?"+":"")+fmtSpan(past?at:now,past?now:at);
+loveBtn.title=`${past?"Time since":"Time to"} ${name}. Click for ${nextName}.`;
+if(!loveBtn.dataset.s||now.getSeconds()===0){loveBtn.dataset.s=1;loveBtn.setAttribute("aria-label",`${loveLab.textContent}: ${loveTxt.textContent}. Click for ${nextName}.`)}}
+function setUnitLabel(){const [k,l]=UNITS[unitIx],n=UNITS[(unitIx+1)%UNITS.length][1];unitBtn.title=`Showing: ${l}. Click for ${n.toLowerCase()}.`;unitBtn.setAttribute("aria-label",unitBtn.title)}
+unitBtn.addEventListener("click",e=>{e.stopPropagation();unitIx=(unitIx+1)%UNITS.length;try{localStorage.setItem("mwpTimerUnit",UNITS[unitIx][0])}catch(x){}
+unitBtn.classList.remove("spin");void unitBtn.offsetWidth;unitBtn.classList.add("spin");setUnitLabel();tickTimer()});
+loveBtn.addEventListener("click",e=>{e.stopPropagation();seqIx=(seqIx+1)%SEQ.length;playScene(SEQ[seqIx]);loveBtn.dataset.s="";tickTimer()});
+setUnitLabel();tickTimer();setInterval(tickTimer,1000);document.addEventListener("visibilitychange",tickTimer);
 
-const HEART="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 2.8 4.5 6.5 4.5c2.2 0 3.6 1.3 4.5 2.7.9-1.4 2.3-2.7 4.5-2.7 3.7 0 5.6 3.8 4.1 7.2C19.5 16.4 12 21 12 21z";
-const REDS=["#e0102f","#c8102e","#ff2d55","#b0122b","#ff4d6d","#d90429"];
-let loveTimerId=null,loveEl=null,loveBack=null;
-function closeLove(){if(!loveEl)return;clearTimeout(loveTimerId);const el=loveEl;loveEl=null;el.classList.add("out");setTimeout(()=>el.remove(),450);document.removeEventListener("keydown",loveKey);if(loveBack&&loveBack.focus)loveBack.focus({preventScroll:true})}
-const loveKey=e=>{if(e.key==="Escape"||e.key==="Enter"||e.key===" "){e.preventDefault();closeLove()}};
-function celebrate(){if(loveEl){loveEl.remove();loveEl=null;clearTimeout(loveTimerId)}
-loveBack=document.activeElement;const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
-const el=document.createElement("div");el.className="love"+(reduce?" calm":"");el.setAttribute("role","dialog");el.setAttribute("aria-modal","true");el.setAttribute("aria-label","I love you so much! So excited!");el.tabIndex=-1;
-const n=reduce?14:Math.min(46,Math.max(26,Math.round(innerWidth/30)));let b="";
-for(let i=0;i<n;i++){const s=26+Math.random()*46,c=REDS[i%REDS.length];
-b+=`<span class="lvb" style="--x:${(Math.random()*96).toFixed(1)}vw;--s:${s.toFixed(0)}px;--d:${(4.2+Math.random()*3).toFixed(2)}s;--w:${(Math.random()*1.6).toFixed(2)}s;--sw:${(Math.random()*60-30).toFixed(0)}px;--r:${(Math.random()*30-15).toFixed(0)}deg;--y:${(10+Math.random()*80).toFixed(0)}vh"><svg viewBox="0 0 24 40" aria-hidden="true"><path d="${HEART}" fill="${c}"/><path d="M8 8.5c1.2-1.4 2.6-1.8 3.6-1.6" stroke="#fff" stroke-opacity=".55" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M12 21q-1.5 5 0 9t0 9" stroke="${c}" stroke-opacity=".7" stroke-width=".8" fill="none"/></svg></span>`}
-el.innerHTML=`<div class="lbs">${b}</div><div class="lmsg"><svg class="lheart" viewBox="0.6 3.9 22.8 17.4" preserveAspectRatio="none" aria-hidden="true"><path d="${HEART}" fill="#d90429"/></svg><div class="ltx"><p class="l1">I Love you so much!</p><p class="l2">So Excited !</p></div></div>`;
-document.body.appendChild(el);loveEl=el;el.addEventListener("click",closeLove);document.addEventListener("keydown",loveKey);el.focus({preventScroll:true});
-loveTimerId=setTimeout(closeLove,reduce?4500:6500)}
-loveBtn.addEventListener("click",celebrate);
-
-/* header height drives the sticky offset of the certificate tabs */
+/* header height drives the sticky offset of the certificate tabs and the scenes */
 (()=>{const ab=document.querySelector(".ab");if(!ab)return;const set=()=>document.documentElement.style.setProperty("--abh",ab.offsetHeight+"px");set();if(window.ResizeObserver)new ResizeObserver(set).observe(ab);else addEventListener("resize",set)})();
