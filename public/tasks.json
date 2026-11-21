@@ -1,6 +1,6 @@
 {
  "project": {
-  "title": "Our wedding project",
+  "title": "My Wedding Plan",
   "sub": "",
   "wedding": "",
   "fly": "W-62",
@@ -15,6 +15,7 @@
   },
   {
    "d": "W-62",
+   "role": "fly",
    "l": "Fly to India",
    "key": 1
   },
@@ -35,6 +36,7 @@
   },
   {
    "d": "W+0",
+   "role": "wedding",
    "l": "Wedding day",
    "key": 1
   },
@@ -51,6 +53,7 @@
   },
   {
    "d": "W+13",
+   "role": "back",
    "l": "Fly back to Germany",
    "key": 1
   },

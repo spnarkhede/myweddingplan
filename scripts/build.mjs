@@ -7,7 +7,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const src = (p) => readFileSync(join(root, "src", p), "utf8");
 
 // Order matters: modules share one script scope and run top to bottom.
-export const MODULES = ["core.js", "load.js", "project-dates.js", "storage.js", "helpers.js", "views.js", "name-change.js", "visa-letters.js", "router.js", "events.js", "settings-backup.js", "documents.js", "invitations.js"];
+export const MODULES = ["core.js", "load.js", "project-dates.js", "storage.js", "helpers.js", "views.js", "plan.js", "name-change.js", "visa-letters.js", "router.js", "events.js", "settings-backup.js", "documents.js", "invitations.js", "love.js"];
 
 export function build() {
   const appJs = MODULES.map((m) => src("js/" + m)).join("\n");

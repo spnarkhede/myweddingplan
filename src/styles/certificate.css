@@ -11,7 +11,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Mukta,system-
 .wrap{max-width:1240px;margin:0 auto;padding:clamp(20px,3vw,40px) max(5vw,16px)}
 h1{font-size:clamp(30px,4.6vw,46px);line-height:1.05;margin:0 0 6px;font-weight:800;text-wrap:balance}
 header p{margin:0;max-width:64ch;opacity:.92}
-nav.tabs{position:sticky;top:56px;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav.tabs{position:sticky;top:var(--abh,56px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
 nav.tabs .in{max-width:1240px;margin:0 auto;padding:0 max(5vw,16px);display:flex;gap:4px;overflow-x:auto;align-items:stretch}
 nav.tabs button{flex:none;font:600 16px Mukta,sans-serif;color:var(--mute);background:none;border:0;border-bottom:3px solid transparent;padding:12px 10px;min-height:48px;cursor:pointer}
 nav.tabs button[aria-selected=true]{color:var(--mar);border-color:var(--mar)}

@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wedding Project Planner</title>
+<title>My Wedding Plan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Mukta:wght@400;600;800&family=Noto+Serif:wght@400;700&family=Noto+Serif+Devanagari:wght@400;700&family=Tiro+Devanagari+Marathi&family=Yatra+One&family=Cinzel:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Mukta:wght@400;600;800&family=Noto+Serif:wght@400;700&family=Noto+Serif+Devanagari:wght@400;700&family=Tiro+Devanagari+Marathi&family=Yatra+One&family=Cinzel:wght@600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 <style>
 /*MAKER_CSS*/
 /*SHELL_CSS*/
@@ -14,7 +14,7 @@
 <body>
 <header class="ab">
 <div class="ab-in">
-<a class="ab-brand" href="#home"><span class="ab-om">ॐ</span><span>Wedding project</span></a>
+<a class="ab-brand" href="#home"><span class="ab-om">ॐ</span><span>My Wedding Plan</span></a>
 <nav class="ab-nav" aria-label="Sections">
 <a href="#home" data-v="home">Overview</a>
 <a href="#cert" data-v="cert">Certificate</a>
@@ -23,6 +23,7 @@
 <a href="#letters" data-v="letters">Visa letters</a>
 <a href="#name" data-v="name">Name change</a>
 </nav>
+<button class="ab-tm" id="loveTimer" type="button" aria-label="Wedding countdown. Click to celebrate."><span class="ab-tmh" aria-hidden="true">&#9829;</span><span id="tmTxt">00Y:00M:00W:00D:00H:00M:00S</span></button>
 <span class="ab-save" id="saveChip">Loading</span>
 </div>
 </header>
@@ -33,10 +34,10 @@
 <h1 class="hero-t" id="heroTitle"></h1>
 <div class="hero-stats" id="stats"></div>
 <div class="meter2"><div class="bar2"><i id="allFill"></i></div><b id="allCount"></b></div>
-<details class="pset"><summary>Edit project details</summary><form id="pf" class="fg" autocomplete="off"><label class="f w">Project title<input data-p="title" placeholder="Our wedding, city, date"></label><label class="f">Wedding date<input data-p="wedding" type="date"></label><label class="f">Travel out<input data-p="fly" type="date"></label><label class="f">Travel back<input data-p="back" type="date"></label></form><p class="hint" style="color:#fff;opacity:.85">Due dates move with the wedding date.</p></details>
+<details class="pset"><summary>Edit project details</summary><form id="pf" class="fg" autocomplete="off"><label class="f w">Project title<input data-p="title" placeholder="Our wedding, city, date"></label><label class="f">Wedding date<input data-p="wedding" type="date"></label><label class="f">Travel out<input data-p="fly" type="date"></label><label class="f">Travel back<input data-p="back" type="date"></label></form><div id="pfEv" class="pfev"></div><p class="hint" style="color:#fff;opacity:.85">Due dates move with the wedding date. Event dates and times also fill the wedding invitations.</p></details>
 </div></section>
 <section class="ap-wrap tl-band">
-<h2 class="ap-h2">Timeline</h2>
+<h2 class="ap-h2 tlh">Timeline <a href="#home" data-jump-plan>Day-by-day plan</a></h2>
 <ol class="tl2" id="timeline"></ol>
 </section>
 <section class="ap-wrap two">
@@ -48,6 +49,11 @@
 <h2 class="ap-h2">Workstreams</h2>
 <div class="wsg" id="wsGrid"></div>
 </div>
+</section>
+<section class="ap-wrap plan-band" id="planSec">
+<h2 class="ap-h2">Detailed plan</h2>
+<p class="muted" style="margin-top:-6px">Built from your wedding date, travel dates, event times and every dated task. Tick tasks here or in each workstream.</p>
+<div id="plan"></div>
 </section>
 </main>
 
@@ -149,7 +155,7 @@
 </div>
 </main>
 
-<div class="ap-wrap foot2"><p class="muted" id="footNote"></p><div class="acts" style="margin-top:4px"><button class="btn" type="button" id="bExp">Export backup</button><label class="btn" style="display:inline-flex;align-items:center">Import backup<input type="file" id="bImp" accept="application/json,.json" hidden></label><span class="muted" id="bMsg"></span></div></div>
+<div class="ap-wrap foot2"><p class="muted" id="footNote"></p><div class="acts" style="margin-top:4px"><button class="btn" type="button" id="bExp">Export backup</button><label class="btn" style="display:inline-flex;align-items:center">Import backup<input type="file" id="bImp" accept="application/json,.json" hidden></label><span class="muted" id="bMsg"></span></div><p class="pby">Powered by: Developer Shubham Narkhede</p></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>

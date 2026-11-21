@@ -1,7 +1,7 @@
 {
   "name": "myweddingplan",
   "version": "1.0.0",
-  "description": "Wedding project planner: checklists, documents, priest certificate, invitations and visa letters. Runs in the browser.",
+  "description": "My Wedding Plan: checklists, documents, priest certificate, invitations and visa letters. Runs in the browser.",
   "private": true,
   "type": "module",
   "scripts": {

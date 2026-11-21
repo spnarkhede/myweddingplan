@@ -1,6 +1,6 @@
 # My Wedding Plan
 
-A wedding project planner for an Indian Hindu wedding followed by a move to Germany. It runs entirely in the browser: no server, no account, no tracking.
+My Wedding Plan is a planner for an Indian Hindu wedding followed by a move to Germany. It runs entirely in the browser: no server, no account, no tracking.
 
 **Live site:** https://spnarkhede.github.io/myweddingplan/
 

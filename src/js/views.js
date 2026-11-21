@@ -2,7 +2,7 @@
 function home(){
 const P=T.project;const all=allItems();const pr=prog(all);
 const stat=(d,l)=>{if(!d)return `<div class="st"><b>?</b><span>Set the date for ${l} below</span></div>`;const n=days(d);return `<div class="st"><b>${n>0?n:n===0?"Today":"Done"}</b><span>${n>0?"days to ":""}${l} (${fd(d)})</span></div>`};
-document.getElementById("heroTitle").textContent=P.title||"Our wedding project";document.getElementById("heroSub").textContent=(P.fly&&P.back?`${fd(P.fly)} to ${fd(P.back)}`:"")+(P.sub?(P.fly&&P.back?", ":"")+P.sub:"");
+document.getElementById("heroTitle").textContent=P.title||"My Wedding Plan";document.getElementById("heroSub").textContent=(P.fly&&P.back?`${fd(P.fly)} to ${fd(P.back)}`:"")+(P.sub?(P.fly&&P.back?", ":"")+P.sub:"");
 document.querySelectorAll("#pf [data-p]").forEach(i=>{if(document.activeElement!==i)i.value=(S.project&&S.project[i.dataset.p])||(i.dataset.p==="title"?"":P[i.dataset.p])||""});
 document.getElementById("stats").innerHTML=stat(P.fly,"your flight")+stat(P.wedding,"the wedding")+stat(P.back,"flying back");
 document.getElementById("allFill").style.width=pr.p+"%";
@@ -11,6 +11,7 @@ document.getElementById("timeline").innerHTML=T.timeline.filter(e=>e.d).map(e=>{
 const next=all.filter(i=>!isDone(i)&&i.due).sort((a,b)=>a.due<b.due?-1:1).slice(0,8);
 document.getElementById("nextUp").innerHTML=next.length?next.map(i=>itemRow(i,{ws:1})).join(""):`<li class="empty">Nothing due. Well done.</li>`;
 document.getElementById("wsGrid").innerHTML=T.workstreams.map(w=>{const p=prog(wsItems(w));return `<a class="wsc" href="#ws-${w.id}" style="--c:${w.color}"><h3>${esc(w.title)}</h3><div class="m">${esc(w.place)} &middot; ${esc(w.window)}</div><div class="pb"><i style="width:${p.p}%"></i></div><div class="n">${p.n?`${p.d} of ${p.n} done`:"No tasks yet"}</div></a>`}).join("");
+renderEvForm();renderPlan();
 }
 function wsView(id){const w=wsOf(id);const el=document.getElementById("v-ws");if(!w){location.hash="home";return}
 const p=prog(wsItems(w));const mine=S.custom[w.id]||[];
