@@ -35,3 +35,6 @@ el.innerHTML=`<div class="lbs">${b}</div><div class="lmsg"><svg class="lheart" v
 document.body.appendChild(el);loveEl=el;el.addEventListener("click",closeLove);document.addEventListener("keydown",loveKey);el.focus({preventScroll:true});
 loveTimerId=setTimeout(closeLove,reduce?4500:6500)}
 loveBtn.addEventListener("click",celebrate);
+
+/* header height drives the sticky offset of the certificate tabs */
+(()=>{const ab=document.querySelector(".ab");if(!ab)return;const set=()=>document.documentElement.style.setProperty("--abh",ab.offsetHeight+"px");set();if(window.ResizeObserver)new ResizeObserver(set).observe(ab);else addEventListener("resize",set)})();
