@@ -295,3 +295,93 @@ ul.ck2 input:checked~.tx .tt{color:var(--mute);text-decoration:line-through}
 /* header: phones */
 @media(max-width:700px){.ab-brand span:last-child{display:none}.ab-in{gap:8px}.ab-tm{font-size:11.5px;padding:0 9px;gap:4px}.ab-nav{gap:2px}.ab-nav a{padding:0 10px;font-size:15px}}
 @media(max-width:380px){.ab-tm{font-size:10.5px;padding:0 7px}.ab-tmh{display:none}.ab-save{display:none}}
+/* header countdown: event label and unit switch */
+.ab-tmg{flex:none;display:flex;align-items:center;gap:6px}
+.ab-tmv{display:flex;flex-direction:column;align-items:flex-start;gap:2px;line-height:1}
+#tmLab{font:700 10px/1 Mukta,sans-serif;letter-spacing:.5px;text-transform:uppercase;opacity:.8}
+.ab-tm{min-height:40px}
+.ab-unit{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);color:#fff;display:grid;place-items:center;cursor:pointer;padding:0;transition:background .15s}
+.ab-unit:hover{background:rgba(255,255,255,.22)}.ab-unit:focus-visible{outline:3px solid #ffd166;outline-offset:2px}
+.ab-unit svg{width:18px;height:18px}.ab-unit.spin svg{animation:unitSpin .5s cubic-bezier(.3,.7,.3,1)}
+@keyframes unitSpin{from{transform:rotate(-360deg)}}
+@media(max-width:700px){.ab-unit{width:34px;height:34px}}
+/* event scenes */
+.fx{position:fixed;inset:0;z-index:15;overflow:hidden;cursor:pointer;animation:lvIn .35s ease-out both}
+.fx.out{animation:lvOut .4s ease-in both}
+.fx .arm{transform-box:view-box}
+.fx-hint{position:absolute;left:0;right:0;bottom:8px;margin:0;text-align:center;font:600 13px Mukta,sans-serif;color:rgba(40,10,0,.55);pointer-events:none}
+.fx-sangeet .fx-hint,.fx-love .fx-hint{color:rgba(255,255,255,.75)}
+.fx-t{position:absolute;left:50%;top:calc(var(--abh,101px) + 12px);transform:translateX(-50%);width:min(92vw,720px);text-align:center;pointer-events:none;animation:fxTi .8s ease-out .2s both}
+.fx-t h2{margin:0;font:700 clamp(36px,7vw,62px)/1.05 "Dancing Script","Great Vibes",cursive}
+.fx-mr{margin:0;font:clamp(18px,3vw,26px)/1.3 "Tiro Devanagari Marathi",serif}
+.fx-w{margin:4px 0 0;font:700 clamp(14px,2vw,18px) Mukta,sans-serif}
+.fx-l{margin:2px 0 0;font:italic clamp(14px,2vw,17px) "Noto Serif",serif;opacity:.85}
+@keyframes fxTi{from{opacity:0;transform:translate(-50%,-12px)}}
+.fx-fls{position:absolute;inset:0;pointer-events:none}
+.fx-fl{position:absolute;top:-8vh;width:var(--s);height:var(--s);animation:fxFall var(--d) linear var(--w) infinite}
+.fx-fl svg{width:100%;height:100%;display:block}
+@keyframes fxFall{from{transform:translate(0,0) rotate(0)}to{transform:translate(var(--sw),118vh) rotate(540deg)}}
+.fx-couple{position:absolute;left:50%;transform:translateX(-50%);overflow:visible}
+@keyframes fxRise{from{opacity:0;transform:translate(-50%,30px)}}
+@keyframes fxPop{from{transform:scale(0);opacity:0}}
+/* engagement */
+.fx-engagement{background:radial-gradient(circle at 50% 58%,#fff7f0,#ffe3e8 60%,#f9c9d4);color:#8e1b2a}
+.fx-glow{position:absolute;left:50%;top:60%;width:64vmin;height:64vmin;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,210,110,.6),transparent 65%);animation:fxGlow 2.4s ease-in-out 1.8s infinite alternate}
+@keyframes fxGlow{from{opacity:.45;transform:translate(-50%,-50%) scale(.85)}}
+.fx-hands{position:absolute;left:50%;top:60%;width:min(96vw,860px);transform:translate(-50%,-50%);overflow:visible}
+.fx-hands .hb{animation:fxHb 1.5s cubic-bezier(.2,.8,.3,1) .2s both}
+@keyframes fxHb{from{transform:translateX(-580px)}}
+.fx-hands .hg{transform:translateX(150px);animation:fxHg 3.2s cubic-bezier(.3,.7,.3,1) .2s both}
+@keyframes fxHg{0%{transform:translateX(640px)}45%,62%{transform:translateX(0)}100%{transform:translateX(150px)}}
+.fx-hands .ringHeld{opacity:0;animation:fxRh 3.2s cubic-bezier(.3,.7,.3,1) .2s both}
+@keyframes fxRh{0%{transform:translateX(640px);opacity:1}45%,55%{transform:translateX(0);opacity:1}62%,100%{transform:translateX(0);opacity:0}}
+.fx-hands .ringOn{transform-box:fill-box;transform-origin:center;animation:fxPop .6s cubic-bezier(.34,1.56,.64,1) 1.9s both}
+.fx-hands .burst{opacity:0;transform-box:fill-box;transform-origin:center;animation:fxBurst .9s ease-out 1.95s both}
+@keyframes fxBurst{0%{opacity:1;transform:scale(.3)}100%{opacity:0;transform:scale(1.8)}}
+.fx-pop{position:absolute;width:var(--s);height:calc(var(--s) * 1.17);transform:translate(-50%,-50%);animation:fxPop2 .7s cubic-bezier(.34,1.56,.64,1) calc(2.4s + var(--i) * .14s) both}
+@keyframes fxPop2{from{transform:translate(-50%,-50%) scale(0) rotate(-30deg);opacity:0}}
+.fx-pop svg{width:100%;height:100%;display:block;filter:drop-shadow(0 4px 8px rgba(140,40,60,.25))}
+.fx-pop .tw{transform-box:fill-box;transform-origin:center;animation:fxTw 1.1s ease-in-out calc(var(--i) * .2s) infinite alternate}
+@keyframes fxTw{from{transform:scale(.3);opacity:.3}}
+/* haldi */
+.fx-haldi{background:radial-gradient(circle at 50% 62%,#fff8d6,#ffe066 70%,#ffd23f);color:#7a4300}
+.fx-haldi-c{bottom:5vh;width:min(86vw,560px);max-height:calc(100vh - var(--abh,101px) - 170px);animation:fxRise 1s ease-out .3s both}
+/* sangeet */
+.fx-sangeet{background:radial-gradient(circle at 50% 30%,#3c1361,#14051f 75%);color:#ffe7a8}
+.beam{position:absolute;top:calc(var(--abh,101px) - 20px);width:26vw;height:110vh;background:linear-gradient(to bottom,var(--c),transparent 80%);clip-path:polygon(46% 0,54% 0,100% 100%,0 100%);transform-origin:50% 0;mix-blend-mode:screen;animation:fxBeam var(--bd) ease-in-out infinite alternate}
+@keyframes fxBeam{from{transform:rotate(-24deg)}to{transform:rotate(24deg)}}
+.dnc{position:absolute;width:clamp(56px,9vw,110px);aspect-ratio:120/260;animation:fxIn 1.6s cubic-bezier(.2,.8,.3,1) var(--del) both}
+.dnc.rear{width:clamp(44px,7vw,84px)}
+@keyframes fxIn{from{transform:translate(var(--fx),var(--fy));opacity:0}}
+.dnc svg{width:100%;height:100%;display:block;overflow:visible;transform-origin:50% 100%;animation:fxBob var(--bd) ease-in-out calc(var(--del) + 1.4s) infinite alternate}
+@keyframes fxBob{from{transform:translateY(0) rotate(-6deg)}to{transform:translateY(-10%) rotate(6deg)}}
+.dnc .aL{animation:fxAL var(--ad) ease-in-out infinite alternate}
+.dnc .aR{animation:fxAR var(--ad) ease-in-out calc(var(--ad) * -.5) infinite alternate}
+@keyframes fxAL{from{transform:rotate(30deg)}to{transform:rotate(150deg)}}
+@keyframes fxAR{from{transform:rotate(-30deg)}to{transform:rotate(-150deg)}}
+.fx-note{position:absolute;bottom:-6vh;font-size:clamp(20px,3vw,34px);animation:fxNote var(--d) ease-in var(--w) infinite}
+@keyframes fxNote{from{transform:translateY(0);opacity:0}15%{opacity:1}to{transform:translateY(-105vh) rotate(20deg);opacity:0}}
+/* wedding */
+.fx-wedding{background:radial-gradient(circle at 50% 40%,#fffaf0,#ffe8cc 70%,#ffd6a5);color:#8e1b2a}
+.fx-wed{position:absolute;top:calc(var(--abh,101px) + 8px);bottom:30px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:6px;padding:0 16px;overflow:hidden}
+.fx-wed .fx-t{position:static;transform:none;animation:lvIn .8s ease-out both}
+.fx-wed-c{position:static;transform:none;flex:0 1 auto;min-height:0;width:min(80vw,420px);max-height:min(38vh,320px)}
+.fx-wed-c .g1{animation:fxG1 1.6s ease-in-out .7s both}
+.fx-wed-c .g2{animation:fxG2 1.6s ease-in-out 2.7s both}
+@keyframes fxG1{0%{transform:translate(-96px,30px)}50%{transform:translate(-50px,-36px)}100%{transform:translate(0,0)}}
+@keyframes fxG2{0%{transform:translate(96px,30px)}50%{transform:translate(50px,-36px)}100%{transform:translate(0,0)}}
+.fx-wed-c .pB .aR{animation:fxRaR 2.3s ease-in-out .4s both}
+.fx-wed-c .pG .aL{animation:fxRaL 2.3s ease-in-out 2.4s both}
+@keyframes fxRaR{25%,70%{transform:rotate(-75deg)}}
+@keyframes fxRaL{25%,70%{transform:rotate(75deg)}}
+.vows{list-style:none;margin:0;padding:8px 18px;width:min(92vw,560px);background:rgba(255,255,255,.72);border:1px solid #e6c37a;border-radius:14px;box-shadow:0 8px 24px rgba(120,40,0,.12)}
+.vows li{display:flex;gap:10px;align-items:baseline;padding:3px 0;font:clamp(13.5px,1.9vw,17px)/1.35 "Noto Serif",serif;color:#5a1019;animation:fxVow .7s ease-out calc(4.5s + var(--i) * .9s) both}
+.vows li b{flex:none;width:22px;height:22px;border-radius:50%;background:#8e1b2a;color:#fff;display:grid;place-items:center;font:700 12px Mukta,sans-serif;align-self:center}
+@keyframes fxVow{from{opacity:0;transform:translateY(-14px)}}
+@media(max-height:760px){.fx-wed-c{max-height:28vh}.fx-wed .fx-t h2{font-size:clamp(30px,6vw,46px)}}
+/* love scene keeps its own layout, under the header like the others */
+.fx.love{z-index:15}
+/* reduced motion: final frame, no movement */
+.fx.calm,.fx.calm *{animation:none!important}
+.fx.calm .fx-fl{top:var(--y)}.fx.calm .fx-note{display:none}
+@media print{.fx{display:none!important}}
