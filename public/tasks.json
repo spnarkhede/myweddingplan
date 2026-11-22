@@ -90,8 +90,8 @@
       },
       {
        "id": "fly-ins",
-       "t": "Health insurance letter",
-       "d": "Krankenkasse confirms family cover, or a private quote for her.",
+       "t": "Your TK health insurance certificate",
+       "d": "Allgemeine Versicherungsbescheinigung from Meine TK. TK can’t confirm her cover until after the wedding and her Anmeldung, so she needs incoming insurance for the visa. See the spouse visa page.",
        "due": "W-63",
        "status": 1
       },
