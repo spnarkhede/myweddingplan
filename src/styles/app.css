@@ -444,3 +444,4 @@ ul.ck2 input:checked~.tx .tt{color:var(--mute);text-decoration:line-through}
 .vt2{animation:fxTi .9s ease-out 8.1s both}
 @media(max-width:600px){.fx-vidaai{--cw:clamp(220px,62vw,300px)}.vhome{width:46vw}.vsun{left:8%}}
 .fx.calm .vcl,.fx.calm .vtr,.fx.calm .vht,.fx.calm .vfw{display:none}
+.sinfo{margin:0 0 10px;font-size:.95em}.sinfo summary{padding:9px 28px 9px 0;min-height:40px}

@@ -714,8 +714,9 @@
       },
       {
        "id": "v-ins",
-       "t": "Health insurance confirmation letter (for example TK family insurance)",
-       "tag": "3 copies"
+       "t": "Health insurance: your TK certificate plus her incoming insurance",
+       "tag": "3 copies",
+       "d": "TK can't issue a certificate in her name before you are married and she is registered in Germany. See the TK sections below."
       },
       {
        "id": "v-slip",
@@ -729,9 +730,9 @@
       },
       {
        "id": "v-travel",
-       "t": "Travel insurance",
+       "t": "Incoming health insurance in her name",
        "tag": "3 copies",
-       "d": "Covers her until family insurance starts."
+       "d": "At least €30,000 cover, valid in Germany and Schengen, for the first 3 to 6 months after arrival. Covers her until TK family insurance starts."
       },
       {
        "id": "v-a1c",
@@ -789,14 +790,117 @@
       },
       {
        "id": "h-ins",
-       "t": "Your health insurance confirmation",
-       "tag": "3 copies"
+       "t": "Your TK insurance certificate (Allgemeine Versicherungsbescheinigung)",
+       "tag": "3 copies",
+       "d": "Meine TK or the TK-App, Bescheinigungen. Shows she joins your family insurance once she is registered."
       },
       {
        "id": "h-inv",
        "t": "Invitation letter from you, signed",
        "tag": "3 copies",
        "d": "Use the Visa letters tool."
+      }
+     ]
+    },
+    {
+     "id": "tk-a",
+     "title": "TK health insurance: for her visa appointment",
+     "info": [
+      {
+       "q": "What is this document?",
+       "a": "TK's Allgemeine Versicherungsbescheinigung (or Mitgliedsbescheinigung) confirms active statutory health insurance in Germany. It comes in two forms. Yours proves you are an active TK member who can add your wife. Hers is issued only after she arrives, registers her address and is enrolled in TK family insurance (Familienversicherung)."
+      },
+      {
+       "q": "Why do we need it?",
+       "a": "German law requires proof of health insurance before any visa or residence permit. At the embassy or consulate, your TK certificate plus her incoming insurance shows she moves into public health insurance on arrival. At the Ausländerbehörde, her own TK certificate is needed to turn her D visa into a residence permit (Aufenthaltstitel). Until her TK card arrives, the certificate is her proof of cover at doctors, hospitals and pharmacies."
+      },
+      {
+       "q": "Can TK issue it in her name before the wedding?",
+       "a": "No. Family insurance is only for a legal spouse, so a passport is not enough; TK needs the marriage certificate. Even after the wedding, her cover normally starts only once she lives in Germany and has registered her address (Anmeldung). For the visa appointment you use your own certificate and her incoming insurance instead."
+      },
+      {
+       "q": "What does family insurance cover?",
+       "a": "The same statutory benefits as yours, at no extra cost: doctors and specialists, hospital stays and surgery, check-ups, cancer screening, vaccinations, pregnancy care and childbirth, prescriptions (standard co-payments), physiotherapy, dental check-ups and basic treatment, and long-term care insurance (Pflegeversicherung)."
+      },
+      {
+       "q": "Who is eligible?",
+       "a": "A legal spouse who lives in Germany, whose regular total income is no more than €565 a month in 2026 (€603 from a mini-job), and who is not mainly self-employed or privately insured. Check the current limits with TK before applying."
+      },
+      {
+       "q": "Timeline",
+       "a": "Before the wedding: nothing to do at TK. After the wedding, for the visa appointment: your TK certificate plus her incoming insurance. On arrival: Anmeldung, then apply for family insurance; enrolment usually takes 1 to 3 weeks. At the Ausländerbehörde: her own TK certificate. Checklists vary by embassy and immigration office, so confirm with yours."
+      }
+     ],
+     "items": [
+      {
+       "id": "tk-wait",
+       "t": "Before the wedding: nothing to apply for at TK",
+       "d": "TK can't add a fiancée. Family insurance needs the marriage certificate and her German address registration."
+      },
+      {
+       "id": "tk-mine",
+       "t": "Download your own TK certificate",
+       "d": "Meine TK or the TK-App, then Bescheinigungen, Allgemeine Versicherungsbescheinigung, download the PDF. Or call TK on +49 40 46 06 62 53 00.",
+       "tag": "3 copies"
+      },
+      {
+       "id": "tk-inc",
+       "t": "Buy incoming health insurance in her name",
+       "d": "For example Dr. Walter, Mawista, HanseMerkur or ADAC. At least €30,000 cover, valid in Germany and Schengen, from her planned arrival date for 3 to 6 months.",
+       "tag": "3 copies"
+      },
+      {
+       "id": "tk-emb",
+       "t": "Check the embassy checklist for the insurance it wants",
+       "d": "Requirements differ slightly between embassies, consulates and VFS centres."
+      }
+     ]
+    },
+    {
+     "id": "tk-b",
+     "title": "TK health insurance: after she arrives in Germany",
+     "items": [
+      {
+       "id": "tk-anm",
+       "t": "Register her address (Anmeldung) at the Bürgerbüro",
+       "d": "Get her Meldebescheinigung. Family insurance normally starts from here."
+      },
+      {
+       "id": "tk-app",
+       "t": "Apply for TK family insurance (Familienversicherung)",
+       "d": "Send the Antrag auf Familienversicherung through Meine TK, the TK-App or by post. Not by email."
+      },
+      {
+       "id": "tk-mc",
+       "t": "Marriage certificate, valid in Germany",
+       "d": "Apostille or legalisation and a certified German translation if TK asks."
+      },
+      {
+       "id": "tk-pp",
+       "t": "Her passport and entry visa or residence permit"
+      },
+      {
+       "id": "tk-meld",
+       "t": "Her Meldebescheinigung"
+      },
+      {
+       "id": "tk-photo",
+       "t": "Passport photo for her TK health card (Gesundheitskarte)"
+      },
+      {
+       "id": "tk-inc2",
+       "t": "Income declaration",
+       "d": "Confirms she has no income, or less than €565 a month (€603 from a mini-job)."
+      },
+      {
+       "id": "tk-hers",
+       "t": "Download her TK certificate",
+       "d": "Once TK confirms her enrolment (usually 1 to 3 weeks), download her Allgemeine Versicherungsbescheinigung in Meine TK. Use it until her card arrives."
+      },
+      {
+       "id": "tk-abh",
+       "t": "Take her TK certificate to the Ausländerbehörde",
+       "d": "Needed to convert her D visa into a residence permit (Aufenthaltstitel)."
       }
      ]
     }
@@ -1613,9 +1717,10 @@
      },
      {
       "id": "d-v-ins",
-      "t": "Health insurance confirmation",
+      "t": "Incoming health insurance in her name",
       "who": "Bride",
-      "tag": "3 copies"
+      "tag": "3 copies",
+      "d": "TK can't cover her until you are married and she is registered in Germany."
      },
      {
       "id": "d-v-slip",
@@ -1679,7 +1784,7 @@
      },
      {
       "id": "d-v-gins",
-      "t": "Health insurance confirmation",
+      "t": "Your TK insurance certificate",
       "who": "Groom",
       "tag": "3 copies"
      },
@@ -1814,12 +1919,23 @@
       "who": "Bride"
      },
      {
+      "id": "d-g-kk-inc",
+      "t": "Income declaration",
+      "who": "Bride"
+     },
+     {
+      "id": "d-g-kk-cert",
+      "t": "Her TK insurance certificate",
+      "who": "Bride"
+     },
+     {
       "id": "d-g-kk-card",
       "t": "Health insurance card received",
       "who": "Bride",
       "tag": "Original"
      }
-    ]
+    ],
+    "note": "Apply after she arrives and registers. Her TK certificate is then needed at the Ausländerbehörde."
    },
    {
     "id": "de-bank",
