@@ -1,0 +1,81 @@
+{
+ "done": {
+  "fly-hr": 1,
+  "fly-ins": 1,
+  "fly-rent": 1
+ },
+ "pick": {},
+ "notes": {},
+ "custom": {},
+ "cert": {},
+ "status": {
+  "fly-hr": "Received",
+  "fly-ins": "Received",
+  "fly-wgb": "Requested",
+  "fly-wra": "Requested"
+ },
+ "statusAt": {
+  "fly-hr": "2026-11-20",
+  "fly-ins": "2026-11-20",
+  "fly-wgb": "2026-11-20",
+  "fly-wra": "2026-11-20"
+ },
+ "updated": 1795221412504,
+ "name": {
+  "ans": {}
+ },
+ "letters": {
+  "hName": "Shubham Narkhede",
+  "hPermit": "settlement permit (Niederlassungserlaubnis)",
+  "marDate": "2027-02-03",
+  "marPlace": "Nagpur",
+  "regOffice": "Nagpur Municipal Corporation",
+  "stay": "on a long term basis",
+  "cons": "Hoechst House, 10th Floor, 193 Backbay Reclamation,\nNariman Point, Mumbai 400021",
+  "enc": "1",
+  "perm": [
+   "pr"
+  ],
+  "employer": "Robert Bosch GmbH",
+  "empCity": "Stuttgart-Feuerbach",
+  "job": "Softwareentwickler",
+  "hStreet": "",
+  "hCity": "",
+  "hPhone": "",
+  "hEmail": "",
+  "flat": "",
+  "wName": "Anuja Satishkumar Naphade",
+  "wAddr": "",
+  "marTime": "12:10"
+ },
+ "project": {
+  "title": "Shubham's wedding, Nagpur, 3 February 2027",
+  "sub": "Stuttgart to Nagpur and back",
+  "wedding": "2027-02-03",
+  "fly": "2026-12-03",
+  "back": "2027-02-16"
+ },
+ "inv": {
+  "groom": "Shubham Narkhede",
+  "bride": "Anuja Satishkumar Naphade",
+  "gParents": "",
+  "bParents": "",
+  "elders": "",
+  "city": "Nagpur",
+  "rsvp": "",
+  "ev": {
+   "wedding": {
+    "date": "2027-02-03",
+    "time": "12:10"
+   },
+   "haldi": {
+    "date": "2027-02-02",
+    "time": "16:30"
+   },
+   "sangeet": {
+    "date": "2027-02-02",
+    "time": "19:00"
+   }
+  }
+ }
+}

@@ -1,5 +1,5 @@
 /* ---------- visa letters ---------- */
-const LDEF={hName:"",hPermit:"settlement permit (Niederlassungserlaubnis)",marDate:"",marPlace:"",regOffice:"",stay:"on a long term basis",cons:"Hoechst House, 10th Floor, 193 Backbay Reclamation,\nNariman Point, Mumbai 400021",enc:"1",perm:["pr"]};
+const LDEF={hName:"Shubham Narkhede",hPermit:"settlement permit (Niederlassungserlaubnis)",marDate:"2027-02-03",marPlace:"Nagpur",regOffice:"Nagpur Municipal Corporation",stay:"on a long term basis",cons:"Hoechst House, 10th Floor, 193 Backbay Reclamation,\nNariman Point, Mumbai 400021",enc:"1",perm:["pr"]};
 const PERM={pr:["Copy of Niederlassungserlaubnis","settlement permit (Niederlassungserlaubnis)","Settlement Permit (Niederlassungserlaubnis)"],blue:["Copy of Blaue Karte EU + Zusatzblatt","EU Blue Card (Blaue Karte EU)","EU Blue Card (Blaue Karte EU)"],work:["Copy of Aufenthaltserlaubnis zur Beschäftigung + Zusatzblatt","residence permit for employment","Residence Permit (Aufenthaltserlaubnis)"],student:["Copy of Aufenthaltserlaubnis zum Studium + Zusatzblatt","residence permit for study","Residence Permit for Study (Aufenthaltserlaubnis zum Studium)"],foreign:[null,null]};
 const permList=()=>{const p=L().perm;return Array.isArray(p)?p:["pr"]};
 let lcur="inv",ldl=null;

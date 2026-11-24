@@ -141,7 +141,9 @@ ul.ck2 input:checked~.tx .tt{color:var(--mute);text-decoration:line-through}
 .dm{margin:12px 0}.dm .bar2{background:var(--line)}.dm .bar2 i{background:#1f5f7a}
 .dnav{display:flex;gap:6px;overflow-x:auto;padding:8px 0 2px}
 .dnav a{flex:none;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:16px;padding:0 12px;min-height:36px;display:flex;align-items:center;background:var(--bg)}
-.dcat{padding-top:16px;scroll-margin-top:70px}.dcount{font-size:15px;color:var(--mute);font-weight:600}
+.dnav a[aria-current=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.dfull{width:100%;max-width:none;padding:16px clamp(12px,3vw,40px) 40px;box-sizing:border-box}
+.dcat{margin-top:20px;padding:16px 20px 20px;border:2px solid var(--line);border-radius:14px;scroll-margin-top:70px}.dcount{font-size:15px;color:var(--mute);font-weight:600}
 .dl2 li.got .tt{text-decoration:line-through;color:var(--mute)}
 .chip.who{background:none;border:1px solid var(--line)}
 .chip.w-Groom{border-color:#1f5f7a;color:#1f5f7a}.chip.w-Bride{border-color:#9c1458;color:#9c1458}.chip.w-Both{border-color:#8a6a1a;color:#8a6a1a}.chip.w-Witnesses{border-color:#555;color:#555}
